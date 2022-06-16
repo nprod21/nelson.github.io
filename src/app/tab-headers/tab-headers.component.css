@@ -1,0 +1,224 @@
+.tab-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tab-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.tab-container::-webkit-scrollbar-thumb {
+    background-color: #3d3e42;
+    opacity: 20%;
+}
+
+.tab-container::-webkit-scrollbar-thumb:hover {
+    background-color: #4c4d4f;
+    opacity: 80%;
+    transition: opacity 2s;
+}
+
+.tab-header-container > * {
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+
+.tab-header-container > div {
+    margin: 0px;
+    padding: 0px;
+}
+
+.tab-header-container {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 50px;
+    grid-template-rows: auto;
+}
+
+.tab-header-expanded-width {
+    width: calc(100vw - 350px);
+}
+  
+.tab-header-collapsed-width {
+    width: calc(100vw - 50px);
+}
+
+.view-icon-container {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 100%;
+    background-color: #2e3138;
+    display: grid;
+}
+
+.view-icon {
+    position: relative;
+    height: 50%;
+    width: 50%;
+    place-self: center;
+    cursor: pointer;
+}
+
+.tab-grid {
+    position: relative;
+    height: 100%;
+    display: grid;
+    align-items: start;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.tab-container {
+    position: relative;
+    align-self: start;
+    background-color: #202327;
+    height: 50px;
+    padding: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.tab {
+    width: 206px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #72c790;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.tab:-moz-drag-over {
+    cursor: ew-resize;
+}
+
+.unselected-tab {
+    background-color: #24272d;
+    border-left: solid #202327;
+    border-left-width: 3px;
+    box-shadow: 0px -5px 10px -5px #202327 inset;
+}
+
+.selected-tab {
+    background-color: #15181e;
+    background-color: #3c4453;
+    border-left: solid #3c4453;
+    border-left-width: 3px;
+}
+
+.tab-content:hover > .tab-close-button > .tab-x {
+    color: #a8a8a8;
+}
+
+.dragged-over {
+    border-left: dashed aqua;
+    border-left-width: 3px;
+}
+
+.dragged-tab {
+    opacity: 33%;
+}
+
+.dragged-end {
+    background-color: #3b3c3c;
+    background-color: aqua;
+    border-right: dashed aqua;
+}
+
+.close-button {
+    position: relative;
+    display: block;
+    float: right;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+}
+
+.tab-content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.tab-icon {
+    position: relative;
+    grid-column: span 1;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.svg-container {
+    position: relative;
+    vertical-align: middle;
+}
+
+.svg-icon {
+    position: relative;
+    vertical-align: middle;
+    height: 16.5px;
+    width: 15.45px;
+    height: 1em;
+    width: 1em;
+    margin: 0;
+}
+
+.ext-icon {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    display: grid;
+    place-items: center;
+}
+
+.at-sign {
+    color: #3f87b7;
+    font-weight: bold;
+}
+
+.tab-header-container > i {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-name {
+    position: relative;
+    grid-column: span 3;
+    width: 100%;
+    font-size: 1em;
+    display: grid;
+    place-items: center;
+}
+
+.tab-close-button {
+    position: relative;
+    grid-column: span 1;
+    display: grid;
+    place-items: center;
+}
+
+.open-tab-x {
+    position: relative;
+    color: aliceblue;
+}
+
+.tab-x {
+    position: relative;
+    color: transparent;
+}
+
+.close-button:hover {
+    background-color: #3b3c3c;
+    cursor: pointer;
+}

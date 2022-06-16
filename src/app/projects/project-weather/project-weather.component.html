@@ -1,0 +1,98 @@
+<div class="project-container" [ngClass]="[showProject ? '' : 'transparent']">
+    <div class="weather-body">
+        <div class="weather-container"  [ngClass]="[ isDayTime ? 'day-text-shadow': 'night-text-shadow']">
+            <img [src]="backgroundImg" class="background" [alt]="dailyDescription[0]">
+            <div class="current-weather section">
+                <h2 class="city">{{city}}</h2>
+                <h4 class="description">{{dailyDescription[0]}}</h4>
+                <h2 class="temperature">{{dailyTemp[0]}}°C</h2>
+                <section class="today-extras">
+                <h4 class="feels-like">feels like: {{todayFeelsLike}}°C</h4>
+                    <h5 *ngIf="!isDayTime" class="next-sun">
+                        sunrise: {{nextSunriseTime | date: 'h:mma'}}
+                    </h5>
+                    <h5 *ngIf="isDayTime" class="next-sun">
+                        sunset: {{nextSunsetTime | date: 'h:mma'}}
+                    </h5>  
+                </section>
+            </div>
+            <div class="hourly-forecast section">
+                <div class="hourly-container">
+                    <div class="hour-row">
+                        <h4 class="hour">{{hourTime[1] | date: 'ha'}}</h4>
+                        <h4 class="hour">{{hourTime[2] | date: 'ha'}}</h4>
+                        <h4 class="hour">{{hourTime[3] | date: 'ha'}}</h4>
+                        <h4 class="hour">{{hourTime[4] | date: 'ha'}}</h4>
+                        <h4 class="hour">{{hourTime[5] | date: 'ha'}}</h4>
+                    </div>
+                    <div class="hour-icon">
+                        <img src="https://openweathermap.org/img/wn/{{hourIcon[1]}}.png" class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/{{hourIcon[2]}}.png" class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/{{hourIcon[3]}}.png" class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/{{hourIcon[4]}}.png" class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/{{hourIcon[5]}}.png" class="weather-icon">
+                    </div>
+                    <div class="hour-temp">
+                        <h4 class="hour">{{hourTemp[1]}}°C</h4>
+                        <h4 class="hour">{{hourTemp[2]}}°C</h4>
+                        <h4 class="hour">{{hourTemp[3]}}°C</h4>
+                        <h4 class="hour">{{hourTemp[4]}}°C</h4>
+                        <h4 class="hour">{{hourTemp[5]}}°C</h4>
+                    </div> 
+                </div>
+            </div>
+            <div class="daily-forecast">
+                <div class="daily-rows-container">
+                        <div class="daily-dates-col">
+                            <span class="daily-date">{{dailyDate[1] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[2] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[3] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[4] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[5] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[6] | date: 'EEEE, d MMM'}}</span>
+                            <span class="daily-date">{{dailyDate[7] | date: 'EEEE, d MMM'}}</span>
+                        </div>
+                        <div class="daily-icons-col">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[1]}}.png" class="daily-icon">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[2]}}.png" class="daily-icon">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[3]}}.png" class="daily-icon">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[4]}}.png" class="daily-icon">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[5]}}.png" class="daily-icon">
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[6]}}.png" class="daily-icon"> 
+                            <img src="https://openweathermap.org/img/wn/{{dailyIcon[7]}}.png" class="daily-icon">
+                        </div>
+                        <div class="daily-temps-col">
+                            <span class="daily-temp">{{dailyTemp[1]}}°C</span>
+                            <span class="daily-temp">{{dailyTemp[2]}}°C </span>
+                            <span class="daily-temp">{{dailyTemp[3]}}°C</span>
+                            <span class="daily-temp">{{dailyTemp[4]}}°C</span>
+                            <span class="daily-temp">{{dailyTemp[5]}}°C</span>
+                            <span class="daily-temp">{{dailyTemp[6]}}°C</span>
+                            <span class="daily-temp">{{dailyTemp[7]}}°C</span>
+                        </div>
+                    </div>   
+            </div>
+        </div>
+    </div>
+    <div class="demo-simulation-setter">
+            <h3> DEMO SIMULATION SETTER </h3>
+            <div class="settings">
+                <div class="time-settings">
+                    <label for="TIME OF DAY">TIME OF DAY: </label>
+                    <select #seltime (change)="simulateDayTime(seltime.value)">
+                        <option value="default">DEFAULT</option>
+                        <option value="day">Day</option>
+                        <option value="night">Night</option>
+                    </select>      
+                </div>
+                <div class="weather-settings">
+                    <label for="CONDITION">CONDITION: </label>
+                    <select #selweather (change)="simulateWeather(selweather.value)">
+                        <option value="default">DEFAULT</option>
+                        <option *ngFor="let option of weatherOptions; let i = index" value="{{weatherOptions[i]}}">{{weatherOptions[i]}}</option>
+                    </select>      
+                </div>
+            </div>   
+    </div>    
+</div>
+

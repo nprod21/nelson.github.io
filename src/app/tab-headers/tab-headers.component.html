@@ -1,0 +1,79 @@
+<div class="tab-header-container" [ngClass]="[sidebarExpanded ? 'tab-header-expanded-width' : 'tab-header-collapsed-width']">
+    <div id="tabscontainer" class="tab-container" [ngClass]="[endDragged ? 'dragged-end' :  '']">
+        <ng-container *ngFor="let tab of openPages">
+            <ng-container *ngIf="tab.selected">
+                <div class="tab selected-tab" [routerLink]="tab.filepath" (click)="selectTab(tab)" [id]="tab.id" draggable="true" [ngClass]="[tab.draggedOver ? 'dragged-over' : '']" [style.height]="tabHeight">
+                    <div class="tab-content" [style.height]="tabHeight">
+                        <div class="tab-icon">
+                                <svg *ngIf="tab.id == 1" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 155.422 164.684">
+                                    <path d="M126.325,46.685A37.448,37.448,0,1,1,88.876,9.237a37.466,37.466,0,0,1,37.448,37.448M88.876,95.357a78.63,78.63,0,0,0-77.564,65.785,11.083,11.083,0,0,0,11.112,12.779h132.9a11.083,11.083,0,0,0,11.112-12.779A78.63,78.63,0,0,0,88.876,95.357" transform="translate(-11.166 -9.237)" fill="#55b4f4"/>
+                                </svg>
+                                <svg *ngIf="tab.id == 2" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 229.196 229.196">
+                                    <g id="Tick-Icon-SVG-psokcd" transform="translate(-4097.992 -3416.812)">
+                                    <path id="Path_136721" data-name="Path 136721" d="M159.34,2.206H69.856C19.629,2.206,0,21.835,0,72.062v89.485C0,211.773,19.629,231.4,69.856,231.4H159.34c49.938,0,69.856-19.629,69.856-69.856V72.062c0-50.227-19.918-69.856-69.856-69.856" transform="translate(4097.992 3414.606)" fill="#48c300"/>
+                                    <path id="Path_136722" data-name="Path 136722" d="M42.034,101.743.178,59.6,14.9,44.877,42.034,72.011,111.89,2.444l14.722,14.722Z" transform="translate(4149.224 3483.097)" fill="#fff"/>
+                                    </g>
+                                </svg>
+                                <svg *ngIf="tab.parentFolderId == 3" class="svg-icon" viewBox="0 0 256 272" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M.1 45.522L125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522z" fill="#E23237"/>
+                                    <path d="M255.104 44.725L125.908.697v270.444l108.277-59.866 20.919-166.55z" fill="#B52E31"/>
+                                    <path d="M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z" fill="#FFF"/>
+                                </svg>
+                            <div *ngIf="tab.parentFolderId != 3" class="ext-icon">
+                                <span *ngIf="tab.id == 5" class="at-sign">@</span>
+                            </div>    
+                        </div>
+                        <div class="tab-name" [style.height]="tabHeight">{{ tab.name }}</div>
+                        <div class="tab-close-button" [style.height]="tabHeight">
+                            <button class="close-button" [ngClass]="tab.selected ? 'open-tab-x' : 'tab-x'" (click)="closeTab(tab)" title="Close tab">X</button>    
+                        </div>
+                    </div>
+                </div> 
+            </ng-container>
+            <ng-container *ngIf="tab.selected === false">
+                <div class="tab unselected-tab" [routerLink]="tab.filepath" (click)="selectTab(tab)" [id]="tab.id" draggable="true" [ngClass]="[tab.draggedOver ? 'dragged-over' : '']" [style.height]="tabHeight">
+                    <div class="tab-content" [style.height]="tabHeight">
+                        <div class="tab-icon" title="Select tab">
+                            <svg *ngIf="tab.id == 1" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 155.422 164.684">
+                                <path d="M126.325,46.685A37.448,37.448,0,1,1,88.876,9.237a37.466,37.466,0,0,1,37.448,37.448M88.876,95.357a78.63,78.63,0,0,0-77.564,65.785,11.083,11.083,0,0,0,11.112,12.779h132.9a11.083,11.083,0,0,0,11.112-12.779A78.63,78.63,0,0,0,88.876,95.357" transform="translate(-11.166 -9.237)" fill="#55b4f4"/>
+                            </svg>
+                            <svg *ngIf="tab.id == 2" xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 229.196 229.196">
+                                <g id="Tick-Icon-SVG-psokcd" transform="translate(-4097.992 -3416.812)">
+                                  <path id="Path_136721" data-name="Path 136721" d="M159.34,2.206H69.856C19.629,2.206,0,21.835,0,72.062v89.485C0,211.773,19.629,231.4,69.856,231.4H159.34c49.938,0,69.856-19.629,69.856-69.856V72.062c0-50.227-19.918-69.856-69.856-69.856" transform="translate(4097.992 3414.606)" fill="#48c300"/>
+                                  <path id="Path_136722" data-name="Path 136722" d="M42.034,101.743.178,59.6,14.9,44.877,42.034,72.011,111.89,2.444l14.722,14.722Z" transform="translate(4149.224 3483.097)" fill="#fff"/>
+                                </g>
+                              </svg>
+                            <svg *ngIf="tab.parentFolderId == 3" class="svg-icon" width="20%" height="20%" viewBox="0 0 256 272" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <path d="M.1 45.522L125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522z" fill="#E23237"/>
+                                <path d="M255.104 44.725L125.908.697v270.444l108.277-59.866 20.919-166.55z" fill="#B52E31"/>
+                                <path d="M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z" fill="#FFF"/>
+                            </svg>
+                            <div *ngIf="tab.parentFolderId != 3" class="ext-icon">
+                                <span *ngIf="tab.id == 5" class="at-sign">@</span>
+                            </div>    
+                        </div>
+                        <div class="tab-name" title="Select tab" [style.height]="tabHeight">{{ tab.name }}</div>
+                        <div class="tab-close-button" [style.height]="tabHeight">
+                            <button class="close-button" [ngClass]="tab.selected ? 'open-tab-x' : 'tab-x'" (click)="closeTab(tab)" title="Close tab">X</button>    
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+    <div class="view-icon-container" title="Toggle view split">
+        <svg class="view-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352.14 394.69" (click)="handleToggle()">
+            <g class="lines-group" [style.fill]="pageFill">
+              <path class="lines-outer" d="M300-.25c5.49,2.24,11.53,3.66,16.37,6.88C326.7,13.49,331.11,24,331.12,36.19q.09,81.82,0,163.64c0,.5-.12,1-.19,1.65l-26.23-6.11v-4q0-76.45,0-152.91c0-9.72-2.79-12.51-12.54-12.51q-90.66,0-181.31,0a30.29,30.29,0,0,0-5.7.51c-3.62.7-6.2,2.94-6.48,6.58-.38,5-.09,10.12-.09,15.68H103q71.07,0,142.13,0c15,0,26.66,6.23,33.15,19.89a41.53,41.53,0,0,1,3.72,17c.33,35.51.14,71,.22,106.53,0,2.73-.7,3.6-3.54,4-6.31.9-12.53,2.42-18.78,3.71-1.2.25-2.39.6-4.16,1.05v-5q0-54.22,0-108.45c0-9.81-2.74-12.56-12.5-12.56H61.59A12.43,12.43,0,0,0,49.16,87.37q0,132.16,0,264.33c0,9.29,2.87,12.15,12.11,12.16q62.62,0,125.23-.07c2.78,0,4.2.93,5.74,3.22,4.55,6.77,9.51,13.25,14.32,19.84.64.88,1.35,1.71,2.39,3-1.81.1-3,.23-4.25.23q-72.21,0-144.43,0C44.93,390.12,33.1,384,26.52,370a40.45,40.45,0,0,1-3.62-16.6q-.31-133.94-.11-267.87c0-21.77,15.26-36.63,37.15-36.73H71.52c.3-6.4.28-12.51.93-18.54A34.45,34.45,0,0,1,101.15.39a15.24,15.24,0,0,0,2.16-.64Z" transform="translate(-22.73 0.25)"/>
+              <path class="line-0" d="M139.72,152.09c-12.46,0-24.93.15-37.39,0-9.83-.15-16-8.36-13.17-17.16a12.92,12.92,0,0,1,12.51-9.16q38.16-.2,76.33,0A12.88,12.88,0,0,1,191.18,139c0,7.39-5.38,12.92-13.29,13-12.72.2-25.44.06-38.17.06Z" transform="translate(-22.73 0.25)"/>
+              <path class="line-1" d="M151.76,210.9c-16.06,0-32.13,0-48.19,0-7.94,0-12.88-3.51-14.58-10A13,13,0,0,1,98.23,185a23.89,23.89,0,0,1,5.72-.63q47.8-.06,95.61,0c10.64,0,17.17,7.49,14.72,16.68a12.63,12.63,0,0,1-10.88,9.54,41.88,41.88,0,0,1-5.38.28Q174.89,210.92,151.76,210.9Z" transform="translate(-22.73 0.25)"/>
+              <path class="line-2" d="M198.14,243.35c-4.4,8.32-8.66,16.49-13.08,24.56a4.05,4.05,0,0,1-2.95,1.69c-26.6.08-53.2.17-79.79,0-8.1,0-13.76-5.79-13.83-13.11s5.6-13.27,13.61-13.31c31.87-.15,63.73,0,95.59,0A.81.81,0,0,1,198.14,243.35Z" transform="translate(-22.73 0.25)"/>
+              <path class="line-3" d="M176.72,302v26a14,14,0,0,1-2.19.31q-35.67,0-71.34,0c-7.51,0-12.54-3.7-14.18-10.05A13,13,0,0,1,99.39,302.2a23.7,23.7,0,0,1,4.21-.37q34.91,0,69.8,0C174.27,301.82,175.15,301.92,176.72,302Z" transform="translate(-22.73 0.25)"/>
+            </g>
+            <g class="eye-group" [style.fill]="previewFill">
+              <path class="eye-ball" d="M374.87,311.89c-.18,45.58-37.51,82.74-82.95,82.55a82.71,82.71,0,0,1-82.41-82.58c-.12-45.72,37.36-83,83-82.66S375,266.6,374.87,311.89Zm-82.94-41.46c-6.86,1.54-13.95,2.42-20.52,4.76-17.12,6.1-30.72,17.35-42.56,30.88-3.86,4.4-3.78,7,0,11.46a116.83,116.83,0,0,0,26.72,23.11c22.58,14.31,45.66,15.7,69.17,2.34a115.35,115.35,0,0,0,30.69-25.47c3.74-4.37,3.72-7.14,0-11.51A118.65,118.65,0,0,0,328,282.47,77.62,77.62,0,0,0,291.93,270.43Z" transform="translate(-22.73 0.25)"/>
+              <path class="eye-pupil" d="M343.1,310.73c-10.35,11-21.05,19.5-34.14,24.56a46,46,0,0,1-35.67-.67c-12.45-5.23-22.68-13.41-32-23.39,13.68-13.72,28.25-25.47,48.42-27,12.07-.92,22.83,3.49,32.54,10.08C329.43,299.18,335.94,305,343.1,310.73Zm-31.47.72a19.76,19.76,0,1,0-19.93,19.68A19.81,19.81,0,0,0,311.63,311.45Z" transform="translate(-22.73 0.25)"/>
+            </g>
+          </svg>
+    </div>
+</div>

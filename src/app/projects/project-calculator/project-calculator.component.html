@@ -1,0 +1,668 @@
+<div class="calc-container" [ngClass]="[showProject ? '' : 'transparent']">
+    <div class="calc-body-shadow"></div>
+    <div class="calc-body-upper-ergo-curve-shadow"></div>
+    <div class="calc-body-side-ergo-shadow-left"></div>
+    <div class="calc-body-side-ergo-shadow-right"></div>
+    <div class="calc-body-bottom-shadow"></div>
+    <div class="calc-body-side-ergo-edge-left"></div>
+    <div class="calc-body-side-ergo-edge-right"></div>
+    <div class="calc-body-bottom-edge"></div>
+    <div class="calc-body"></div>
+    <div class="calc-body-upper-ergo-curve"></div>
+    <div class="calc-body-side-ergo-curve-left"></div>
+    <div class="calc-body-side-ergo-curve-right"></div>
+    <div class="calc-body-bottom-curve"></div>
+    <div class="screen-shape"></div>
+    <div class="screen-shape-low-center-filler"></div>
+    <div class="screen-shape-low-tilt-left"></div>
+    <div class="screen-shape-low-tilt-right"></div>
+    <div class="screen-shape-circle-cutout"></div>
+    <div class="calc-grid">
+        <div class="top-container">
+            <div class="screen-grid">
+                <div class="casio">CASIO</div>
+                <div class="sp">
+                    <span class="sp-splits"></span>
+                    <span class="sp-splits"></span>
+                    <span class="sp-splits"></span>
+                </div>
+                <div class="fx-991ms">fx-991MS</div>
+                <div class="svpam">S-V.P.A.M</div>
+                <div class="two-way-power">TWO WAY POWER</div>
+                <div class="display-screen">
+                    <div class="display-bg">
+                        <div class="display">
+                            <div class="display-top-line">
+                                <ng-container *ngIf="!isError">
+                                    <div class="display-top-line-grid">
+                                        <div class="display-top-line-hyp-enabled"><span class="hyp-text" [ngClass]="[hypEnabled ? 'lcd-on' : 'lcd-off']">hyp</span></div>
+                                        <div class="display-top-line-memory-enabled"><span class="memory-text" [ngClass]="[memoryEnabled ? 'lcd-on' : 'lcd-off']">M</span></div>
+                                        <div class="display-top-line-recall"><span class="recall-text" [ngClass]="[memoryRecall ? 'lcd-on' : 'lcd-off']">RCL</span></div>
+                                        <div class="display-top-line-degrees-enabled"><span class="degrees-text">D</span></div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <div class="display-middle-line">
+                                
+                                <div class="validExpression">
+                                    <ng-container *ngIf="isError">
+                                        <ng-container *ngIf="syntaxError">
+                                            <div class="syntax-error">Syntax ERROR</div>
+                                        </ng-container>
+                                        <ng-container *ngIf="mathError">
+                                            <div class="math-error">Math ERROR</div>
+                                        </ng-container>
+                                    </ng-container>
+                                    
+                                    <ng-container *ngIf="!isError">
+                                        <div class="display-expression-left-arrow">
+                                            <div class="charsToLeft" [ngClass]="[charsToLeft ? 'lcd-on' : 'lcd-off']">
+                                                <i class="fa fa-long-arrow-left long-arrow-left" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="display-expression-entry">
+                                            <!-- {{displayExpression}}<span class="blinking-cursor">_</span> -->
+                                            <ng-container *ngFor="let char of displayCharsInViewAsStringArray">
+                                                <ng-container *ngIf="char === '_'">
+                                                    <span class="blinking-cursor" [ngClass]="[ cursorOnChar ? 'overlay-cursor': '']">_</span>
+                                                </ng-container>
+                                                <ng-container *ngIf="char != '_' && char != 'y' && char != 'x' && char != 'z' && char != 'E'">
+                                                    <span class="display-entries">{{char}}</span>
+                                                </ng-container>
+                                                <ng-container *ngIf="char == 'y'">
+                                                    <span class="display-squared-sign">2</span>
+                                                </ng-container>
+                                                <ng-container *ngIf="char == 'x'">
+                                                    <span class="display-x-1-sign-minus">-</span>
+                                                    <span class="display-x-1-sign-1">|</span>
+                                                </ng-container>
+                                                <ng-container *ngIf="char == 'z'">
+                                                    <span class="display-negative-sign">-</span>
+                                                </ng-container>                                               
+                                                <ng-container *ngIf="char == 'E'">
+                                                    <span class="display-exp-sign">E</span>
+                                                </ng-container>
+                                            </ng-container>
+
+                                        </div>
+                                            
+                                            
+                                        
+                                        <div class="display-expression-right-arrow">
+                                            <div class="charsToRight" [ngClass]="[charsToRight ? 'lcd-on' : 'lcd-off']">
+                                                <i class="fa fa-long-arrow-right long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </div>    
+                                    </ng-container>
+                                    
+                                </div>
+                                
+
+                            </div>
+                            <div class="display-bottom-line">
+                                <div class="display-result-calc">
+                                    <div class="display-result-calc-result">
+                                        <ng-container *ngIf="!isError">
+                                            <div class="display-result-calc-figures">{{calculatedResult}}</div>
+                                            <div class="display-result-placeholder-figures">8888888888</div>
+                                            <div class="display-result-calc-commas">
+                                                <ng-container *ngFor="let comma of commas" >
+                                                    <span [ngClass]="[ comma ? 'show-comma': 'hide-comma']">,</span>
+                                                </ng-container>
+                                            </div>
+                                            <div class="display-result-calc-decimals">
+                                                <ng-container *ngFor="let decimal of decimals" >
+                                                    <span [ngClass]="[ decimal ? 'show-decimal': 'hide-decimal']">.</span>
+                                                </ng-container>
+                                            </div>
+                                        </ng-container>
+                                    </div> 
+                                    <div class="display-result-x10-sign">
+                                        <ng-container *ngIf="!isError">
+                                            <span class="x10-sign" [ngClass]="[isOverTenDigits ? 'lcd-on' : 'lcd-off']">×10</span>    
+                                        </ng-container>
+                                    </div>
+                                    <div class="display-result-calc-x10-power-of">
+                                        <ng-container *ngIf="!isError">
+                                            <span class="x10-power-of" [ngClass]="[isOverTenDigits ? 'lcd-on' : 'lcd-power-off']">{{x10PowerOf}}</span>    
+                                        </ng-container>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>  
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div class="middle-container">
+            <div class="function-keys-grid">
+                <div class="row1-keys key-shift">
+                    <button type="button" class="btn-shift disabled-row1-btn">
+                        <span class="row1-btn-edge"></span>
+                        <span class="row1-btn-shadow"></span>
+                        <span class="row1-btn-front-cover">
+                            <span class="row1-btn-front-text btn-front-shift">SHIFT</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="row1-keys key-alpha">
+                    <button type="button" class="btn-alpha disabled-row1-btn">
+                        <span class="row1-btn-edge"></span>
+                        <span class="row1-btn-shadow"></span>
+                        <span class="row1-btn-front-cover">
+                            <span class="row1-btn-front-text btn-front-alpha">ALPHA</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="arrows-keys">
+                    <div class="btn-arrow-container">
+                        <div class="btn-arrow btn-arrow-up" [style.display]="arrowDisplayUp" [ngClass]="[ isKeyPressed('ArrowUp') ? 'btn-arrow-up-active': '']" (click)="moveCursor('start')">
+                            <div class="btn-arrow-edge btn-arrow-edge-up"></div>
+                            <div class="btn-arrow-shadow btn-arrow-shadow-up"></div>
+                            <div class="btn-arrow-front-cover btn-arrow-front-cover-up">
+                                <div class="btn-arrow-area-up">
+                                    <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-left" (mouseenter)="leftBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-right" (mouseenter)="rightBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-down" (mouseenter)="downBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="btn-arrow btn-arrow-left" [style.display]="arrowDisplayLeft" [ngClass]="[ isKeyPressed('ArrowLeft') ? 'btn-arrow-left-active': '']" (click)="moveCursor('left')">
+                            <div class="btn-arrow-edge btn-arrow-edge-left"></div>
+                            <div class="btn-arrow-shadow btn-arrow-shadow-left"></div>
+                            <div class="btn-arrow-front-cover btn-arrow-front-cover-left">
+                                <div class="btn-arrow-area-up" (mouseenter)="upBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-left">
+                                    <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-right" (mouseenter)="rightBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-down" (mouseenter)="downBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="btn-arrow btn-arrow-right" [style.display]="arrowDisplayRight" [ngClass]="[ isKeyPressed('ArrowRight') ? 'btn-arrow-right-active': '']" (click)="moveCursor('right')">
+                            <div class="btn-arrow-edge btn-arrow-edge-right"></div>
+                            <div class="btn-arrow-shadow btn-arrow-shadow-right"></div>
+                            <div class="btn-arrow-front-cover btn-arrow-front-cover-right">
+                                <div class="btn-arrow-area-up" (mouseenter)="upBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-left"(mouseenter)="leftBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-right">
+                                    <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-down" (mouseenter)="downBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="btn-arrow btn-arrow-down" [style.display]="arrowDisplayDown" [ngClass]="[ isKeyPressed('ArrowDown') ? 'btn-arrow-down-active': '']" (click)="moveCursor('end')">
+                            <div class="btn-arrow-edge btn-arrow-edge-down"></div>
+                            <div class="btn-arrow-shadow btn-arrow-shadow-down"></div>
+                            <div class="btn-arrow-front-cover btn-arrow-front-cover-down">
+                                <div class="btn-arrow-area-up" (mouseenter)="upBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-left"(mouseenter)="leftBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-right"(mouseenter)="rightBtnHovered()">
+                                    <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+                                </div>
+                                <div class="btn-arrow-area-down">
+                                    <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+                                </div>                        
+                            </div>
+                    </div>
+                </div>
+            </div>
+                <div class="row1-keys key-mode">
+                    <button type="button" class="btn-mode disabled-row1-btn">
+                        <span class="row1-btn-edge"></span>
+                        <span class="row1-btn-shadow"></span>
+                        <span class="row1-btn-front-cover">
+                            <span class="row1-btn-front-text btn-front-mode">MODE</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="row1-keys key-on">
+                    <button type="button" class="btn-on row1-btn" (click)="clear()">
+                        <span class="row1-btn-edge"></span>
+                        <span class="row1-btn-shadow"></span>
+                        <span class="row1-btn-front-cover">
+                            <span class="row1-btn-front-text btn-front-on">ON</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="fn-key-calc function-keys fn-keys-col1">
+                    <button type="button" class="btn-calc disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-calc">CALC</span>
+                        </span>                    
+                    </button>
+                </div>
+                <div class="fn-key-dx function-keys fn-keys-col2">
+                    <button type="button" class="btn-dx disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-dx">∫dx</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="fn-key-x1 function-keys fn-keys-col5">
+                    <button type="button" class="btn-x1 fn-btn" (click)="addToEquation('x1')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-x1">
+                                <span class="btn-front-italic-x">x</span>
+                                <span class="btn-front-raised-power">-1</span>
+                            </span>
+                        </span>                        
+                    </button>
+                </div>
+                <div class="fn-key-const function-keys fn-keys-col6">
+                    <button type="button" class="btn-const disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-const">CONST</span>
+                        </span>               
+                    </button>
+                </div>
+                <div class="fn-key-abc function-keys fn-keys-col1">
+                    <button type="button" class="btn-a b/c disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-abc">
+                                <span class="abc-a">a</span>
+                                <span class="abc-b">b</span>
+                                <span class="abc-c">
+                                    <span class="abc-slash">/</span>c
+                                </span>
+                        </span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-sqrt function-keys fn-keys-col2">
+                    <button type="button" class="btn-sqrt fn-btn" (click)="addToEquation('sqrt')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-sqrt">√</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-x2 function-keys fn-keys-col3">
+                    <button type="button" class="btn-x2 fn-btn" (click)="addToEquation('x2')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-x2">
+                                <span class="btn-front-italic-x">x</span>
+                                <span class="btn-front-raised-power">2</span>
+                            </span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-caret function-keys fn-keys-col4">
+                    <button type="button" class="btn-caret fn-btn" (click)="addToEquation('^')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-caret">^</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-log function-keys fn-keys-col5">
+                    <button type="button" class="btn-log fn-btn" (click)="addToEquation('log')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-log">log</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-ln function-keys fn-keys-col6">
+                    <button type="button" class="btn-ln fn-btn" (click)="addToEquation('ln')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-ln">ln</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-negative function-keys fn-keys-col1">
+                    <button type="button" class="btn-negative fn-btn" (click)="addToEquation('negative')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-negative">(–)</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-dms function-keys fn-keys-col2">
+                    <button type="button" class="btn-dms disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-dms">°'"</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-hyp function-keys fn-keys-col3">
+                    <button type="button" class="btn-hyp fn-btn" (click)="enableHyp()">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-hyp">hyp</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-sin function-keys fn-keys-col4">
+                    <button type="button" class="btn-sin fn-btn" (click)="addToEquation('sin')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-sin">sin</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-cos function-keys fn-keys-col5">
+                    <button type="button" class="btn-cos fn-btn" (click)="addToEquation('cos')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-cos">cos</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-tan function-keys fn-keys-col6">
+                    <button type="button" class="btn-tan fn-btn" (click)="addToEquation('tan')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-tan">tan</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-rcl function-keys fn-keys-col1">
+                    <button type="button" class="btn-rcl fn-btn" (click)="setMemoryRecall()">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-rcl">RCL</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-eng function-keys fn-keys-col2">
+                    <button type="button" class="btn-eng fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-eng">ENG</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-open-br function-keys fn-keys-col3">
+                    <button type="button" class="btn-open-br fn-btn" (click)="addToEquation('\(')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-open-br">(</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-close-br function-keys fn-keys-col4">
+                    <button type="button" class="btn-close-br fn-btn" (click)="addToEquation('\)')">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-close-br">)</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-comma function-keys fn-keys-col5">
+                    <button type="button" class="btn-comma disabled-fn-btn">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-comma">,</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+                <div class="fn-key-mplus function-keys fn-keys-col6">
+                    <button type="button" class="btn-mplus fn-btn" (click)="activateMemory()">
+                        <span class="fn-btn-edge"></span>
+                        <span class="fn-btn-shadow"></span>
+                        <span class="fn-btn-front-container">
+                            <span class="fn-btn-front-text btn-front-mplus">M+</span>
+                        </span>                        
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div class="basic-keys-grid">
+                <div class="num-key-7 basic-keys">
+                    <button type="button" class="btn-7 basic-btn" (click)="addToEquation('7')" [ngClass]="[ isKeyPressed('7') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-7">7</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="num-key-8 basic-keys">
+                    <button type="button" class="btn-8 basic-btn" (click)="addToEquation('8')" [ngClass]="[ isKeyPressed('8') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-8">8</span>
+                        </span>
+                        
+                    </button>
+                </div>
+                <div class="num-key-9 basic-keys">
+                    <button type="button" class="btn-9 basic-btn" (click)="addToEquation('9')" [ngClass]="[ isKeyPressed('9') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-9">9</span>
+                        </span>
+                        
+                    </button>
+                </div>
+                <div class="op-key-del basic-keys">
+                    <button type="button" class="btn-del basic-btn" (click)="deleteEntry()" [ngClass]="[ isKeyPressed('Delete') || isKeyPressed('Backspace')? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge basic-btn-edge-alt"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover basic-btn-front-cover-alt">
+                            <span class="basic-btn-front-text btn-front-del">DEL</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-ac basic-keys">
+                    <button type="button" class="btn-ac basic-btn" (click)="clear()" [ngClass]="[ isKeyPressed('Clear') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge basic-btn-edge-alt"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover basic-btn-front-cover-alt">
+                            <span class="basic-btn-front-text btn-front-ac">AC</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-4 basic-keys">
+                    <button type="button" class="btn-4 basic-btn" (click)="addToEquation('4')" [ngClass]="[ isKeyPressed('4') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-4">4</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-5 basic-keys">
+                    <button type="button" class="btn-5 basic-btn" (click)="addToEquation('5')" [ngClass]="[ isKeyPressed('5') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-5">5</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-6 basic-keys">
+                    <button type="button" class="btn-5 basic-btn" (click)="addToEquation('6')" [ngClass]="[ isKeyPressed('6') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-6">6</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-multiply basic-keys">
+                    <button type="button" class="btn-multiply basic-btn" (click)="addToEquation('*')" [ngClass]="[ isKeyPressed('*') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text op-btn-front btn-front-multiply">×</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-divide basic-keys">
+                    <button type="button" class="btn-divide basic-btn" (click)="addToEquation('/')" [ngClass]="[ isKeyPressed('/') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text op-btn-front btn-front-divide">÷</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-1 basic-keys">
+                    <button type="button" class="btn-1 basic-btn" (click)="addToEquation('1')" [ngClass]="[ isKeyPressed('1') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-1">1</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-2 basic-keys">
+                    <button type="button" class="btn-2 basic-btn" (click)="addToEquation('2')" [ngClass]="[ isKeyPressed('2') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-2">2</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-3 basic-keys">
+                    <button type="button" class="btn-3 basic-btn" (click)="addToEquation('3')" [ngClass]="[ isKeyPressed('3') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-3">3</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-add basic-keys">
+                    <button type="button" class="btn-add basic-btn" (click)="addToEquation('+')" [ngClass]="[ isKeyPressed('+') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text op-btn-front btn-front-add">+</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-subtract basic-keys">
+                    <button type="button" class="btn-subtract basic-btn" (click)="addToEquation('-')" [ngClass]="[ isKeyPressed('-') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text op-btn-front btn-front-subtract">-</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-0 basic-keys">
+                    <button type="button" class="btn-0 basic-btn" (click)="addToEquation('0')" [ngClass]="[ isKeyPressed('0') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-0">0</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-decimal basic-keys">
+                    <button type="button" class="btn-decimal basic-btn" (click)="addToEquation('.')" [ngClass]="[ isKeyPressed('.') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-decimal">•</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="num-key-exp basic-keys">
+                    <button type="button" class="btn-exp basic-btn" (click)="addToEquation('E')">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-exp">EXP</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-ans basic-keys">
+                    <button type="button" class="btn-ans basic-btn" (click)="addToEquation('Ans')">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text btn-front-ans">Ans</span>
+                        </span>
+                        
+                    </button></div>
+                <div class="op-key-equals basic-keys">
+                    <button type="button" class="btn-equals basic-btn" (click)="calculateResult()" [ngClass]="[ isKeyPressed('=') ? 'basic-btn-active': '']">
+                        <span class="basic-btn-edge"></span>
+                        <span class="basic-btn-shadow"></span>
+                        <span class="basic-btn-front-cover">
+                            <span class="basic-btn-front-text op-btn-front btn-front-equals">=</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="app-container">
+    <div class="app-side-navbar"><app-side-navbar></app-side-navbar></div>
+    <div class="body-container" [ngClass]="[sidebarExpanded ? 'body-expanded-width' : 'body-collapsed-width']">
+        <div class="app-background"><app-background></app-background></div>
+        <div *ngIf="tabService.tabOpenObs | async" class="tab-view-container">
+            <div class="app-tab-headers"><app-tab-headers></app-tab-headers></div>
+            <div class="tab-content-container" [ngClass]="[sidebarExpanded ? 'content-expanded-width' : 'content-collapsed-width']" id="bodyContainer" appResize (resizeStart)="onResizeStart($event)" (resizeEnd)="onResizeEnd($event)" (resizeMove)="onResizeMove($event)">
+                <div class="tab-lines-text-container" [style.display]="pageDisplay" [style.grid-column]="pageColSpan" id="content" [style.width]="contentWidth" [ngClass]="[resizeActive ? 'unscrollable' : '']">
+                    <div class="app-tab-linecount"><app-tab-linecount [ngClass]="[resizeActive ? 'unselectable' : '']"></app-tab-linecount></div>
+                    <div class="app-tab-body"><app-tab-body [ngClass]="[resizeActive ? 'unselectable' : '']"></app-tab-body></div>
+                    <div class="right-shadow"></div>
+                </div>
+                <div id="resizer-x" [style.display]="resizerDisplay" [style.grid-column]="resizerColSpan"></div>   
+                <div class="app-tab-preview" [ngClass]="[sidebarExpanded ? 'preview-expanded-width' : 'preview-collapsed-width']" [style.display]="previewDisplay" [style.grid-column]="previewColSpan" id="preview" [style.width]="previewWidth">
+                    <app-tab-preview [previewWidth]="previewWidth" [style.width]="previewWidth" [ngClass]="[resizeActive ? 'unselectable' : '']"></app-tab-preview>
+                </div>  
+            </div>
+        </div>
+        <div class="app-panel"><app-panel></app-panel></div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+.app-container, .tab-lines-text-container::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+.app-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.app-container::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.app-container::-webkit-scrollbar-thumb {
+  background-color: #3d3e42;
+  opacity: 20%;
+}
+
+.app-container::-webkit-scrollbar-thumb:hover {
+  background-color: #4c4d4f;
+  opacity: 80%;
+  transition: opacity 2s;
+}
+
+.app-container >  * {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+}
+
+.app-container >  * { 
+  margin: 0px; 
+  padding: 0; 
+  box-sizing:border-box; 
+}
+
+.app-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1;
+  margin: 0px;
+  background-color: grey;
+}
+
+.app-side-navbar {
+  position: relative;
+  height: 100vh;
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: blue;
+}
+
+.body-container {
+  position: relative;
+  height: 100vh;
+  width: 706;
+  grid-column: span 1;
+  grid-row: span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  background-color: #15181e;
+}
+
+.body-expanded-width {
+  width: calc(100vw - 350px);
+}
+
+.body-collapsed-width {
+  width: calc(100vw - 50px);
+}
+
+.app-background {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 7;
+  background-color: black;
+}
+
+.tab-view-container {
+  position: absolute;
+  grid-column: span 1;
+  grid-row: span 7;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  background-color: #202327;
+}
+
+.app-panel {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 2;
+  background-color: #15181e;
+}
+
+.app-tab-headers {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.tab-content-container {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+  height: calc(((100vh / 9) * 7) - 50px);
+  display: grid;
+  grid-template-columns: max-content min-content max-content;
+  grid-template-rows: 1fr;
+}
+
+.content-expanded-width {
+  width: calc((100vw - 350px) / 1);
+}
+
+.content-collapsed-width {
+  width: calc((100vw - 50px) / 1);
+}
+
+#resizer-x {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+  width: 10px;
+}
+
+#resizer-x:hover {
+  background: aqua;
+  cursor: col-resize;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.tab-lines-text-container {
+  position: relative;
+  grid-row: span 1;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: 1fr;
+  padding: 0px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #15181e;
+}
+
+.unscrollable {
+  overflow: hidden;
+}
+
+.app-tab-linecount {
+  position: sticky;
+  left: 0;
+  grid-column: span 1;
+  grid-row: span 1;
+  padding-bottom: 12px;
+  background-color: #15181e;
+  z-index: 12;
+}
+
+.app-tab-body {
+  position: relative;
+  padding-left: 30px;
+  z-index: 11;
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: #15181e;
+}
+
+.right-shadow {
+  position: absolute;
+  grid-column: span 1;
+  grid-row: span 1;
+  width: 10px;
+  height: 100%;
+}
+
+.app-tab-preview {
+  position: relative;
+  grid-row: span 1;
+  background-color: green;
+}
+
+.shadow-div {
+  width: 800px;
+  height: 1200px;
+  position: absolute;
+  background-color: purple;
+}
+
+.display-none {
+    display: none;
+}

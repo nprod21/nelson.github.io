@@ -1,0 +1,101 @@
+.main-container {
+    position: relative;
+    height: calc((100vh / 9) * 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #191c1f;
+}
+
+.main-expanded-width {
+    width: calc(100vw - 300px);
+  }
+  
+.main-collapsed-width {
+    width: calc(100vw - 50px);
+  }
+
+.nlogo-container-container {
+    position: relative;
+    background-color: yellow;
+    width: 356.4px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.nlogo {
+    width: 356.4px;
+    height: 320px;
+}
+
+.left-line, .center-line, .right-line {
+    fill: #101010;
+}
+
+
+@media screen and (max-width: 179px), (max-height: 279px) {
+    .nlogo-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.4);    
+    }
+}
+
+@media screen and (min-width: 300px) and (min-height: 350px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.45);
+    }
+}
+
+@media screen and (min-width: 314px) and (min-height: 400px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.5);
+    }
+}
+
+@media screen and (min-width: 360px) and (min-height: 450px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.55);
+    }
+}
+
+@media screen and (min-width: 380px) and (min-height: 500px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (min-width: 405px) and (min-height: 550px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.65);
+    }
+}
+
+@media screen and (min-width: 430px) and (min-height: 600px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (min-width: 455px) and (min-height: 650px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (min-width: 475px) and (min-height: 700px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 750px) and (max-width: 1079px) {
+    .nlogo-container {
+        transform: scale(0.85);
+    }
+}
+

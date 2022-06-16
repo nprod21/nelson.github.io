@@ -1,0 +1,105 @@
+<div class="sidebar" [ngClass]="[expanded ? 'sidebar-expanded' : 'sidebar-collapsed']">
+    <div class="activity-bar" (click)="toggleSidebar()">
+        <div class="nlogo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="nlogo" viewBox="0 0 256.39 253.98">
+            <defs>
+                <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" class="left-high"/>
+                    <stop offset="100%" class="left-low"/>
+                </linearGradient>
+                <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" class="center-high"/>
+                    <stop offset="100%" class="center-low"/>
+                </linearGradient>
+                <linearGradient id="Gradient3" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" class="right-high"/>
+                    <stop offset="100%" class="right-low"/>
+                </linearGradient>
+            </defs>
+            <g class="left">
+                <path class="left-line" d="M70.5,147V73.32s-1.71-1.09-4.84-.1L46.47,81.06A17.88,17.88,0,0,0,43,83a9.24,9.24,0,0,0-1.32,1.11,11.8,11.8,0,0,0-3.23,6.79c-.33,5,0,117.42,0,117.42A10.19,10.19,0,0,0,44,215.57c5,2.31,20.81,8.92,20.81,8.92a12.79,12.79,0,0,0,5.67,0Z" transform="translate(-38.25 -21.7)" fill="#5e269b">
+                </path>
+            </g>
+            <g class="center">
+            <path class="center-line" d="M38.41,90.89l1.85-2s4.41-4.73,8.76,0c4.19,4.57,156.25,172.3,166.67,183.8l1.45,1c9.25,4.22,16.06.47,16.06.47h0L289.35,247s-59.54-44.9-60.55-45.71L70.5,73.32h0c-1.46-.93-4-.33-4-.33l-.85.23L46.47,81.06A18.23,18.23,0,0,0,43,83a9.48,9.48,0,0,0-1.32,1.11A11.56,11.56,0,0,0,38.41,90.89Z" transform="translate(-38.25 -21.7)" fill="#884ec9"/>
+            </g>
+            <g class="right">
+                <path class="right-line" d="M230.39,202.53V21.7l55.16,26.42A17.51,17.51,0,0,1,294.63,61V235.06A15.37,15.37,0,0,1,289.35,247L233.2,274.14s-6.81,3.77-16.06-.47l-1.45-1s9.25,5.45,14.7-4.95Z" transform="translate(-38.25 -21.7)" fill="#bc8af3">
+                </path>
+            </g>
+        </svg>    
+        </div>
+        <div class="explorer-icon" (mouseenter)="fillExplorerIcon()" (mouseleave)="unfillExplorerIcon()" title="Toggle menu">
+            <svg id="pages-layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.13 212.41" [style.fill]="explorerIconFill">
+                <path id="pages" d="M8.36,128.71v-69c0-14.56,6.89-21.49,21.33-21.49,9.66,0,9.66,0,9.68-9.82,0-14,7.17-21.2,21.18-21.19,21.16,0,42.32.13,63.48,0A21.86,21.86,0,0,1,140.55,14q19,19.2,38.31,38a23.78,23.78,0,0,1,7.56,17.82c.06,32.82.11,65.65,0,98.47-.05,10.59-4.54,17.11-13.08,19.52-2.65.75-5.58.63-8.38.68-11,.17-9.22-1-9.48,9.18a44.5,44.5,0,0,1-.84,7.9c-1.66,8.24-8.17,13.89-16.52,13.91q-56.23.13-112.47,0c-10.37,0-17.22-8.15-17.25-19.84C8.32,176,8.36,152.37,8.36,128.71ZM124.22,18c-13.45,0-26.59,0-39.72,0-8.16,0-16.33-.28-24.49-.14-7,.12-9.49,2.65-9.49,9.29q0,71,0,142c0,6.13,2.69,9,8.73,9q53.73.09,107.47,0c5.85,0,8.53-2.87,8.53-8.68,0-32,0-64,.09-96,0-3.77-1.33-4.94-4.94-4.88-10,.16-20,.08-30,0-10.17,0-15.32-5-15.52-15.29-.18-9.33,0-18.66-.08-28C124.8,23.22,124.48,21.1,124.22,18ZM144.3,188.87H61.65c-15.17,0-21.57-6.31-21.59-21.41q0-54.72,0-109.44c0-9.11,0-9.11-9.32-9.07-8.85,0-11.14,2.34-11.14,11.28V197.64c0,9.54,2.1,11.68,11.75,11.68q50.73,0,101.44,0c2.14,0,4.69.18,6.31-.87,2.13-1.36,4.55-3.67,5-5.93C144.87,198.35,144.3,194,144.3,188.87ZM166.72,57.76l-31-31.9c0,9.74-.11,19.13.14,28.51,0,1.15,2,3.21,3.12,3.24C148.31,57.87,157.69,57.76,166.72,57.76Z" transform="translate(-8.35 -7.23)"/>
+              </svg>
+        </div>
+    </div>
+<div class="sidebar-container" *ngIf="expanded">
+   <div class="header-container">
+        <div class="explorer-header">
+            EXPLORER
+        </div>
+        <div class="menu-collapse-icon-container" (click)="collapseSidebar()" title="Collapse menu">
+            <svg id="dotted-left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376.39 253.87" fill="#cccccc">
+                <g>
+                  <path id="dot-8" d="M266.21,141.88a27.37,27.37,0,1,1,27.39,27.41A27.35,27.35,0,0,1,266.21,141.88Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-7" d="M172.49,142a27.4,27.4,0,0,1-27.58,27.28c-15.32-.13-27.31-12.55-27.14-28.1a27.36,27.36,0,1,1,54.72.82Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-6" d="M246.71,141.66a27.36,27.36,0,1,1-27.33-27.59A27.44,27.44,0,0,1,246.71,141.66Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-5" d="M340.43,141.61a27.31,27.31,0,0,1,27.29-27.53,27.6,27.6,0,0,1-.19,55.2A27.22,27.22,0,0,1,340.43,141.61Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-4" d="M73.53,141.7a27.61,27.61,0,0,1-27.25,27.64c-15.09,0-27.54-12.55-27.5-27.83a27.38,27.38,0,1,1,54.75.19Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-3" d="M123,191.69c-.05,15-12.3,27.35-27.1,27.3a27.5,27.5,0,0,1-.73-55C110.92,164,123.07,176.08,123,191.69Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-2" d="M123,91.84c0,15.56-12.22,27.64-28,27.58-14.84-.06-26.77-12.33-26.79-27.56A27.46,27.46,0,0,1,96,64.41C110.84,64.45,123,76.79,123,91.84Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-1" d="M145.19,268.64a27.48,27.48,0,1,1,27.24-27.43A27.07,27.07,0,0,1,145.19,268.64Z" transform="translate(-18.78 -14.77)"/>
+                  <path id="dot-0" d="M145.08,14.77a27,27,0,0,1,27.35,27.69,27.34,27.34,0,0,1-27.49,27.27c-15.28-.08-27.28-12.4-27.23-27.95A27.39,27.39,0,0,1,145.08,14.77Z" transform="translate(-18.78 -14.77)"/>
+                </g>
+              </svg>
+        </div>
+    </div>
+    <div class="explorer-items-container">
+        <ng-container *ngFor="let page of pages">
+            <ng-container *ngIf="page.folder === false">
+                <div class="explorer-item" (click)="onSelect(page)" [ngClass]="page.selected ? 'selected' : ''" title="Open in app tab">
+                    <div class="item-icon">
+                        <svg *ngIf="page.id == 1" width="0.95em" height="0.95em" xmlns="http://www.w3.org/2000/svg" class="svg-page-icon" viewBox="0 0 155.422 164.684">
+                            <path d="M126.325,46.685A37.448,37.448,0,1,1,88.876,9.237a37.466,37.466,0,0,1,37.448,37.448M88.876,95.357a78.63,78.63,0,0,0-77.564,65.785,11.083,11.083,0,0,0,11.112,12.779h132.9a11.083,11.083,0,0,0,11.112-12.779A78.63,78.63,0,0,0,88.876,95.357" transform="translate(-11.166 -9.237)" fill="#55b4f4"/>
+                        </svg>
+                        <svg *ngIf="page.id == 2" width="0.95em" height="0.95em" xmlns="http://www.w3.org/2000/svg" class="svg-page-icon" viewBox="0 0 229.196 229.196">
+                            <g id="Tick-Icon-SVG-psokcd" transform="translate(-4097.992 -3416.812)">
+                                <path id="Path_136721" data-name="Path 136721" d="M159.34,2.206H69.856C19.629,2.206,0,21.835,0,72.062v89.485C0,211.773,19.629,231.4,69.856,231.4H159.34c49.938,0,69.856-19.629,69.856-69.856V72.062c0-50.227-19.918-69.856-69.856-69.856" transform="translate(4097.992 3414.606)" fill="#48c300"/>
+                                <path id="Path_136722" data-name="Path 136722" d="M42.034,101.743.178,59.6,14.9,44.877,42.034,72.011,111.89,2.444l14.722,14.722Z" transform="translate(4149.224 3483.097)" fill="#fff"/>
+                            </g>
+                        </svg>
+                        <div *ngIf="page.parentFolderId != 3" class="ext-icon">
+                            <span *ngIf="page.id == 5" class="at-icon">@</span>
+                        </div>
+                    </div>
+                    <div class="item-name">{{ page.name }}</div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="page.folder">
+                <div class="explorer-item" (click)="toggleFolder(page)" [ngClass]="page.selected ? 'selected' : ''" title="Toggle folder">
+                    <div class="item-icon"><i class="{{ page.iconClass }}"></i></div>
+                    <div class="item-name">{{ page.name }}</div>
+                </div>
+                <ng-container *ngIf="page.folderClosed === false">
+                    <div class="sub-folder-container">
+                        <div *ngFor="let subPage of page.subPages" (click)="onSelect(subPage)" class="sub-folder-item" [ngClass]="subPage.selected ? 'subPage selected' : 'subPage'" title="Open in app tab">
+                            <div class="expand-line-container">
+                                <span class="expand-line"></span>
+                            </div>
+                            <div class="item-icon svg-icon">
+                                <svg width="0.95em" height="0.95em" viewBox="0 0 256 272" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <path d="M.1 45.522L125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522z" fill="#E23237"/>
+                                    <path d="M255.104 44.725L125.908.697v270.444l108.277-59.866 20.919-166.55z" fill="#B52E31"/>
+                                    <path d="M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z" fill="#FFF"/>
+                                </svg>
+                            </div>
+                            <div class="item-name">{{ subPage.name }}</div>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

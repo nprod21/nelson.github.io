@@ -1,0 +1,113 @@
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #3d3e42;
+    opacity: 20%;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4c4d4f;
+    opacity: 80%;
+    transition: opacity 2s;
+  }
+
+a {
+    text-decoration: none;
+    color: #72c790;
+}
+
+.body {
+    position: relative;
+    width: calc((((100vw - 300px) / 2) -0px) - 70px);
+    padding-left: 10px;
+    padding-top: 12px;
+    background: #15181e;
+    color: #ffffff;
+    color: #cccccc;
+    padding-right: 10px;
+}
+
+.content {
+    position: relative;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+ul {
+    margin-top: 0px;
+    margin-left: 78px;
+    line-height: 1.6;
+}
+
+.indent1 {
+    margin-left: 15px;
+}
+
+.indent2 {
+    margin-left: 30px;
+}
+
+.indent3 {
+    margin-left: 45px;
+}
+
+.indent4 {
+    margin-left: 75px;
+}
+
+.indent5 {
+    margin-left: 90px;
+}
+
+.indent6 {
+    margin-left: 105px;
+}
+
+.indent7 {
+    margin-left: 120px;
+}
+
+.indent8 {
+    margin-left: 135px;
+}
+
+.indent9 {
+    margin-left: 150px;
+}
+
+.indent10{
+    margin-left: 165px;
+}
+
+.text-line {
+    width: 1px;
+    height: 19.2pt;
+    background-color: #484a50;
+    position: absolute;
+}
+
+.comment {
+    color: #6a9955;
+}
+
+.highlight {
+    color: #e5c07b;
+}
+
+.feature {
+    color: #61afef;
+}
+
+.test {
+    color: red;
+}

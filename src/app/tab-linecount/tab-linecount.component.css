@@ -1,0 +1,23 @@
+ul {
+   padding-left: 25px;
+   padding-right: 15px 
+}
+
+.lines {
+    list-style: none;
+    width: 100%;
+    padding-top: 12px;
+    line-height: 1.6;
+    background: #15181e;
+    color: #808080;
+    color: #495162;
+    overflow: hidden;
+}
+
+.u10 {
+    margin-left: 10px;
+}
+
+* {
+    margin: 0;
+}

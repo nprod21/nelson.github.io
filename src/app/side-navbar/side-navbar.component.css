@@ -1,0 +1,233 @@
+.sidebar {
+    position: relative;
+    height: 100vh;
+    background: #202327;
+    color: #cccccc;
+    display: grid;
+    grid-template-rows: auto;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+.sidebar-collapsed {
+    grid-template-columns: 50px;
+}
+
+.sidebar-expanded {
+    grid-template-columns: 50px auto;
+}
+
+.activity-bar {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    margin: 0;
+    padding: 0;
+    background-color: #2e3138;
+}
+
+.nlogo-icon, .explorer-icon {
+    position: relative;
+    padding: 15px;
+    padding-bottom: 0;
+}
+
+.explorer-icon {
+    cursor: pointer;
+}
+
+.sidebar-container {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 300px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header-container {
+    position: relative;
+    padding: 20px;
+    padding-left: 10px;
+}
+
+.explorer-header {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    font-weight: 300;
+}
+
+.menu-collapse-icon-container {
+    position: relative;
+    height: 1.25em;
+    width: 1.25em;
+    float: right;
+    cursor: w-resize;
+}
+
+.menu-collapse-icon-container:hover > svg {
+    fill: #ffffff;
+}
+
+.explorer-items-container {
+    position: relative;
+    height: 100%;
+    width: 100%;   
+}
+
+.explorer-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: 25px;
+    cursor: pointer;
+}
+
+.explorer-item:hover, .sub-folder-item:hover {
+    background-color: #2d3139;
+}
+
+.item-icon {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.item-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    grid-column: span 1;
+    grid-row: span 1;
+    display: grid;
+    align-content: center;
+    padding-left: 5px;
+}
+
+.sub-folder-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1px 30px auto;
+    grid-template-rows: 25px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.expand-line-container {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+h4, span, div {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+h4 {
+    padding-top: 0px;
+    padding-left: 6px;
+    padding-bottom: 0px;
+    font-weight: 200;
+    font-size: small;
+}
+
+ul, .item-name {
+    color: #72c790;
+}
+
+.projects-list {
+    display: block;
+}
+
+li:hover {
+    background-color: #2d3139;
+    cursor: pointer;
+}
+
+li {
+    height: 18px;
+    width: 100%;
+    font-size: 11pt;
+    margin-left: -63px;
+    padding-left: 0;
+    text-indent: 20px;
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+/* span {
+    display: inline-block;
+    font-size: 11pt;
+} */
+
+.at-icon {
+    font-size: 1.2em;
+    color: #3f87b7;
+    font-weight: bold;
+}
+
+.subList {
+    margin-left: -0px;
+}
+
+.expand-line {
+    display: inline-block;
+    font-size: 11pt;
+    width: 1px;
+    height: 100%;
+    background-color: #585858;
+}
+
+.selected {
+    background-color: #3c4453;
+}
+
+.selected:hover {
+    background-color: #3c4453;
+}
+
+.left-line {
+    fill: url(#Gradient1);
+}
+
+.left-low {
+    stop-color: #106fae;
+}
+.left-high {
+    stop-color: #3f87b7;
+}
+.center-high {
+    stop-color: #2e92d5;
+}
+.center-low {
+    stop-color: #2e92d5;
+}
+.right-low {
+    stop-color: #239ef0;
+}
+.right-high {
+    stop-color: #55b4f4;
+}
+
+.center-line {
+    fill: url(#Gradient2);
+}
+
+.right-line {
+    fill: url(#Gradient3);
+}

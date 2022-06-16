@@ -1,0 +1,20 @@
+<div class="this-demo-container" [ngClass]="[showDemo ? '' : 'transparent']">
+    <div class="this-demo-header-container">
+        <h3>APP DEMOS</h3>
+    </div>
+    <div class="this-demo-left-arrow-container" (click)="previousImg()">
+        <div class="this-demo-nav-arrow"><</div>
+    </div>
+    <div class="this-demo-gif-container">
+        <div class="demo-img-container">
+            <img *ngIf="showDemo" [src]="demoGif[index - 1]" class="gif-img">
+        </div>
+    </div>
+    <div class="this-demo-right-arrow-container" (click)="nextImg()">
+        <div class="this-demo-nav-arrow">></div>
+    </div>
+    <div class="this-demo-info-container">
+        <p class="demo-number"><span>{{index}}</span> of 5</p>
+        <p class="demo-tags">{{demoTags[index - 1]}}</p>
+    </div>
+</div>

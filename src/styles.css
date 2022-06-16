@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.min.css";
+
+
+@font-face {
+    font-family: 'Plateia';
+    src: url('src/assets/fonts/Plateia-Bold/Plateia-Bold.eot');
+    src: url('src/assets/fonts/Plateia-Bold/Plateia-Bold.eot?#iefix') format('embedded-opentype'),
+         url('src/assets/fonts/Plateia-Bold/Plateia-Bold.woff') format('woff'),
+         url('src/assets/fonts/Plateia-Bold/Plateia-Bold.ttf')  format('truetype'),
+         url('src/assets/fonts/Plateia-Bold/Plateia-Bold.svg#Plateia') format('svg'),
+         url('src/assets/fonts/Plateia-Bold/Plateia-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mesa-Grande';
+    src: url('src/assets/fonts/Mesa-Grande/Mesa-Grande.eot');
+    src: url('src/assets/fonts/Mesa-Grande/Mesa-Grande.eot?#iefix') format('embedded-opentype'),
+         url('src/assets/fonts/Mesa-Grande/Mesa-Grande.woff2') format('woff2'),
+         url('src/assets/fonts/Mesa-Grande/Mesa-Grande.woff') format('woff'),
+         url('src/assets/fonts/Mesa-Grande/Mesa-Grande.ttf')  format('truetype'),
+         url('src/assets/fonts/Mesa-Grande/Mesa-Grande.svg#Mesa Grande') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LCDDot-Regular';
+    src: url('src/assets/fonts/LCDDot-Regular/LCDDot-Regular.ttf.eot');
+    src: url('src/assets/fonts/LCDDot-Regular/LCDDot-Regular.ttf.woff2') format('woff2'),
+	     url('src/assets/fonts/LCDDot-Regular/LCDDot-Regular.ttf.woff') format('woff'),
+         url('src/assets/fonts/LCDDot-Regular/LCDDot-Regular.ttf.svg#LCDDot-Regular') format('svg'),
+         url('src/assets/fonts/LCDDot-Regular/LCDDot-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LED-Calculator';
+    src: url('src/assets/fonts/LEDCalculator/LEDCalculator.eot');
+    src: url('src/assets/fonts/LEDCalculator/LEDCalculator.woff2') format('woff2'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.woff') format('woff'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.ttf')  format('truetype'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.svg#LED Calculator') format('svg'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DS-Digital-Italic';
+    src: url('src/assets/fonts/DS-Digital-Italic/DS-Digital-Italic.ttf.eot');
+    src: url('src/assets/fonts/DS-Digital-Italic/DS-DIGII.woff2') format('woff2'),
+	     url('src/assets/fonts/DS-Digital-Italic/DS-Digital-Italic.ttf.woff') format('woff'),
+         url('src/assets/fonts/DS-Digital-Italic/DS-DIGII.ttf')  format('truetype'),
+         url('src/assets/fonts/DS-Digital-Italic/DS-Digital-Italic.ttf.svg#DS-Digital-Italic') format('svg'),
+         url('src/assets/fonts/DS-Digital-Italic/DS-Digital-Italic.ttf.eot?#iefix') format('embedded-opentype');
+    
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    /* author credit: Sizenko Alexander - http://www.styleseven.com */
+    font-family: 'Digital-7';
+    src: url('src/assets/fonts/Digital-7/digital-7-mono-italic.eot');
+    src: url('src/assets/fonts/Digital-7/digital-7-mono-italic.woff2') format('woff2'),
+         url('src/assets/fonts/Digital-7/digital-7-mono-italic.woff') format('woff'),
+         url('src/assets/fonts/Digital-7/digital-7-mono-italic.ttf')  format('truetype'),
+         url('src/assets/fonts/Digital-7/digital-7-mono-italic.svg#Digital-7') format('svg'),
+         url('src/assets/fonts/Digital-7/digital-7-mono-italic.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}

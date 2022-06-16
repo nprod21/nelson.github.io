@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'LED-Calculator';
+    src: url('src/assets/fonts/LEDCalculator/LEDCalculator.eot');
+    src: url('src/assets/fonts/LEDCalculator/LEDCalculator.woff2') format('woff2'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.woff') format('woff'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.ttf')  format('truetype'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.svg#LED Calculator') format('svg'),
+         url('src/assets/fonts/LEDCalculator/LEDCalculator.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,27 @@
+<div class="panel-container" [ngClass]="[sidebarExpanded ? 'panel-expanded-width' : 'panel-collapsed-width']">
+    <div class="panel-headers">
+        <div [ngClass]="[panelOptions[0] ? 'selected-panel' : 'unselected-panel']" id="problems" (click)="selectPanel(0)">PROBLEMS</div>
+        <div [ngClass]="[panelOptions[1] ? 'selected-panel' : 'unselected-panel']" id="output" (click)="selectPanel(1)">OUTPUT</div>
+        <div [ngClass]="[panelOptions[2] ? 'selected-panel' : 'unselected-panel']" id="debug-console" (click)="selectPanel(2)">DEBUG CONSOLE</div>
+        <div [ngClass]="[panelOptions[3] ? 'selected-panel' : 'unselected-panel']" id="terminal" (click)="selectPanel(3)">TERMINAL</div>
+    </div>
+    <div class="panel-body" [id]="panelBodyID">
+        <div *ngIf="panelOptions[0]">
+            {{ problemsContent }}
+        </div>
+        <div *ngIf="panelOptions[1]">
+            {{ outputContent }}
+        </div>
+        <div *ngIf="panelOptions[2]">
+            {{ debugConsoleContent }}
+        </div>
+        <div *ngIf="panelOptions[3]">
+            <div>
+                <p *ngFor="let entry of panelBody" [innerHTML]="entry"></p>
+            </div>
+            <p id="panel-cursor-container">
+                <span id="panel-cursor"></span>
+            </p>
+        </div>
+    </div>
+</div>
