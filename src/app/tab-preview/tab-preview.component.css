@@ -57,7 +57,7 @@
     outline: none;
     position: relative;
     text-align: center;
-    font-size: 14pt;
+    font-size: 1em;
     font-weight: bold;
     transition: .2s;
 }
@@ -67,7 +67,7 @@
 }
 
 .unselected-btn:hover {
-    font-size: 16pt;
+    font-size: 1.1em;
     padding: 0px;
 }
 

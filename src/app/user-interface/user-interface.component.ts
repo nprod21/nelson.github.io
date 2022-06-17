@@ -12,6 +12,7 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
 
   private viewToggleSub!: Subscription;
   private sidebarExpandedSub!: Subscription;
+  private tabOpenSub!: Subscription;
   
   private viewPosition: number = 0;
   private sidebarWidth: number = 350;
@@ -30,6 +31,8 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
 
   public contentWidth: string = this.windowWidthMinusSidebarHalved + "px";
   public previewWidth: string = this.contentWidth;
+
+  public tabsOpen: boolean = false;
 
   constructor(
     public tabService: TabService,
@@ -67,12 +70,19 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
       }  
     });
 
+    this.tabOpenSub = this.tabService.tabOpenObs.subscribe(status => {
+      /* assigns async status from tabOpenObservable to this.tabsOpen
+      - used to display either app-background or tab-view-container elements in template */
+      this.tabsOpen = status;
+    });
+
   }
 
   ngOnDestroy(): void {
     /* manually unsubscribes from all observable subscriptions on component destruction */
     this.viewToggleSub.unsubscribe();
     this.sidebarExpandedSub.unsubscribe();
+    this.tabOpenSub.unsubscribe();
   }
 
   @HostListener("window:resize", ["$event"]) onResize(event: any) {

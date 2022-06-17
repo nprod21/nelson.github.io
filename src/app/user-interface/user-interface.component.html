@@ -1,8 +1,8 @@
 <div class="app-container">
     <div class="app-side-navbar"><app-side-navbar></app-side-navbar></div>
     <div class="body-container" [ngClass]="[sidebarExpanded ? 'body-expanded-width' : 'body-collapsed-width']">
-        <div class="app-background"><app-background></app-background></div>
-        <div *ngIf="tabService.tabOpenObs | async" class="tab-view-container">
+        <div *ngIf="tabsOpen == false" class="app-background"><app-background></app-background></div>
+        <div *ngIf="tabsOpen" class="tab-view-container">
             <div class="app-tab-headers"><app-tab-headers></app-tab-headers></div>
             <div class="tab-content-container" [ngClass]="[sidebarExpanded ? 'content-expanded-width' : 'content-collapsed-width']" id="bodyContainer" appResize (resizeStart)="onResizeStart($event)" (resizeEnd)="onResizeEnd($event)" (resizeMove)="onResizeMove($event)">
                 <div class="tab-lines-text-container" [style.display]="pageDisplay" [style.grid-column]="pageColSpan" id="content" [style.width]="contentWidth" [ngClass]="[resizeActive ? 'unscrollable' : '']">
