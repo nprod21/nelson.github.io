@@ -15,9 +15,8 @@
     width: calc(100vw - 50px);
   }
 
-.nlogo-container-container {
+.nlogo-container {
     position: relative;
-    background-color: yellow;
     width: 356.4px;
     height: 320px;
     overflow: hidden;

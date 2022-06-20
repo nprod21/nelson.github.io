@@ -64,6 +64,11 @@
 
 .selected-btn {
     color: #ffffff;
+    font-size: 1em;
+}
+
+.unselected-btn {
+    font-size: 1em;
 }
 
 .unselected-btn:hover {
@@ -97,14 +102,10 @@
 
 .splash-screen {
     position: absolute;
-    height: 100vh;
-    width: 100%;
-    height: 100%;
 }
 
 .ss-raised {
     transform: translateY(-2%);
-    height: 105%;
 }
 
 .transparent {

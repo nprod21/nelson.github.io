@@ -109,7 +109,8 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
       + assign current x and y scroll positions for current tab's content
     && slightly delays actions:
           - scroll selected tab into view,
-          - set route path / URL/Location state */
+          - set route path / URL/Location state
+    && calls method to auto collapse sidebar, if window width is less than double width of expanded sidebar */
     if(this.tabService.getTabs().length >= 1) {
       this.tabService.initializeTabScrollSetting();
       this.tabService.setTabScrollSettings();
@@ -120,6 +121,7 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
       this.routeService.setRoutePath();
     }, 1);
     this.tabService.scrollToTabScrollSettings();
+    this.autoCollapse();
   }
 
   /* METHODS TO RETRIEVE/HANDLE ROUTE PARAMS FROM ROUTER EVENT */
@@ -352,6 +354,14 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
       if(this.getPageByPath(pagePath).id == element) isListed = true;
     });
     return isListed;
+  }
+
+  private autoCollapse(): void {
+    /* automatically collapses sidebar menu,
+        if window width is less than double width of expanded sidebar */
+    if(window.innerWidth < 700) {
+        this.tabService.collapseSidebar();
+    }
   }
 
 }

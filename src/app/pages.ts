@@ -99,7 +99,7 @@ export const Pages = [
                 ** Communication - comfortable interacting with all levels of awareness and seniority\\
                 ** Collaboration - always open-minded and eager to learn from other people's perspectives\\
                 ** Creativity - enjoy thinking outside of the box to overcome challenging obstacles\\
-                ** Teamwork - happy helping teammates with any issues and not afraid to ask for help when beneficial \\*/
+                ** Teamwork - happy helping teammates with any issues and not afraid to ask for help if needed \\*/
                 `,
         subPages: [],
         iconClass: 'fa fa-hand-spock-o',

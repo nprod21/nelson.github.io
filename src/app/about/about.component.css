@@ -26,6 +26,7 @@
 .hello-world {
     width: 200px;
     transition: transform 0.1s;
+    fill: #313241;
 }
 
 .hw-scaled {
@@ -87,6 +88,7 @@
     grid-row: span 1;
     padding-left: 60px;
     transition: opacity 3s;
+    color: #313241;
 }
 
 .select-cv-format {
