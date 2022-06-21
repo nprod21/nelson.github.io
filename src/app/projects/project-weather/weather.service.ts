@@ -40,8 +40,6 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  
-
   private setWeather(data: any): void {
     /* assigns response data received from API call to relevant properties
     && calls further setters to continue separate date/time + background image assignments */
