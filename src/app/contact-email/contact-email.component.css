@@ -13,13 +13,13 @@ input, select, textarea {
     font-size: 1.25em;
 }
 
-label {
+.email-form-label {
     font-size: 1.25em;
     color: #313241;
 }
   
   /* Style the submit button with a specific background color etc */
-button[type=submit] {
+.email-form-button {
     background-color: #04AA6D;
     color: white;
     padding: 12px 20px;
@@ -31,7 +31,7 @@ button[type=submit] {
 }
   
   /* When moving the mouse over the submit button, add a darker green color */
-button[type=submit]:hover {
+.email-form-button:hover {
     background-color: #45a049;
     transform: translateX(2.5%) scale(1.05);
 }
@@ -49,7 +49,7 @@ button[type=submit]:hover {
     width: 440px;
 }
 
-form > * {
+.email-form > * {
       position: relative;
       display: block;
 }
@@ -74,7 +74,7 @@ form > * {
         transform: translateX(-30%) translateY(-30%) scale(0.4);
         margin-left: 15px;
     }
-    button {
+    .email-form-button {
         transform: translateX(15%) scale(1.25);
     }
 }
