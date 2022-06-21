@@ -43,7 +43,6 @@
                                 </ng-container>
                             </div>
                             <div class="display-middle-line">
-                                
                                 <div class="validExpression">
                                     <ng-container *ngIf="isError">
                                         <ng-container *ngIf="syntaxError">
@@ -53,7 +52,6 @@
                                             <div class="math-error">Math ERROR</div>
                                         </ng-container>
                                     </ng-container>
-                                    
                                     <ng-container *ngIf="!isError">
                                         <div class="display-expression-left-arrow">
                                             <div class="charsToLeft" [ngClass]="[charsToLeft ? 'lcd-on' : 'lcd-off']">
@@ -61,7 +59,6 @@
                                             </div>
                                         </div>
                                         <div class="display-expression-entry">
-                                            <!-- {{displayExpression}}<span class="blinking-cursor">_</span> -->
                                             <ng-container *ngFor="let char of displayCharsInViewAsStringArray">
                                                 <ng-container *ngIf="char === '_'">
                                                     <span class="blinking-cursor" [ngClass]="[ cursorOnChar ? 'overlay-cursor': '']">_</span>
@@ -83,21 +80,14 @@
                                                     <span class="display-exp-sign">E</span>
                                                 </ng-container>
                                             </ng-container>
-
                                         </div>
-                                            
-                                            
-                                        
                                         <div class="display-expression-right-arrow">
                                             <div class="charsToRight" [ngClass]="[charsToRight ? 'lcd-on' : 'lcd-off']">
                                                 <i class="fa fa-long-arrow-right long-arrow-right" aria-hidden="true"></i>
                                             </div>
                                         </div>    
                                     </ng-container>
-                                    
                                 </div>
-                                
-
                             </div>
                             <div class="display-bottom-line">
                                 <div class="display-result-calc">
@@ -298,9 +288,8 @@
                                 <span class="abc-c">
                                     <span class="abc-slash">/</span>c
                                 </span>
+                            </span>
                         </span>
-                        </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-sqrt function-keys fn-keys-col2">
@@ -310,7 +299,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-sqrt">√</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-x2 function-keys fn-keys-col3">
@@ -323,7 +311,6 @@
                                 <span class="btn-front-raised-power">2</span>
                             </span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-caret function-keys fn-keys-col4">
@@ -333,7 +320,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-caret">^</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-log function-keys fn-keys-col5">
@@ -343,7 +329,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-log">log</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-ln function-keys fn-keys-col6">
@@ -363,7 +348,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-negative">(–)</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-dms function-keys fn-keys-col2">
@@ -373,7 +357,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-dms">°'"</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-hyp function-keys fn-keys-col3">
@@ -382,8 +365,7 @@
                         <span class="fn-btn-shadow"></span>
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-hyp">hyp</span>
-                        </span>                        
-                        
+                        </span>                                            
                     </button>
                 </div>
                 <div class="fn-key-sin function-keys fn-keys-col4">
@@ -393,7 +375,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-sin">sin</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-cos function-keys fn-keys-col5">
@@ -403,7 +384,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-cos">cos</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-tan function-keys fn-keys-col6">
@@ -423,7 +403,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-rcl">RCL</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-eng function-keys fn-keys-col2">
@@ -433,7 +412,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-eng">ENG</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-open-br function-keys fn-keys-col3">
@@ -443,7 +421,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-open-br">(</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-close-br function-keys fn-keys-col4">
@@ -453,7 +430,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-close-br">)</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-comma function-keys fn-keys-col5">
@@ -463,7 +439,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-comma">,</span>
                         </span>                        
-                        
                     </button>
                 </div>
                 <div class="fn-key-mplus function-keys fn-keys-col6">
@@ -473,7 +448,6 @@
                         <span class="fn-btn-front-container">
                             <span class="fn-btn-front-text btn-front-mplus">M+</span>
                         </span>                        
-                        
                     </button>
                 </div>
             </div>
@@ -496,7 +470,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-8">8</span>
                         </span>
-                        
                     </button>
                 </div>
                 <div class="num-key-9 basic-keys">
@@ -506,7 +479,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-9">9</span>
                         </span>
-                        
                     </button>
                 </div>
                 <div class="op-key-del basic-keys">
@@ -516,7 +488,6 @@
                         <span class="basic-btn-front-cover basic-btn-front-cover-alt">
                             <span class="basic-btn-front-text btn-front-del">DEL</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-ac basic-keys">
                     <button type="button" class="btn-ac basic-btn" (click)="clear()" [ngClass]="[ isKeyPressed('Clear') ? 'basic-btn-active': '']">
@@ -525,7 +496,6 @@
                         <span class="basic-btn-front-cover basic-btn-front-cover-alt">
                             <span class="basic-btn-front-text btn-front-ac">AC</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-4 basic-keys">
                     <button type="button" class="btn-4 basic-btn" (click)="addToEquation('4')" [ngClass]="[ isKeyPressed('4') ? 'basic-btn-active': '']">
@@ -534,7 +504,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-4">4</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-5 basic-keys">
                     <button type="button" class="btn-5 basic-btn" (click)="addToEquation('5')" [ngClass]="[ isKeyPressed('5') ? 'basic-btn-active': '']">
@@ -552,7 +521,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-6">6</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-multiply basic-keys">
                     <button type="button" class="btn-multiply basic-btn" (click)="addToEquation('*')" [ngClass]="[ isKeyPressed('*') ? 'basic-btn-active': '']">
@@ -561,7 +529,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text op-btn-front btn-front-multiply">×</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-divide basic-keys">
                     <button type="button" class="btn-divide basic-btn" (click)="addToEquation('/')" [ngClass]="[ isKeyPressed('/') ? 'basic-btn-active': '']">
@@ -570,7 +537,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text op-btn-front btn-front-divide">÷</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-1 basic-keys">
                     <button type="button" class="btn-1 basic-btn" (click)="addToEquation('1')" [ngClass]="[ isKeyPressed('1') ? 'basic-btn-active': '']">
@@ -579,7 +545,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-1">1</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-2 basic-keys">
                     <button type="button" class="btn-2 basic-btn" (click)="addToEquation('2')" [ngClass]="[ isKeyPressed('2') ? 'basic-btn-active': '']">
@@ -597,7 +562,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-3">3</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-add basic-keys">
                     <button type="button" class="btn-add basic-btn" (click)="addToEquation('+')" [ngClass]="[ isKeyPressed('+') ? 'basic-btn-active': '']">
@@ -615,7 +579,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text op-btn-front btn-front-subtract">-</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-0 basic-keys">
                     <button type="button" class="btn-0 basic-btn" (click)="addToEquation('0')" [ngClass]="[ isKeyPressed('0') ? 'basic-btn-active': '']">
@@ -633,7 +596,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-decimal">•</span>
                         </span>
-                        
                     </button></div>
                 <div class="num-key-exp basic-keys">
                     <button type="button" class="btn-exp basic-btn" (click)="addToEquation('E')">
@@ -642,7 +604,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-exp">EXP</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-ans basic-keys">
                     <button type="button" class="btn-ans basic-btn" (click)="addToEquation('Ans')">
@@ -651,7 +612,6 @@
                         <span class="basic-btn-front-cover">
                             <span class="basic-btn-front-text btn-front-ans">Ans</span>
                         </span>
-                        
                     </button></div>
                 <div class="op-key-equals basic-keys">
                     <button type="button" class="btn-equals basic-btn" (click)="calculateResult()" [ngClass]="[ isKeyPressed('=') ? 'basic-btn-active': '']">
