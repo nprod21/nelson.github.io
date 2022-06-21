@@ -26,7 +26,7 @@
     width: 326px;
     margin: 35px;
     border-radius: 20px;
-    background-color: #000000;
+    background-color: #313241;
     transform: translateY(14px);
     filter: blur(2px);
     opacity: 25%;
@@ -43,7 +43,7 @@
 
 .calc-body-upper-ergo-curve-shadow {
     position: absolute;
-    background-color: #000000;
+    background-color: #313241;
     margin-top: 35px;
     margin-left: 30px;
     height: 275px;
@@ -66,7 +66,7 @@
 
 .calc-body-side-ergo-shadow-left, .calc-body-side-ergo-shadow-right {
     position: absolute;
-    background-color: #000000;
+    background-color: #313241;
     height: 410px;
     width: 50px;
     margin-top: 276px;
@@ -88,7 +88,7 @@
 
 .calc-body-bottom-shadow {
     position: absolute;
-    background-color: #000000;
+    background-color: #313241;
     width: 319.5px;
     height: 20px;
     margin-top: 676px;
@@ -778,7 +778,7 @@
     width: 40px;
     height: 20px;
     border-radius: 30px;
-    background-color: #000000;
+    background-color: #313241;
     opacity: 33%;
     transform: translateY(2px);
     filter: blur(2px);
@@ -881,7 +881,7 @@
     top: 0;
     left: 0;
     margin: 0;
-    background-color: #000000;
+    background-color: #313241;
     opacity: 33%;
     filter: blur(2px);
     cursor: default;
@@ -1259,7 +1259,7 @@
     width: 40px;
     height: 22.5px;
     border-radius: 5px;
-    background-color: #000000;
+    background-color: #313241;
     opacity: 25%;
     transform: translateY(2px);
     filter: blur(2px);
@@ -1449,7 +1449,7 @@
     border-radius: 5px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-color: #000000;
+    background-color: #313241;
     opacity: 33%;
     transform: translateY(2px);
     filter: blur(2px);
