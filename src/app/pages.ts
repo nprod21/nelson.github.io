@@ -143,7 +143,8 @@ export const Pages = [
                         For this project, my overall objectives were to develop;
                         firstly, a deeper understanding of using Angular to create Single-Page Applications,
                         && secondly, a portfolio website to host all current && future projects.
-                        Therefore, I decided to build this app in the style of a code editor's UI, with an integrated preview section.
+                        Therefore, I decided to build this app in the style of a code editor's UI, with an integrated preview section.\\
+                        <a href="https://github.com/nprod21/nprod21.github.io" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         TabHeaders Component {
                             summary: displays open tabs + controls tab reselection/closure;
@@ -197,7 +198,8 @@ export const Pages = [
                 content: `/* OBJECTIVE */\\
                         For this project, my primary objective, was to build an application centered around data received from a third-party API call.
                         My secondary objective was to gain familiarity with CSS flex, to structure a layout.\\
-                        /* FEATURES */\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-weather" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* FEATURES */\\
                         dynamic animated background image {
                             highlight: image source property binding varies depending on current weather description and time of day;}
                         date pipe used to format and review data received {
@@ -232,7 +234,8 @@ export const Pages = [
                         The initial purpose of this project was to simply gain further experience using CSS grid,
                         however, this app generated a great amount of exposure to numerous CSS && JavaScript features, required to enable the business logic.
                         /*\\
-                        * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! */\\
+                        * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! */\\\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         3D Design {
                             highlights: [raised edges + outer shadows on body && buttons, button edges && shadows adjust when active, arrow buttons perform 2D transforms when active, inner shadow on display screen && solar panel];}
@@ -278,7 +281,7 @@ export const Pages = [
         name: 'contact',
         filepath: 'contact',
         content: `Connect with me on LinkedIn <i class=\"fa fa-linkedin-square\"></i> --->\\\\ 
-                    ||\\\\ 
+                    ||\\\\
                     Send me an email <i class=\"fa fa-pencil-square-o\"></i> --->\\
                     /* my email address can be found on my CV - located under the 'about' page preview */
                     `,
