@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
-import { PressedKey } from 'src/app/projects/project-calculator/pressed-key';
+import { PressedKey } from './pressed-key';
 
 @Component({
   selector: 'app-project-calculator',
