@@ -1,19 +1,18 @@
 <ng-container *ngIf="emailSent === false">
  <div class="email-container" [style.box-shadow]="boxShadow" [ngClass]="[showComponent ? '' : 'transparent']">
   <iframe name="votar" style="display:none;"></iframe>
-    <form ngNoForm action="https://formsubmit.co/nelson.daly@outlook.com" method="POST" target="votar">
-      <label for="name">Full Name</label>
+    <form ngNoForm class="email-form" action="https://formsubmit.co/nelson.daly@outlook.com" method="POST" target="votar">
+      <label class="email-form-label" for="name">Full Name</label>
       <input type="text" id="name" name="name" [(ngModel)]="formName" placeholder="Your name.." required>
-      <label for="email">Email</label>
+      <label class="email-form-label" for="email">Email</label>
       <input type="email" id="email" name="email" [(ngModel)]="formEmail" placeholder="Your email address.." required>  
-      <label for="_subject">Subject</label>
+      <label class="email-form-label" for="_subject">Subject</label>
       <input type="text" id="subject" name="_subject" [(ngModel)]="formSubject" placeholder="Write something.." required>
-      <label for="message">Message</label>
+      <label class="email-form-label" for="message">Message</label>
       <input type="text" id="message" name="message" [(ngModel)]="formMessage" placeholder="Write something.." style="height:235px" required>
-      <!-- <input type="hidden" name="_next" value="http://localhost:4200/"> -->
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none">
-      <button type="submit" title="Send message" id="submitBtn">Send</button>
+      <button class="email-form-button" type="submit" title="Send message" id="submitBtn">Send</button>
     </form>
   </div> 
 </ng-container>
