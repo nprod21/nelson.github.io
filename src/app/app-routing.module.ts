@@ -8,11 +8,11 @@ const routes: Routes = [
   { path: ':first', 
       children: [
         { path: ':second', component: UserInterfaceComponent },
-        { path: ':second/:third', component: UserInterfaceComponent },
+        { path: ':second/:third', component: UserInterfaceComponent }
       ]
   },
-  { path: '**', redirectTo: '' },
-
+  // { path: '**', redirectTo: '' },
+  { path: '', redirectTo: '/about', pathMatch: 'full' }
 ];
 
 @NgModule({
