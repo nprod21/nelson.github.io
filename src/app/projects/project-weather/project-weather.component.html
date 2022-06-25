@@ -1,6 +1,8 @@
 <div class="project-container" [ngClass]="[showProject ? '' : 'transparent']">
-    <div class="weather-body">
-        <div class="weather-container"  [ngClass]="[ isDayTime ? 'day-text-shadow': 'night-text-shadow']">
+    <!-- <div class="weather-body">
+        
+    </div> -->
+    <div class="weather-container"  [ngClass]="[ isDayTime ? 'day-text-shadow': 'night-text-shadow']">
             <img [src]="backgroundImg" class="background" [alt]="dailyDescription[0]">
             <div class="current-weather section">
                 <h2 class="city">{{city}}</h2>
@@ -73,7 +75,6 @@
                 </div>   
             </div>
         </div>
-    </div>
     <div class="demo-simulation-setter">
         <h3> DEMO SIMULATION SETTER </h3>
         <div class="settings">
