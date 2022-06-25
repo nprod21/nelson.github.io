@@ -48,11 +48,11 @@ export class ProjectWeatherComponent implements OnInit, OnDestroy {
       if(response) {
         this.setWeatherFromServiceData();
         this.tabService.updateWeatherFetchedSubject();
+        /* timer delay for content visibility - to prevent flickering behind splash screen */
+        setTimeout(() => this.showProject = true, 3000);
       }
     })
-
-    /* timer delay for content visibility - to prevent flickering before splash screen */
-    setTimeout(() => this.showProject = true, 1000);
+    
   }
 
   ngOnDestroy(): void {
