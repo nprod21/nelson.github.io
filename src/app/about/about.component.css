@@ -98,6 +98,7 @@
     grid-column: span 1;
     grid-row: span 1;
     transition: opacity 0.7s;
+    color: #313241;
 }
 
 .cv-options-container > div {
