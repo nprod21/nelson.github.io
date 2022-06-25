@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SplashScreenComponent implements OnInit {
 
-  public previewWidth: string = "";
+  @Input() previewWidth: string = ""; // binded to template's container [style.width]
+
+  // public previewWidth: string = "";
   public previewHeight: string = "";
 
   constructor() { }
@@ -20,10 +22,10 @@ export class SplashScreenComponent implements OnInit {
   public setSize(): void {
     /* sets width + height properties (binded to style in template)
       using width and height of the preview section at the time of initialization */
-    let previewElementWidth: any = document.getElementById('preview')?.offsetWidth;
+    // let previewElementWidth: any = document.getElementById('preview')?.offsetWidth;
     let previewElementHeight: any = document.getElementById('preview')?.offsetHeight;
-    this.previewWidth = previewElementWidth.toString() + "px";
-    this.previewHeight = previewElementHeight.toString() + "px";
+    // this.previewWidth = (previewElementWidth - 6).toString() + "px";
+    this.previewHeight = (previewElementHeight - 6).toString() + "px";
   }
 
 }
