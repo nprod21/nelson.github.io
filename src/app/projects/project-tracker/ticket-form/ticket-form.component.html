@@ -1,0 +1,57 @@
+<div class="new-ticket-container">
+    <div class="ticket-form-title">
+        <h3 class="ticket-form-header">New Ticket</h3>
+    </div>
+    <div class="ticket-form-container">
+        <form *ngIf="ticketForm" [formGroup]="ticketForm" (ngSubmit)="addTicket()">
+            <div class="form-field">
+                <label class="field-label">Priority</label>
+                <label class="input-radio-label">
+                    <input type="radio" formControlName="priority" value="Low" required/>
+                    Low
+                </label>
+                <label class="input-radio-label">
+                    <input type="radio" formControlName="priority" value="Medium" required/>  
+                    Medium
+                </label>
+                <label class="input-radio-label">
+                    <input type="radio" formControlName="priority" value="High" required/>    
+                    High
+                </label>
+                <p class="required-alert" *ngIf="submitted && ticketForm.invalid && priority?.invalid">Priority required.</p>
+            </div>
+            <div class="form-field">
+                <label class="field-label">Type</label>
+                <select class="form-dropdown" formControlName="type" required>
+                    <option value="Feature">Feature</option>
+                    <option value="Issue">Issue</option>
+                </select>
+                <p class="required-alert" *ngIf="submitted && ticketForm.invalid && type?.invalid">Type required.</p>
+            </div>
+            <div class="form-field">
+                <label class="field-label">Project</label>
+                <select class="form-dropdown" formControlName="project" required>
+                    <option value="this.app">this.app</option>
+                    <option value="localWeather.app">localWeather.app</option>
+                    <option value="sciCalculator.app">sciCalculator.app</option>
+                    <option value="issueTracker.app">issueTracker.app</option>
+                </select>
+                <p class="required-alert" *ngIf="submitted && ticketForm.invalid && project?.invalid">Project required.</p>                  
+            </div>
+            <div class="form-field">
+                <label class="field-label">Title</label>
+                <input class="standard-input" formControlName="title" required/>
+                <p class="required-alert" *ngIf="submitted && ticketForm.invalid && title?.invalid">Title required.</p>
+            </div>
+            <div class="form-field">
+                <label class="field-label">Description</label>
+                <textarea class="textarea-input" formControlName="description" required></textarea>
+                <p class="required-alert" *ngIf="submitted && ticketForm.invalid && description?.invalid">Description required.</p>      
+            </div>
+            <div class="ticket-form-button-container">
+                <button class="ticket-form-button" type="submit">Create</button>
+                <button class="ticket-form-button" type="button" (click)="formClose.emit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
