@@ -1,0 +1,12 @@
+<div *ngIf="chartElements.length" class="bar-chart-component-container">
+    <div class="bar-chart-title">
+        <h3 class="bar-chart-header">Tickets by {{category | titlecase}}</h3>
+    </div>
+    <div class="bar-chart-container">
+        <div *ngFor="let element of chartElements" class="chart-element">
+            <div class="element-label">{{element.count}}</div>
+            <div class="{{getClassName(element.name)}} bar" [style.height]="element.percentage + '%'" (click)="setFilteredTickets(element.name)"></div>
+            <div class="element-label">{{element.name}}</div>
+        </div>
+    </div>
+</div>
