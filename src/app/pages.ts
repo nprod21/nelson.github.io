@@ -31,10 +31,10 @@ export const Pages = [
                     with extensive prior experience providing Business Management Support, within a Technology Division, in Financial Services.\\
                     My programming journey began in 2020 /* excluding early experiments modifying the HTML of my MySpace page back in 2008 :) */,
                     initially starting with C, before moving on to Object Oriented Programming with Java, via a thorough course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a>.
-                    Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
-                    before receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
+                    Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>, topics of which I intend to expand upon in the future, and a further course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
+                    before eventually receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
                     A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning new things, socialising and listening to various genres of music.\\
-                    Interested in continued further learning and development using Angular, plus the entire frontend ecosystem, and working on exciting projects with positive people!\\
+                    Interested in continued further learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on exciting projects with positive people!\\
                     `,
         subPages: [],
         iconClass: 'fa fa-user-o',
@@ -56,7 +56,7 @@ export const Pages = [
         name: 'skills',
         filepath: 'skills',
         content: ` To paraphrase a song lyric I like to live by;
-                    If I can't learn it, then it can't be learnt. \\
+                    If I can't learn it, it can't be learnt. \\
                 /* CORE TECH SKILLS */\\
                 Angular 13 {
                     features: [Components,
@@ -99,7 +99,8 @@ export const Pages = [
                 ** Communication - comfortable interacting with all levels of awareness and seniority\\
                 ** Collaboration - always open-minded and eager to learn from other people's perspectives\\
                 ** Creativity - enjoy thinking outside of the box to overcome challenging obstacles\\
-                ** Teamwork - happy helping teammates with any issues and not afraid to ask for help if needed \\*/
+                ** Teamwork - happy helping teammates with any issues and not afraid to ask for help if needed\\
+                */
                 `,
         subPages: [],
         iconClass: 'fa fa-hand-spock-o',
@@ -174,7 +175,9 @@ export const Pages = [
                         * Refactor TabPreview Component to utilise router link for preview component selection
                         * General refactoring of app codebase\\
                         * Set cursor styling for when tabs are dragged\\
-                        * Activity/Sidebar enhancement - add open-tab count to side activity bar explorer icon + add search icon && functionality */
+                        * Activity/Sidebar enhancement - add open-tab count to side activity bar explorer icon + add search icon && functionality\\
+                        * For further details of TODOs for this project - please view my issueTracker.app project!\\
+                        */
                         `,
                 subPages: [],
                 iconClass: 'fa fa-asterisk',
@@ -209,7 +212,9 @@ export const Pages = [
                         \\/* TODOs\\
                         * add city search functionality\\
                         * add non location-specific/universal background gif images for other cities\\
-                        * style demo simulation setter dropdowns && address positioning on responsive devices */
+                        * style demo simulation setter dropdowns && address positioning on responsive devices\\
+                        * For further details of TODOs for this project - please view my issueTracker.app project!\\
+                        */
                        `,
                 subPages: [],
                 iconClass: 'fa fa-cloud',
@@ -234,7 +239,8 @@ export const Pages = [
                         The initial purpose of this project was to simply gain further experience using CSS grid,
                         however, this app generated a great amount of exposure to numerous CSS && JavaScript features, required to enable the business logic.
                         /*\\
-                        * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! */\\\\
+                        * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! \\
+                        */\\\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         3D Design {
@@ -257,7 +263,8 @@ export const Pages = [
                         **** - this would cause the result shown for one million squared to become '1 *(10^12)'\\
                         *\\
                         * Add functionality to disabled buttons\\
-                        */\\
+                        * For further details of TODOs for this project - please view my issueTracker.app project!\\
+                        */\\\\
                         `,
                 subPages: [],
                 iconClass: 'fa fa-calculator',
@@ -268,6 +275,42 @@ export const Pages = [
                 hasPreviewOptions: false,
                 previewOptions: ['sciCalc'],
                 previewComponents: ['calculator-project'],
+                previewToggle: '110px',
+                previewContent: 'Demo or Live previewContent',
+                draggedOver: false,
+            },
+            {
+                id: 9,
+                folder: false,
+                folderClosed: false,
+                name: 'issueTracker.app',
+                filepath: 'issueTracker.app',
+                content: `/* OBJECTIVE */\\
+                        The purpose of this project was to build a CRUD application, with reusable components heavily focused on data management and processing, alongside interactive presentation.\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-tracker" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* FEATURES */\\
+                        Reusable chart components {
+                                highlights: [bar + donut chart components dynamically represent data summaries per input properties, interactive chart elements (bars/segments) facilitate list data filtering];}
+                        Reusable tabular data component {
+                                highlights: [ticket-list component presents filtered data per input properties, table columns are sortable in both ascending + descending order];}
+                        Data object management {
+                                    highlights: [data objects (tickets) can be created and updated via ticket form submissions, form submissions feature input validation];}
+                        Responsive design {
+                                        highlights: [side navigation bar menu auto-collapses/expands per inputted preview width - with z-index switches to overlay app body on menu expansion under a defined width threshold, ticket-list component features flex display to fill available width space - with container overflow scrolling enabled];}           
+                        \\/* TODOs\\
+                        * Fix issues detailed within this application\\
+                        * Implement features detailed within this application\\
+                        */
+                    `,
+                subPages: [],
+                iconClass: '',
+                selected: false,
+                contentLineCount: 0,
+                contentFormatted: false,
+                parentFolderId: 3,
+                hasPreviewOptions: false,
+                previewOptions: ['issueTracker'],
+                previewComponents: ['tracker-project'],
                 previewToggle: '110px',
                 previewContent: 'Demo or Live previewContent',
                 draggedOver: false,
@@ -283,7 +326,7 @@ export const Pages = [
         content: `Connect with me on LinkedIn <i class=\"fa fa-linkedin-square\"></i> --->\\\\ 
                     ||\\\\
                     Send me an email <i class=\"fa fa-pencil-square-o\"></i> --->\\
-                    /* my email address can be found on my CV - located under the 'about' page preview */
+                    /* nelson.daly@outlook.com */
                     `,
         subPages: [],
         iconClass: 'fa fa-address-card',
