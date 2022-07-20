@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,14 @@ import { UserInterfaceComponent } from './user-interface/user-interface.componen
 import { PanelComponent } from './panel/panel.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ResizeDirective } from './resize.directive';
+import { ProjectTrackerComponent } from './projects/project-tracker/project-tracker.component';
+import { TicketFormComponent } from './projects/project-tracker/ticket-form/ticket-form.component';
+import { TicketDetailsComponent } from './projects/project-tracker/ticket-details/ticket-details.component';
+import { BarChartComponent } from './projects/project-tracker/bar-chart/bar-chart.component';
+import { DonutChartComponent } from './projects/project-tracker/donut-chart/donut-chart.component';
+import { SortPipe } from './projects/project-tracker/sort.pipe';
+import { AssigneesComponent } from './projects/project-tracker/assignees/assignees.component';
+import { TicketListComponent } from './projects/project-tracker/ticket-list/ticket-list.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +52,21 @@ import { ResizeDirective } from './resize.directive';
     PanelComponent,
     SkillsComponent,
     ResizeDirective,
+    ProjectTrackerComponent,
+    TicketFormComponent,
+    TicketDetailsComponent,
+    BarChartComponent,
+    DonutChartComponent,
+    SortPipe,
+    AssigneesComponent,
+    TicketListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
