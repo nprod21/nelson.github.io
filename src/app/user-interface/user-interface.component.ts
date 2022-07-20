@@ -29,8 +29,9 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
   public sidebarExpanded: boolean = this.tabService.sidebarExpanded;
   public resizeActive: boolean = false;
 
-  public contentWidth: string = this.windowWidthMinusSidebarHalved + "px";
-  public previewWidth: string = this.contentWidth;
+  public contentWidth: number = this.windowWidthMinusSidebarHalved;
+  public previewWidth: number = this.contentWidth;
+  public previewHeight: number = 0;
 
   public tabsOpen: boolean = false;
 
@@ -46,6 +47,9 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
 
     /* calls method to initialize widths of: page/tab text/content && preview sections */
     this.setInnerWidths(true, this.viewPosition);
+
+    /* calls method to set previewHeight */
+    this.setPreviewHeight();
 
     this.viewToggleSub = this.tabService.viewToggleObs.subscribe(position => {
       /* calls method to set display + grid column styles for:
@@ -72,8 +76,11 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
 
     this.tabOpenSub = this.tabService.tabOpenObs.subscribe(status => {
       /* assigns async status from tabOpenObservable to this.tabsOpen
-      - used to display either app-background or tab-view-container elements in template */
+      - used to display either app-background or tab-view-container elements in template
+      - if tabsOpen, calls method to set preview height property */
       this.tabsOpen = status;
+      console.warn("ui.tabsOpen status = " + status);
+      this.setPreviewHeight();
     });
 
   }
@@ -91,6 +98,7 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
       && sets widths of: page/tab text/content && preview sections */  
     this.collapseSidebar();
     this.expandSidebar();
+    this.setPreviewHeight();
     this.viewPosition = this.tabService.viewPosition;
     if(this.contentResized) this.setInnerWidths(false, this.viewPosition);
     else if(!this.contentResized) {
@@ -125,8 +133,8 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
       if(contentNewWidth < 100) contentNewWidth = 100;
       if(contentNewWidth > (bodyWidth - 100)) contentNewWidth = (bodyWidth - 100);
       let previewNewWidth: number = bodyWidth - 10 - contentNewWidth;
-      this.contentWidth = contentNewWidth.toString() + "px";
-      this.previewWidth = previewNewWidth.toString() + "px";  
+      this.contentWidth = contentNewWidth;
+      this.previewWidth = previewNewWidth;  
     }
     return;
   }
@@ -198,7 +206,7 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
     else if(!this.sidebarExpanded) this.sidebarWidth = 50;
     if(initialize) {
       let splitInnerWidth: number = (window.innerWidth - this.sidebarWidth - 10) / 2;
-      this.contentWidth = splitInnerWidth.toString() + "px";
+      this.contentWidth = splitInnerWidth;
       this.previewWidth = this.contentWidth;  
     }
     else if(!initialize) {
@@ -206,25 +214,38 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
         let contentWidthNum: any = document.getElementById("content")?.offsetWidth;
         if(contentWidthNum > (window.innerWidth -  this.sidebarWidth - 110)) {
           contentWidthNum = window.innerWidth -  this.sidebarWidth - 110;
-          this.contentWidth = contentWidthNum.toString() + "px";
+          this.contentWidth = contentWidthNum;
         }
         let previewNewWidth: number = (window.innerWidth - this.sidebarWidth - contentWidthNum - 10);
-        this.previewWidth = previewNewWidth.toString() + "px"; 
+        this.previewWidth = previewNewWidth; 
       }
       if(position == 1 || position == 2) { // either or position
-        let fullWidthNum: any = window.innerWidth - this.sidebarWidth;
-        let fullWidthPx: string = fullWidthNum.toString() + "px";
+        let fullWidth: any = window.innerWidth - this.sidebarWidth;
+        // let fullWidthPx: string = fullWidthNum;
         if(position == 1) { // text only position
-          this.contentWidth = fullWidthPx;
-          this.previewWidth = "0px";
+          this.contentWidth = fullWidth;
+          this.previewWidth = 0;
         }
         else if(position == 2) {
-          this.contentWidth = "0px";
-          this.previewWidth = fullWidthPx;
+          this.contentWidth = 0;
+          this.previewWidth = fullWidth;
         }
       }
     }
     return;
+  }
+
+  private setPreviewHeight(): void {
+    setTimeout(() => {
+      let previewElementHeight: any = document.getElementById('bodyContainer')?.clientHeight;
+      // this.previewWidth = (previewElementWidth - 6).toString() + "px";
+      console.warn("ui.previewElementHeight == " + previewElementHeight);
+      // this.previewHeight = (previewElementHeight).toString() + "px";
+      this.previewHeight = previewElementHeight;
+      console.warn("ui.previewHeight == " + this.previewHeight);
+    }, 1);
+    /* sets preview height value as string with appended unit measurement */
+    
   }
 
 }
