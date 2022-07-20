@@ -10,8 +10,13 @@ export class SplashScreenComponent implements OnInit {
   @Input() previewWidth: number = 0; // binded to template's container [style.width]
   @Input() previewHeight: number = 0; // binded to template's container [style.height]
 
+  public showSplash: boolean = false;
+
   constructor() { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+    /* timer delay for content visibility - to prevent flickering before splash screen */
+    setTimeout(() => this.showSplash = true, 50);
+   }
 
 }
