@@ -148,18 +148,18 @@ export class TabHeadersComponent implements OnInit, OnDestroy {
     /* changes properties used for split-screen icon svg styling, depending on view toggle position */
     this.viewPosition = this.tabService.viewPosition;
     if(this.viewPosition == 0) {
-      this.pageFill = "#3f87b7";
-      this.previewFill = "#3f87b7";
+      this.pageFill = "#239ef0";
+      this.previewFill = "#239ef0";
       return;
     }
     if(this.viewPosition == 1) {
-      this.pageFill = "#3f87b7";
+      this.pageFill = "#239ef0";
       this.previewFill = "#2e3138";
       return;
     }
     if(this.viewPosition == 2) {
       this.pageFill = "#2e3138";
-      this.previewFill = "#3f87b7";
+      this.previewFill = "#239ef0";
       return;
     }
   }
