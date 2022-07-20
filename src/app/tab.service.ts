@@ -113,7 +113,7 @@ export class TabService {
         && selectedPage.content[i + 2] == "a"
         && selectedPage.content[i + 3] == ">") linkOpen = false;
 
-        if(selectedPage.content.charAt(i).match(/[.!?;]/) && !linkOpen) {
+        if(selectedPage.content.charAt(i).match(/[.!?;]/) && !linkOpen && !commentOpen) {
           charMatchEnders = true;
           if(selectedPage.content[i] != ";" && !blockOpen) indentCount = 0;
           if(highlightOpen) {
@@ -475,20 +475,22 @@ export class TabService {
     increment line count */
     this.counter = 0;
     let linkOpen: boolean = false;
+    let commentOpen: boolean = false;
     for (let i: number = 0; i < text.length; i++) {
       if(text[i] == "<" && text[i + 1] == "a") linkOpen = true;
       if(text[i] == "<"
       && text[i + 1] == "/"
       && text[i + 2] == "a"
       && text[i + 3] == ">") linkOpen = false;
-      if((text.charAt(i).match(/[.,;{}\\]/)
-          || (text.charAt(i).match(/[*]/)
-              && text.charAt(i + 1).match(/[/]/)
-              && i + 1 == text.length - 1))
+      if(text[i] == "/" && text[i + 1] == "*") commentOpen = true;
+      if(text[i] == "*" && text[i + 1] == "/") commentOpen = false;
+      if((text.charAt(i).match(/[.,;{}\\]/))
           && !linkOpen
+          && !commentOpen
       ) {
         this.counter++;
       }
+      if(commentOpen && text.charAt(i).match(/[\\]/)) this.counter++;
     }
     if(this.counter > 0) this.counter++;
     return this.counter;
