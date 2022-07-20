@@ -1,0 +1,91 @@
+:host {
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+}
+
+.donut-chart-component-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+    background-color: #ffffff;
+}
+
+.donut-chart-title {
+    background-color: #134a9f;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.donut-chart-header {
+    color: #fff;
+    padding-left: 25px;
+}
+
+.donut-chart-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+circle {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+circle:hover {
+    stroke-width: 10;
+}
+
+.thisapp {
+    stroke: #2e3138;
+}
+
+.localWeatherapp {
+    stroke: gray;
+}
+
+.sciCalculatorapp {
+    stroke: #4a5a73;
+}
+
+.issueTrackerapp {
+    stroke: #134a9f;
+}
+
+.Feature {
+    stroke: green;
+}
+
+.Issue {
+    stroke: purple;
+}
+
+.svg-text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-size: 0.5rem;
+    fill: #313241;
+}
+
+.label {
+    color:#313241;
+    width: 250px;
+    text-align: center;
+    padding-bottom: 7px;
+}
