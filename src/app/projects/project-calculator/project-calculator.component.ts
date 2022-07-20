@@ -147,7 +147,7 @@ export class ProjectCalculatorComponent implements OnInit {
 
   ngOnInit(): void {
     /* timer delay for content visibility - to prevent flickering before splash screen */
-    setTimeout(() => this.showProject = true, 3050);
+    setTimeout(() => this.showProject = true, 3100);
   }
 
 
