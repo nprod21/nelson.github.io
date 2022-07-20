@@ -156,12 +156,12 @@ export class TrackerService {
 
     if(commentAdded) {
       if(logUpdate.length) {
-        logUpdate += "<br>" + "DemoUser commented \"" + submission.comment + "\"."
+        logUpdate += "<br>" + "DemoUser commented \"" + submission.comment + "\"";
       }
       else {
         this.tickets[index].log?.push({
         date: new Date(),
-        update: "DemoUser commented \"" + submission.comment + "\"."
+        update: "DemoUser commented \"" + submission.comment + "\""
         });
       }
     }
