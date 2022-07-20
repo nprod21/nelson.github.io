@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
 })
 export class TabPreviewComponent implements OnInit, OnDestroy {
 
-  @Input() previewWidth: string = ""; // binded to template's container [style.width]
+  @Input() previewWidth: number = 0; // binded to template's container [style.width]
+  @Input() previewHeight: number = 0; // to be provided to project component selectors
 
   private weatherFetchedSub!: Subscription;
   private constructSub!: Subscription;
