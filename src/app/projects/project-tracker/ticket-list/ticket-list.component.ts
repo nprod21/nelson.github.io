@@ -27,7 +27,7 @@ export class TicketListComponent implements OnInit {
   public columns: string[] = ["number", "priority", "type", "project", "title", "description", "status", "assignee", "submitter"];
   public sortedColumn: string = this.columns[0];
   public sortPipeTrigger: boolean = false;
-  public sortReverse: boolean = false;
+  public sortReverse: boolean = true;
   public sortableColumns: any[] = [
     {
       name: "number",
