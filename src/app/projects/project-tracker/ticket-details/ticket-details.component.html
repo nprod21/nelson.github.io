@@ -1,0 +1,88 @@
+<div class="ticket-details-container">
+    <div class="ticket-details-title">
+        <h3 class="ticket-details-header">Ticket No.{{ticketNo | number: '3.'}}</h3>
+    </div>
+    <div class="ticket-details-form-box">
+        <div class="ticket-details-body-container">
+            <div class="ticket-details-form-container">
+                <form *ngIf="ticketForm" [formGroup]="ticketForm" (ngSubmit)="updateTicket()">
+                    <!-- <div class="form-field">
+                        <label class="field-label">Ticket No.</label>
+                        <input formControlName="number" class="read-only"/>
+                    </div> -->
+                    <div class="form-field">
+                        <label class="field-label">Submitter</label>
+                        <input class="standard-input read-only" formControlName="submitter" [readonly]="true"/>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Assignee</label>
+                        <input class="standard-input read-only" formControlName="assignee" [readonly]="true"/>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Status</label>
+                        <select class="form-dropdown" formControlName="status" required>
+                            <option value="Open">Open</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                        <p *ngIf="invalidPendingStatus" class="status-alert">Only ticket assignees can set Status to Pending.</p>  
+                        <p *ngIf="invalidOpenStatus" class="status-alert">Only closed tickets can be reopened.</p>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Priority</label>
+                        <ng-container *ngIf="ticket.status != 'Closed'">
+                            <label class="input-radio-label">
+                                <input type="radio" formControlName="priority" value="Low" required/>
+                                Low
+                            </label>
+                            <label class="input-radio-label">
+                                <input type="radio" formControlName="priority" value="Medium" required/>
+                                Medium
+                            </label>
+                            <label class="input-radio-label">
+                                <input type="radio" formControlName="priority" value="High" required/>
+                                High
+                            </label>   
+                        </ng-container>   
+                        <input *ngIf="ticket.status == 'Closed'" class="standard-input read-only" formControlName="priority" [readonly]="true"/>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Type</label>
+                        <select *ngIf="ticket.status != 'Closed'" class="form-dropdown" formControlName="type" required>
+                            <option value="Feature">Feature</option>
+                            <option value="Issue">Issue</option>
+                        </select>
+                        <input *ngIf="ticket.status == 'Closed'" class="standard-input read-only" formControlName="type" [readonly]="true"/>            
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Project</label>
+                        <input class="standard-input read-only" formControlName="project" [readonly]="true"/>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Title</label>
+                        <input class="standard-input read-only" formControlName="title" [readonly]="true"/>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Description</label>
+                        <textarea class="textarea-input read-only" formControlName="description" [readonly]="true"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Comment</label>
+                        <textarea class="textarea-input" formControlName="comment" required></textarea>
+                        <p *ngIf="submitted && ticketForm.invalid" class="comment-alert">Comment required.</p>
+                    </div>
+                    <div class="ticket-form-submit-container">
+                        <button class="ticket-form-submit-button" type="submit">Update</button>    
+                    </div>
+                    
+                </form>  
+            </div>
+            <div *ngIf="ticket.log !== undefined" class="ticket-log-container">
+                <div *ngFor="let log of ticket.log" class="ticket-log">
+                    <p>{{log.date | date: 'MMM d, y, h:mma'}}</p>
+                    <div [innerHTML]="log.update"></div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
