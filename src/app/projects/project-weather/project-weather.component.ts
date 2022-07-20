@@ -49,7 +49,7 @@ export class ProjectWeatherComponent implements OnInit, OnDestroy {
         this.setWeatherFromServiceData();
         this.tabService.updateWeatherFetchedSubject();
         /* timer delay for content visibility - to prevent flickering behind splash screen */
-        setTimeout(() => this.showProject = true, 3000);
+        setTimeout(() => this.showProject = true, 3100);
       }
     })
     
