@@ -1,4 +1,4 @@
-<div class="preview-container" id="previewcontainer" [style.width]="previewWidth" [ngClass]="[sidebarExpanded ? 'preview-expanded-width' : 'preview-collapsed-width']">
+<div class="preview-container" id="previewcontainer" [style.width]="previewWidth + 'px'" [ngClass]="[sidebarExpanded ? 'preview-expanded-width' : 'preview-collapsed-width']">
     <div class="preview-content">
        <ng-container *ngFor="let page of openPages">
             <ng-container *ngIf="page.selected">
@@ -20,7 +20,7 @@
                                 <app-contact-email></app-contact-email>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen ss-raised">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'contact-linkedin'">
@@ -28,7 +28,7 @@
                                 <app-contact-linkedin></app-contact-linkedin>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen ss-raised">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'this-demo'">
@@ -36,7 +36,7 @@
                                 <app-this-demo></app-this-demo>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'skills'">
@@ -44,7 +44,7 @@
                                 <app-skills></app-skills>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'about'">
@@ -52,7 +52,7 @@
                                 <app-about></app-about>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'weather-project'">
@@ -60,7 +60,7 @@
                                 <app-project-weather></app-project-weather>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'calculator-project'">
@@ -68,7 +68,7 @@
                                 <app-project-calculator></app-project-calculator>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                     </ng-container>
@@ -78,7 +78,7 @@
                                 <app-contact-email></app-contact-email>
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen ss-raised">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[1] === 'contact-linkedin'">
@@ -86,7 +86,7 @@
                                 <app-contact-linkedin></app-contact-linkedin>    
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen ss-raised">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[1] === 'this-demo'">
@@ -94,7 +94,7 @@
                                 <app-this-demo></app-this-demo>    
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[1] === 'skills'">
@@ -102,7 +102,7 @@
                                 <app-skills></app-skills>    
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'weather-project'">
@@ -110,7 +110,7 @@
                                 <app-project-weather></app-project-weather>    
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                         <ng-container *ngIf="page.previewComponents[0] === 'calculator-project'">
@@ -118,7 +118,15 @@
                                 <app-project-calculator></app-project-calculator>    
                             </div>
                             <div *ngIf="splashTimeout" class="splash-screen">
-                                <app-splash-screen [previewWidth]="previewWidth"></app-splash-screen>
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'tracker-project'">
+                            <div class="app-preview-component">
+                                <app-project-tracker [appHeight]="previewHeight" [previewWidth]="previewWidth"></app-project-tracker>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
                             </div> 
                         </ng-container>
                     </ng-container>
