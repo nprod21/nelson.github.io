@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class TabPreviewComponent implements OnInit, OnDestroy {
 
   @Input() previewWidth: number = 0; // binded to template's container [style.width]
-  @Input() previewHeight: number = 0; // to be provided to project component selectors
+  @Input() previewHeight: number = 0; // to be provided to project-component
 
   private weatherFetchedSub!: Subscription;
   private constructSub!: Subscription;
@@ -41,7 +41,7 @@ export class TabPreviewComponent implements OnInit, OnDestroy {
         if(this.tabService.getSelectedTab().id == "7") {
           this.splashTimeout = false;
         }
-      }, 3050);
+      }, 3100);
       } 
     });
 
@@ -54,7 +54,7 @@ export class TabPreviewComponent implements OnInit, OnDestroy {
           if(this.tabService.getSelectedTab().id != "7") {
               this.splashTimeout = false;
           }
-        }, 3050);
+        }, 3100);
       }
     });
 
