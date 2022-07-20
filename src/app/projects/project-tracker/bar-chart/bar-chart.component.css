@@ -1,0 +1,102 @@
+:host {
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+}
+
+.bar-chart-table {
+    height: 250px;
+}
+
+.bar {
+    width: 50px;
+    border-radius: 3px 3px 3px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2),
+                1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.bar:hover {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.Low {
+    background-color: blue;
+    color: blue;
+}
+
+.Medium {
+    background-color: darkorange;
+    color: darkorange;
+}
+
+.High {
+    background-color: red;
+    color: red;
+}
+
+.Open {
+    background-color: gold;
+}
+
+.Pending {
+    background-color: maroon;
+}
+
+.td-div {
+    height: 100px;
+}
+
+.bar-chart-component-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+}
+
+.bar-chart-title {
+    background-color: #134a9f;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bar-chart-header {
+    color: #fff;
+    padding-left: 25px;
+}
+
+.bar-chart-container {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.chart-element {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.element-label {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
