@@ -17,7 +17,7 @@ export class ThisDemoComponent implements OnInit {
 
   ngOnInit(): void {
     /* timer delay for content visibility - to prevent any flickering before splash screen */
-    setTimeout(() => this.showDemo = true, 3050);
+    setTimeout(() => this.showDemo = true, 3100);
   }
 
   public nextImg(): void {
