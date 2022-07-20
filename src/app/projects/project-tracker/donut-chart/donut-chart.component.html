@@ -1,0 +1,23 @@
+<div *ngIf="chartElements.length" class="donut-chart-component-container">
+        <div class="donut-chart-title">
+                <h3 class="donut-chart-header">Tickets by {{category | titlecase}}</h3>
+        </div>
+        <div class="donut-chart-container">
+                <svg xlmns="http://www.w3.org.2000/svg" viewBox="0 0 50 50" width="225" width="225">
+                        <circle *ngFor="let element of chartElements"
+                                r="17" cx="25" cy="25"
+                                class="{{getClassName(element.name)}}"
+                                fill="none"
+                                [attr.stroke-width]="labelText === element.name ? '10' : '8'"
+                                attr.stroke-dasharray="calc({{element.percentage}} *(3.1416 * 34)/100) calc(3.146 * 34)"
+                                [attr.transform]="element.rotate"
+                                transform-origin="center"
+                                (mouseover)="tempSetChartText(element)"
+                                (mouseout)="setChartText()"
+                                (click)="setFilteredTickets(element.name)"
+                        />
+                        <text class="svg-text" x="50%" y="50%">{{centerText}}</text>
+                </svg>
+                <p class="label">{{labelText}}</p>
+        </div>
+</div>
