@@ -146,6 +146,7 @@ export const Pages = [
                         && secondly, a portfolio website to host all current && future projects.
                         Therefore, I decided to build this app in the style of a code editor's UI, with an integrated preview section.\\
                         <a href="https://github.com/nprod21/nprod21.github.io" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         TabHeaders Component {
                             summary: displays open tabs + controls tab reselection/closure;
@@ -202,6 +203,7 @@ export const Pages = [
                         For this project, my primary objective, was to build an application centered around data received from a third-party API call.
                         My secondary objective was to gain familiarity with CSS flex, to structure a layout.\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-weather" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         dynamic animated background image {
                             highlight: image source property binding varies depending on current weather description and time of day;}
@@ -242,6 +244,7 @@ export const Pages = [
                         * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! \\
                         */\\\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         3D Design {
                             highlights: [raised edges + outer shadows on body && buttons, button edges && shadows adjust when active, arrow buttons perform 2D transforms when active, inner shadow on display screen && solar panel];}
@@ -288,6 +291,7 @@ export const Pages = [
                 content: `/* OBJECTIVE */\\
                         The purpose of this project was to build a CRUD application, with reusable components heavily focused on data management and processing, alongside interactive presentation.\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-tracker" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         Reusable chart components {
                                 highlights: [bar + donut chart components dynamically represent data summaries per input properties, interactive chart elements (bars/segments) facilitate list data filtering];}
