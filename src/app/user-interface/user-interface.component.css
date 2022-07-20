@@ -129,12 +129,14 @@
 }
 
 #resizer-x:hover {
-  background: aqua;
+  /* background: aqua; #3f87b7 #55b4f4*/
+  background-color: #239ef0;
   cursor: col-resize;
 }
 
 .unselectable {
   user-select: none;
+  cursor: col-resize;
 }
 
 .tab-lines-text-container {
@@ -151,6 +153,7 @@
 
 .unscrollable {
   overflow: hidden;
+  cursor: col-resize;
 }
 
 .app-tab-linecount {
