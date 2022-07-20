@@ -1,0 +1,18 @@
+<div class="aa-container">
+    <div class="assignees-title">
+        <h3 class="assignees-header">Assignees ({{assignees.length}})</h3>
+    </div>
+    <div class="all-assignees-container">
+        <div *ngFor="let assignee of assignees" class="assignee-container">
+            <div class="assignee-pic-container">
+                <img src="{{assignee.imgSrc}}" class="assignee-pic" alt="{{assignee.name}}">  
+            </div>
+            <div class="assignee-details-container">
+                <p>{{assignee.name}}</p>
+                <p>{{assignee.email}}</p>
+                <p>Active Tickets: <span class="assignee-tickets" (click)="setAssigneeTickets(assignee.name, true)">{{getActiveTicketsCount(assignee.name)}}</span></p>
+                <p>Closed Tickets: <span class="assignee-tickets" (click)="setAssigneeTickets(assignee.name, false)">{{getClosedTicketsCount(assignee.name)}}</span></p>
+            </div>
+        </div>    
+    </div>
+</div>
