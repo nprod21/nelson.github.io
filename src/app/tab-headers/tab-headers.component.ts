@@ -145,21 +145,21 @@ export class TabHeadersComponent implements OnInit, OnDestroy {
   }
 
   private toggleViewFill(): void {
-    /* changes properties used for view icon svg styling, depending on view toggle position */
+    /* changes properties used for split-screen icon svg styling, depending on view toggle position */
     this.viewPosition = this.tabService.viewPosition;
     if(this.viewPosition == 0) {
-      this.pageFill = "#ffffff";
-      this.previewFill = "#ffffff";
+      this.pageFill = "#3f87b7";
+      this.previewFill = "#3f87b7";
       return;
     }
     if(this.viewPosition == 1) {
-      this.pageFill = "#ffffff";
-      this.previewFill = "#808080";
+      this.pageFill = "#3f87b7";
+      this.previewFill = "#2e3138";
       return;
     }
     if(this.viewPosition == 2) {
-      this.pageFill = "#808080";
-      this.previewFill = "#ffffff";
+      this.pageFill = "#2e3138";
+      this.previewFill = "#3f87b7";
       return;
     }
   }
