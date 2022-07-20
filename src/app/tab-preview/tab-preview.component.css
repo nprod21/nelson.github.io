@@ -90,8 +90,8 @@
 
 .preview-component {
     position: relative;
-    width: 600px;
-    padding: 1%;
+    /* width: 600px; */
+    /* padding: 1%; */
     background: #ffffff;
     display: grid;
 }
