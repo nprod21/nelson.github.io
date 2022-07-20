@@ -21,7 +21,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 9, 2022 11:41:00"),
-                update: `Nelson commented "Generated side-navbar component".<br>
+                update: `Nelson commented "Generated side-navbar component."<br>
                         Nelson updated Status from Pending to Closed.`
             }
         ],
@@ -48,7 +48,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 14:12:00"),
-                update: `Nelson commented "Styled menu items to appear as a list, resembling the explorer filetree in VS Code".<br>
+                update: `Nelson commented "Styled menu items to appear as a list, resembling the explorer filetree in VS Code."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -75,7 +75,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 10:12:00"),
-                update: `Nelson commented "Generated Page interface plus created an array of pages, with all properties populated".<br>
+                update: `Nelson commented "Generated Page interface plus created an array of pages, with all properties populated."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -102,7 +102,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 10:41:00"),
-                update: `Nelson commented "Generated service with private properties and public methods".<br>
+                update: `Nelson commented "Generated service with private properties and public methods."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -129,7 +129,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 11:03:00"),
-                update: `Nelson commented "Created boolean to store collapsed/expanded status, + methods to toggle boolean and set to false. Value used for ngClass with width styles".<br>
+                update: `Nelson commented "Created boolean to store collapsed/expanded status, + methods to toggle boolean and set to false. Value used for ngClass with width styles."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -156,7 +156,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 11:47:00"),
-                update: `Nelson commented "Expandable/Collapsible folder page menu items functionality implemented".<br>
+                update: `Nelson commented "Expandable/Collapsible folder page menu items functionality implemented."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -183,7 +183,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 14:43:00"),
-                update: `Nelson commented "Generated tab-headers component".<br>
+                update: `Nelson commented "Generated tab-headers component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -210,7 +210,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 15:33:00"),
-                update: `Nelson commented "Styled tab heads to resemble tabs in VS Code".<br>
+                update: `Nelson commented "Styled tab heads to resemble tabs in VS Code."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -237,7 +237,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 16:18:00"),
-                update: `Nelson commented "Implemented methods and openTabs property in shared tab service to open/close tabs".<br>
+                update: `Nelson commented "Implemented methods and openTabs property in shared tab service to open/close tabs."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -264,7 +264,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 10, 2022 17:01:00"),
-                update: `Nelson commented "Implemented methods in shared tab service to select/deselect open tabs".<br>
+                update: `Nelson commented "Implemented methods in shared tab service to select/deselect open tabs."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -291,7 +291,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 09:21:00"),
-                update: `Nelson commented "Implemented logic and CSS classes for selected page/tab".<br>
+                update: `Nelson commented "Implemented logic and CSS classes for selected page/tab."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -318,7 +318,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 10:01:00"),
-                update: `Nelson commented "Implemented scrollIntoView using setTimeout() delay to function as expected".<br>
+                update: `Nelson commented "Implemented scrollIntoView using setTimeout() delay to function as expected."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -345,7 +345,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 10:11:00"),
-                update: `Nelson commented "Generated tab-body component".<br>
+                update: `Nelson commented "Generated tab-body component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -372,7 +372,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 10:21:00"),
-                update: `Nelson commented "Generated tab-linecount component".<br>
+                update: `Nelson commented "Generated tab-linecount component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -399,7 +399,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 11:43"),
-                update: `Nelson commented "Method created to format and replace each page's content on tab opening".<br>
+                update: `Nelson commented "Method created to format and replace each page's content on tab opening."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -426,7 +426,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 11:45"),
-                update: `Nelson commented "Method created to count expected lines of each page's content on tab opening".<br>
+                update: `Nelson commented "Method created to count expected lines of each page's content on tab opening."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -453,7 +453,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 12:22:00"),
-                update: `Nelson commented "Style classes created for formatted content's intended presentation".<br>
+                update: `Nelson commented "Style classes created for formatted content's intended presentation."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -480,7 +480,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 13:34:00"),
-                update: `Nelson commented "Generated tab-preview component".<br>
+                update: `Nelson commented "Generated tab-preview component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -507,7 +507,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 13:48:00"),
-                update: `Nelson commented "Generated user-interface component".<br>
+                update: `Nelson commented "Generated user-interface component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -534,7 +534,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 14:48:00"),
-                update: `Nelson commented "Implemented section view toggle".<br>
+                update: `Nelson commented "Implemented section view toggle."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -561,7 +561,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 15:02:00"),
-                update: `Nelson commented "Generated panel component".<br>
+                update: `Nelson commented "Generated panel component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -588,7 +588,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 15:42:00"),
-                update: `Nelson commented "Styled panel and terminal view to resemble both in VS Code".<br>
+                update: `Nelson commented "Styled panel and terminal view to resemble both in VS Code."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -615,7 +615,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 16:42:00"),
-                update: `Nelson commented "Generated terminal service component and simulation methods".<br>
+                update: `Nelson commented "Generated terminal service component and simulation methods."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -642,7 +642,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 11, 2022 16:54:00"),
-                update: `Nelson commented "Generated splash-screen component".<br>
+                update: `Nelson commented "Generated splash-screen component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -669,7 +669,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 09:52:00"),
-                update: `Nelson commented "Style splash-screen SVG logo with linear gradients in the style of VS Code's logo".<br>
+                update: `Nelson commented "Style splash-screen SVG logo with linear gradients in the style of VS Code's logo."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -696,7 +696,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 10:52:00"),
-                update: `Nelson commented "Animated splash screen logo SVG elements with infinite durations".<br>
+                update: `Nelson commented "Animated splash screen logo SVG elements with infinite durations."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -723,7 +723,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 11:22:00"),
-                update: `Nelson commented "Implemented mechanism to await weatherFetched observable subscription, before commening ~3s visibility countdown".<br>
+                update: `Nelson commented "Implemented mechanism to await weatherFetched observable subscription, before commening ~3s visibility countdown."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -750,7 +750,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 15:27:00"),
-                update: `Nelson commented "Generated route service with methods to get and set open tabs in order".<br>
+                update: `Nelson commented "Generated route service with methods to get and set open tabs in order."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -777,7 +777,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 17:16:00"),
-                update: `Nelson commented "Implemented functionality to drag and reorder open tabs view and url route/path".<br>
+                update: `Nelson commented "Implemented functionality to drag and reorder open tabs view and url route/path."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -804,7 +804,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 14:03:00"),
-                update: `Nelson commented "Added Resize 'handle' element with applied Resize directive working as required".<br>
+                update: `Nelson commented "Added Resize 'handle' element with applied Resize directive working as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -831,7 +831,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 10:12:00"),
-                update: `Nelson commented "Created tabScrollSetting interface and implemented logic to create an object implementation for each open/selected tab on tab reselection, adding to array of tabScrollSettings. Feature working as required".<br>
+                update: `Nelson commented "Created tabScrollSetting interface and implemented logic to create an object implementation for each open/selected tab on tab reselection, adding to array of tabScrollSettings. Feature working as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -858,7 +858,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 10:59:00"),
-                update: `Nelson commented "Generated contact-linkedin component".<br>
+                update: `Nelson commented "Generated contact-linkedin component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -885,7 +885,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 11:34:00"),
-                update: `Nelson commented "Styled contact-linkedin component to resemble LinkedIn profile".<br>
+                update: `Nelson commented "Styled contact-linkedin component to resemble LinkedIn profile."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -912,7 +912,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 11:44:00"),
-                update: `Nelson commented "Generated contact-email component".<br>
+                update: `Nelson commented "Generated contact-email component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -939,7 +939,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 12:34:00"),
-                update: `Nelson commented "Styled contact-email component form".<br>
+                update: `Nelson commented "Styled contact-email component form."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -966,7 +966,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 14:24:00"),
-                update: `Nelson commented "Added mousedown event handler to intercept form submission click event and toggle bool used to display thank you message. Working as required".<br>
+                update: `Nelson commented "Added mousedown event handler to intercept form submission click event and toggle bool used to display thank you message. Working as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -993,7 +993,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 14:44:00"),
-                update: `Nelson commented "Generated about component".<br>
+                update: `Nelson commented "Generated about component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1020,7 +1020,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 15:37:00"),
-                update: `Nelson commented "Styled about component, with animated welcome message, as required.".<br>
+                update: `Nelson commented "Styled about component, with animated welcome message, as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1047,7 +1047,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 15:43:00"),
-                update: `Nelson commented "Generated skills component".<br>
+                update: `Nelson commented "Generated skills component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1074,7 +1074,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 13, 2022 16:34:00"),
-                update: `Nelson commented "Styled skills badge icons of frontend tech stack to individually display consecutively, as required".<br>
+                update: `Nelson commented "Styled skills badge icons of frontend tech stack to individually display consecutively, as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1103,7 +1103,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 10:22:00"),
-                update: `Nelson commented "Created navigation sidebar plus 'body' elements". Setup menu logic to control view selections.<br>
+                update: `Nelson commented "Created navigation sidebar plus 'body' elements." Setup menu logic to control view selections.<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1130,7 +1130,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 10:22:00"),
-                update: `Nelson commented "Created expandable/collapsible responsive styles for navigation sidebar menu".<br>
+                update: `Nelson commented "Created expandable/collapsible responsive styles for navigation sidebar menu."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1157,7 +1157,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 10:32:00"),
-                update: `Nelson commented "Generated tracker service".<br>
+                update: `Nelson commented "Generated tracker service."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1184,7 +1184,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 10:41:00"),
-                update: `Nelson commented "Generated ticket-list component".<br>
+                update: `Nelson commented "Generated ticket-list component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1211,7 +1211,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 11:11:00"),
-                update: `Nelson commented "Generated ticket-form component. Implemented form with required inputs and validators".<br>
+                update: `Nelson commented "Generated ticket-form component. Implemented form with required inputs and validators."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1238,7 +1238,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 11:11:00"),
-                update: `Nelson commented "Generated ticket-details component. Implemented populated form logic with required input and validators for certain enabled updates".<br>
+                update: `Nelson commented "Generated ticket-details component. Implemented populated form logic with required input and validators for certain enabled updates."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1265,7 +1265,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 12, 2022 14:28:00"),
-                update: `Nelson commented "Generated bar-chart component. Implemented input property logic".<br>
+                update: `Nelson commented "Generated bar-chart component. Implemented input property logic."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1292,7 +1292,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 13, 2022 11:07:00"),
-                update: `Nelson commented "Generated chart service. Added supporting logic required for reusable chart components".<br>
+                update: `Nelson commented "Generated chart service. Added supporting logic required for reusable chart components."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1319,7 +1319,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 13, 2022 16:47:00"),
-                update: `Nelson commented "Generated donut-chart component. Implemented input property logic, setup SVG with angle calculations".<br>
+                update: `Nelson commented "Generated donut-chart component. Implemented input property logic, setup SVG with angle calculations."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1346,7 +1346,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 10:22:00"),
-                update: `Nelson commented "Added output properties to chart components and required logic to project component, chart-service and tracker service to filter and display tickets based on chart element selections.".<br>
+                update: `Nelson commented "Added output properties to chart components and required logic to project component, chart-service and tracker service to filter and display tickets based on chart element selections."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1373,7 +1373,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 11:01:00"),
-                update: `Nelson commented "Set the default 'in-focus' donut chart element to be one with the highest count".<br>
+                update: `Nelson commented "Set the default 'in-focus' donut chart element to be one with the highest count."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1400,7 +1400,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 12:16:00"),
-                update: `Nelson commented "Removed the chart-service logic used to round (toFixed() method). Used the number pipe in the template to round the percentages display in bar-chart component".<br>
+                update: `Nelson commented "Removed the chart-service logic used to round (toFixed() method). Used the number pipe in the template to round the percentages display in bar-chart component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1427,11 +1427,11 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 14:12:00"),
-                update: `Nelson commented "Added functionality to sort tickets based on property values in descending order on column".<br>`
+                update: `Nelson commented "Added functionality to sort tickets based on property values in descending order on column."<br>`
             },
             {
                 date: new Date("July 14, 2022 14:31:00"),
-                update: `Nelson commented "Added functionality to sort tickets based on property values in ascending order on column double click".<br>
+                update: `Nelson commented "Added functionality to sort tickets based on property values in ascending order on column double click."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1458,7 +1458,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 15:25:00"),
-                update: `Nelson commented "SVG sort icon with dynamic fill attribute color added to ticket-list component".<br>
+                update: `Nelson commented "SVG sort icon with dynamic fill attribute color added to ticket-list component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1485,7 +1485,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 16:07:00"),
-                update: `Nelson commented "Generated assignees component. Added looped assignee elements with details to template".<br>
+                update: `Nelson commented "Generated assignees component. Added looped assignee elements with details to template."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1512,7 +1512,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 16:27:00"),
-                update: `Nelson commented "Updated navigation logic used to control views within app".<br>
+                update: `Nelson commented "Updated navigation logic used to control views within app."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1539,7 +1539,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 17:06:00"),
-                update: `Nelson commented "Add functionality to ticket submission handler methods, to generate changelog entries as required".<br>
+                update: `Nelson commented "Add functionality to ticket submission handler methods, to generate changelog entries as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1566,7 +1566,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 14, 2022 10:09:00"),
-                update: `Nelson commented "Styled ticket-list component and contained table inline with project application design theme.".<br>
+                update: `Nelson commented "Styled ticket-list component and contained table inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1593,7 +1593,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 10:51:00"),
-                update: `Nelson commented "Styled ticket-details component and contained form inline with project application design theme.".<br>
+                update: `Nelson commented "Styled ticket-details component and contained form inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1620,7 +1620,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 11:21:00"),
-                update: `Nelson commented "Styled ticket-form component and contained form inline with project application design theme.".<br>
+                update: `Nelson commented "Styled ticket-form component and contained form inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1647,7 +1647,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 11:48:00"),
-                update: `Nelson commented "Styled assignees component and contained elements inline with project application design theme.".<br>
+                update: `Nelson commented "Styled assignees component and contained elements inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1674,7 +1674,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 12:22:00"),
-                update: `Nelson commented "Styled bar-chart component and contained chart elements inline with project application design theme.".<br>
+                update: `Nelson commented "Styled bar-chart component and contained chart elements inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1701,7 +1701,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 13:45:00"),
-                update: `Nelson commented "Styled donut-chart component and contained chart element segments inline with project application design theme.".<br>
+                update: `Nelson commented "Styled donut-chart component and contained chart element segments inline with project application design theme."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1728,7 +1728,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 14:21:00"),
-                update: `Nelson commented "Added functionality to highlight ticket table-row on click, within ticket-list component".<br>
+                update: `Nelson commented "Added functionality to highlight ticket table-row on click, within ticket-list component."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -1755,7 +1755,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("July 15, 2022 15:13:00"),
-                update: `Nelson commented "Added style ngClass to target filter property table-header/column in ticket-list component, as required".<br>
+                update: `Nelson commented "Added style ngClass to target filter property table-header/column in ticket-list component, as required."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -2118,6 +2118,29 @@ export const initTicketsData = [
             {
                 date: new Date("July 18, 2022 09:19:00"),
                 update: "Nelson opened ticket."
+            }
+        ],
+        highlighted: false
+    },
+    {
+        number: 124,
+        priority: "High",
+        type: "Issue",
+        project: "issueTracker.app",
+        title: "Fix donut-chart svg circle rendering issue on Safari",
+        description: `Fix svg circle rendering issue on Safari web browser.`,
+        status: "Open",
+        assignee: "Nelson",
+        submitter: "Nelson",
+        log: [
+            {
+                date: new Date("July 20, 2022 19:32:00"),
+                update: "Nelson opened ticket."
+            },
+            {
+                date: new Date("July 20, 2022 19:44:00"),
+                update: `Nelson updated Status from Open to Pending.<br>
+                        Nelson commented "Looking into this. Initial investigation suggests issue is possibly linked to a bug with transform attribute values."`
             }
         ],
         highlighted: false
