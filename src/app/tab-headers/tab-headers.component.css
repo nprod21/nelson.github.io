@@ -8,7 +8,7 @@
 
 .tab-container::-webkit-scrollbar-thumb {
     background-color: #3d3e42;
-    opacity: 20%;
+    opacity: 50%;
 }
 
 .tab-container::-webkit-scrollbar-thumb:hover {
@@ -97,10 +97,12 @@
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
-    -webkit-user-select: none;  
-    -moz-user-select: none;    
-    -ms-user-select: none;      
-    user-select: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
 }
 
 .tab:-moz-drag-over {
@@ -126,7 +128,7 @@
 }
 
 .dragged-over {
-    border-left: dashed aqua;
+    border-left: dashed #55b4f4;
     border-left-width: 3px;
 }
 
@@ -136,8 +138,8 @@
 
 .dragged-end {
     background-color: #3b3c3c;
-    background-color: aqua;
-    border-right: dashed aqua;
+    background-color: #55b4f4;
+    border-right: dashed #55b4f4;
 }
 
 .close-button {
