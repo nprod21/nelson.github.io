@@ -16,6 +16,11 @@
 .tracker-body::-webkit-scrollbar-thumb {
   background-color: #fff;
   background-color: #134a9f;
+  opacity: 50%;
+}
+
+.tracker-body::-webkit-scrollbar-thumb:hover {
+  opacity: 80%;
 }
 
 * {
