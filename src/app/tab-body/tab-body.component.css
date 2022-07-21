@@ -12,7 +12,7 @@
   
   ::-webkit-scrollbar-thumb {
     background-color: #3d3e42;
-    opacity: 20%;
+    opacity: 50%;
   }
   
   ::-webkit-scrollbar-thumb:hover {
