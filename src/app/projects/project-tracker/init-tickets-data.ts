@@ -762,7 +762,7 @@ export const initTicketsData = [
         type: "Feature",
         project: "this.app",
         title: "Add draggable functionality to tab-headers",
-        description: `Add ability to drag tab-headers and reposition order within tab-headers container and update url route path`,
+        description: `Add ability to drag tab-headers and reposition order within tab-headers container and update url/location state`,
         status: "Closed",
         assignee: "Nelson",
         submitter: "Nelson",
@@ -777,7 +777,7 @@ export const initTicketsData = [
             },
             {
                 date: new Date("April 12, 2022 17:16:00"),
-                update: `Nelson commented "Implemented functionality to drag and reorder open tabs view and url route/path."<br>
+                update: `Nelson commented "Implemented functionality to drag and reorder open tabs view and update url/location state."<br>
                         Nelson updated Status from Pending to Closed.`
             },
         ],
@@ -2129,7 +2129,7 @@ export const initTicketsData = [
         project: "issueTracker.app",
         title: "Fix donut-chart svg circle rendering issue on Safari",
         description: `Fix svg circle rendering issue on Safari web browser.`,
-        status: "Open",
+        status: "Closed",
         assignee: "Nelson",
         submitter: "Nelson",
         log: [
@@ -2141,6 +2141,11 @@ export const initTicketsData = [
                 date: new Date("July 20, 2022 19:44:00"),
                 update: `Nelson updated Status from Open to Pending.<br>
                         Nelson commented "Looking into this. Initial investigation suggests issue is possibly linked to a bug with transform attribute values."`
+            },
+            {
+                date: new Date("July 21, 2022 15:04:00"),
+                update: `Nelson updated Status from Pending to Closed.<br>
+                        Nelson commented "Resolved issue - updated svg circle segments to align using newly calculated stroke-dasharray/dashoffset attributes, instead of transform/rotate, for browser rendering consistency."`
             }
         ],
         highlighted: false
