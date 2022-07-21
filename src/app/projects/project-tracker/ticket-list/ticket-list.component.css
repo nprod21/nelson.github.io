@@ -19,6 +19,10 @@
   opacity: 50%;
 }
 
+.ticket-list-container::-webkit-scrollbar-thumb:hover {
+  opacity: 80%;
+}
+
 .ticket-list-title-container::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -38,6 +42,10 @@
   background-color: #fff;
   background-color: #134a9f;
   opacity: 50%;
+}
+
+.ticket-list-title-container::-webkit-scrollbar-thumb:hover {
+  opacity: 80%;
 }
 
 :host {
