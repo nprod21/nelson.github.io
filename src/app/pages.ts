@@ -33,8 +33,8 @@ export const Pages = [
                     initially starting with C, before moving on to Object Oriented Programming with Java, via a thorough course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a>.
                     Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>, topics of which I intend to expand upon in the future, and a further course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
                     before eventually receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
-                    A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning new things, socialising and listening to various genres of music.\\
-                    Interested in continued further learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on exciting projects with positive people!\\
+                    A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning/experiencing new things, socialising and listening to various genres of music.\\
+                    Interested in continued learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on exciting projects with positive people!\\
                     `,
         subPages: [],
         iconClass: 'fa fa-user-o',
@@ -56,7 +56,7 @@ export const Pages = [
         name: 'skills',
         filepath: 'skills',
         content: ` To paraphrase a song lyric I like to live by;
-                    If I can't learn it, it can't be learnt. \\
+                    If I can't learn it, then it can't be learnt. \\
                 /* CORE TECH SKILLS */\\
                 Angular 13 {
                     features: [Components,
@@ -89,17 +89,17 @@ export const Pages = [
                         Draggable Elements, 
                         Media Queries, 
                         Z-Index];}
-                \\/* OTHER TECHNICAL FAMILIARITIES –\\
+                \\/* OTHER TECHNICAL FAMILIARITIES / SKILLS –\\
                 ** Java (basic knowledge)\\
                 ** Github (basic knowledge)\\
                 ** Adobe Illustrator / Photoshop (basic knowledge)\\
                 ** Microsoft Office Suite + Visio\\
                 ** Google Search (extensive daily usage) \\*/\\
                 \\/* NON-TECHNICAL / SOFT SKILLS –\\
-                ** Communication - comfortable interacting with all levels of awareness and seniority\\
-                ** Collaboration - always open-minded and eager to learn from other people's perspectives\\
-                ** Creativity - enjoy thinking outside of the box to overcome challenging obstacles\\
-                ** Teamwork - happy helping teammates with any issues and not afraid to ask for help if needed\\
+                ** Communication: comfortable interacting with all levels of awareness and seniority\\
+                ** Collaboration: always open-minded and eager to learn from other people's perspectives\\
+                ** Creativity: enjoy thinking outside of the box to overcome challenging obstacles\\
+                ** Teamwork: happy helping teammates with any issues and not afraid to ask for help if needed\\
                 */
                 `,
         subPages: [],
@@ -146,7 +146,6 @@ export const Pages = [
                         && secondly, a portfolio website to host all current && future projects.
                         Therefore, I decided to build this app in the style of a code editor's UI, with an integrated preview section.\\
                         <a href="https://github.com/nprod21/nprod21.github.io" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
-                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         TabHeaders Component {
                             summary: displays open tabs + controls tab reselection/closure;
@@ -200,10 +199,9 @@ export const Pages = [
                 name: 'localWeather.app',
                 filepath: 'localWeather.app',
                 content: `/* OBJECTIVE */\\
-                        For this project, my primary objective, was to build an application centered around data received from a third-party API call.
-                        My secondary objective was to gain familiarity with CSS flex, to structure a layout.\\
+                        For this project, my primary objective, was to build an application centered around data consumed from a third-party RESTful API.
+                        My secondary objective was to gain familiarity with CSS flex, to structure a simple layout.\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-weather" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
-                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         dynamic animated background image {
                             highlight: image source property binding varies depending on current weather description and time of day;}
@@ -212,9 +210,9 @@ export const Pages = [
                         dynamic text shadow {
                             highlight: color shade of grey or black used for text shadow, depending on time of day;}    
                         \\/* TODOs\\
-                        * add city search functionality\\
-                        * add non location-specific/universal background gif images for other cities\\
-                        * style demo simulation setter dropdowns && address positioning on responsive devices\\
+                        * Add city search functionality\\
+                        * Add non location-specific/universal background gif images for other cities\\
+                        * Style demo simulation setter dropdowns && address positioning on responsive devices\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
                         */
                        `,
@@ -244,7 +242,6 @@ export const Pages = [
                         * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! \\
                         */\\\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
-                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         3D Design {
                             highlights: [raised edges + outer shadows on body && buttons, button edges && shadows adjust when active, arrow buttons perform 2D transforms when active, inner shadow on display screen && solar panel];}
@@ -291,7 +288,6 @@ export const Pages = [
                 content: `/* OBJECTIVE */\\
                         The purpose of this project was to build a CRUD application, with reusable components heavily focused on data management and processing, alongside interactive presentation.\\
                         <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-tracker" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
-                        \\/* For optimal user experience, please view this application on any non Safari web browser. */\\
                         \\/* FEATURES */\\
                         Reusable chart components {
                                 highlights: [bar + donut chart components dynamically represent data summaries per input properties, interactive chart elements (bars/segments) facilitate list data filtering];}
@@ -330,7 +326,7 @@ export const Pages = [
         content: `Connect with me on LinkedIn <i class=\"fa fa-linkedin-square\"></i> --->\\\\ 
                     ||\\\\
                     Send me an email <i class=\"fa fa-pencil-square-o\"></i> --->\\
-                    /* nelson.daly@outlook.com */
+                    /* <a href="mailto:nelson.daly@outlook.com" title="Direct email">nelson.daly@outlook.com</a> */
                     `,
         subPages: [],
         iconClass: 'fa fa-address-card',
