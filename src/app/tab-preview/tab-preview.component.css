@@ -13,7 +13,7 @@
   
 ::-webkit-scrollbar-thumb {
     background-color: #3d3e42;
-    opacity: 20%;
+    opacity: 50%;
 }
   
 ::-webkit-scrollbar-thumb:hover {
@@ -43,6 +43,7 @@
     border-radius: 5px;
     background: #fff;
     border: solid 2px #2278cf;
+    cursor: pointer;
 }
 
 .toggle-btn {
@@ -65,15 +66,16 @@
 .selected-btn {
     color: #ffffff;
     font-size: 1em;
+    cursor: pointer;
 }
 
 .unselected-btn {
     font-size: 1em;
+    cursor: pointer;
 }
 
 .unselected-btn:hover {
-    font-size: 1.1em;
-    padding: 0px;
+    color: red;
 }
 
 .btn {
@@ -86,6 +88,7 @@
     border-radius: 5px;
     transition: .2s;
     transform: translateX(-1px) translateY(-1px);
+    cursor: pointer;
 }
 
 .preview-component {
