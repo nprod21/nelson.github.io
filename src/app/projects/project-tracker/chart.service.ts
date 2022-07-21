@@ -27,13 +27,16 @@ export class ChartService {
             name: value,
             count: 1,
             percentage: this.getPercentage(1),
-            rotate: ""
+            rotate: "",
+            strokeDashArray: "",
+            strokeDashOffset: 20
             };
           chartElements.push(chartElement);
         }  
       }
     });
-    chartElements = this.getChartElementsWithRotateValues(chartElements)
+    chartElements = this.getChartElementsWithRotateValues(chartElements);
+    chartElements = this.getChartElementsWithStrokeValues(chartElements);
     return chartElements;
   }
 
@@ -93,6 +96,27 @@ export class ChartService {
     }
     return 100 - aggregatePercentage;
   }
+
+  getChartElementsWithStrokeValues(chartElements: ChartElement[]): ChartElement[] {
+    /* Returns provided array of chartElements with each elements rotate property populated */
+    for(let i: number = 0; i < chartElements.length; i++) {
+      chartElements[i].strokeDashArray = this.getStrokeDashArrayValue(chartElements[i]);
+      chartElements[i].strokeDashOffset += this.getStrokeDashOffsetValue(i, chartElements);
+    }
+    return chartElements
+  }
+
+  getStrokeDashArrayValue(chartElement: ChartElement): string {
+    let remainingPercentage: number = 100 - chartElement.percentage;
+    let value: string = (chartElement.percentage - 0.5) + " " + (remainingPercentage + 0.5);
+    return value;
+  }
+
+  getStrokeDashOffsetValue(index: number, chartElements: ChartElement[]): number {
+    // if(index == 0) return;
+    if(index != 0) return this.getFreePercentage(index, chartElements);
+    else return 0;
+  }  
 
   getClassName(elementName: string): string {
     /* Returns formatted className for provided elementName
