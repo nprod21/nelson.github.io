@@ -29,57 +29,7 @@ export class ProjectTrackerComponent implements OnInit {
   private isTicketViewedSub!: Subscription;
   public selectedTicketNo: number = this.trackerService.getSelectedTicketNo();
 
-  public bgFill: string = "#134a9f";
-  public iconFill: string = "#dddddd";
-
-  public filterProperty!: string;
-  public filterValue!: string;
-
-  public showReportIssue: boolean = false;
   public showCharts: boolean = true;
-
-  public columns: string[] = ["number", "priority", "type", "project", "title", "description", "status", "assignee", "submitter"];
-  public sortedColumn: string = "number";
-  public sortPipeTrigger: boolean = false;
-  public sortReverse: boolean = false;
-  public sortableColumns: any[] = [
-    {
-      name: "number",
-      selected: true
-    },
-    {
-      name: "priority",
-      selected: false
-    },
-    {
-      name: "type",
-      selected: false
-    },
-    {
-      name: "project",
-      selected: false
-    },
-    {
-      name: "title",
-      selected: false
-    },
-    {
-      name: "description",
-      selected: false
-    },
-    {
-      name: "status",
-      selected: false
-    },
-    {
-      name: "assignee",
-      selected: false
-    },
-    {
-      name: "submitter",
-      selected: false
-    },
-  ]
 
   public showAssigneeTickets: boolean = false;
   public assigneeActiveTickets: boolean = true;
@@ -105,6 +55,27 @@ export class ProjectTrackerComponent implements OnInit {
     /* manually unsubscribes from observable subscription on component destruction */
     this.isTicketViewedSub.unsubscribe();
   }
+
+  /* PRIVATE METHODS (for component) */
+
+  private setExpanded(previewWidth: number): void {
+    /* Sets expanded status based on provided preview(app) width
+    && calls method to toggle display of shown welcome user message */
+    if(previewWidth > 400) this.expanded = true;
+    else if(previewWidth < 400) {
+      this.expanded = false;
+    }
+    this.toggleWelcome();
+  }
+
+  private toggleWelcome(): void {
+    /* Toggles bool used to display welcome user message in side navigation bar, if collapsed or expanded */
+    if(!this.expanded) this.showWelcome = this.expanded;
+    else setTimeout(()=> this.showWelcome = this.expanded, 60);
+  }
+
+
+  /* PUBLIC METHODS (for template) */
 
   public setSelectedMenuItem(label: string): void {
     /* Sets properties used for controlling views displayed
@@ -132,27 +103,10 @@ export class ProjectTrackerComponent implements OnInit {
     this.toggleWelcome();
   }
 
-  private setExpanded(previewWidth: number): void {
-    /* Sets expanded status based on provided preview(app) width
-    && calls method to toggle display of shown welcome user message */
-    if(previewWidth > 400) this.expanded = true;
-    else if(previewWidth < 400) {
-      this.expanded = false;
-    }
-    this.toggleWelcome();
-  }
-
-  private toggleWelcome(): void {
-    /* Toggles bool used to display welcome user message in side navigation bar, if collapsed or expanded */
-    if(!this.expanded) this.showWelcome = this.expanded;
-    else setTimeout(()=> this.showWelcome = this.expanded, 60);
-  }
-
   public onCloseReport(): void {
-    /* Sets selected menuItem to dashboard and toggles boolean used to retrigger the sort pipe
+    /* Sets selected menuItem to dashboard
     (called following ticket-form submission's 'onCloseReport' event) */
     this.setSelectedMenuItem("dashboard");
-    this.sortPipeTrigger = !this.sortPipeTrigger;
   }
 
   public setSelectedTicketNo(): void {
