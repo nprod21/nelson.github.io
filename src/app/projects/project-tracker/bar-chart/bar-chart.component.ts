@@ -13,7 +13,7 @@ export class BarChartComponent implements OnInit {
   @Input() category: string = "priority";
   @Output() elementSelect = new EventEmitter();
 
-  chartElements: ChartElement[] = [];
+  public chartElements: ChartElement[] = [];
 
   constructor(private chartService: ChartService) { }
 
@@ -26,25 +26,9 @@ export class BarChartComponent implements OnInit {
       && this.chartElements.length == 4) this.orderPriorityChartElements();
   }
 
-  getPercentage(count: number): number {
-    /* Returns percentage, of provided count, as a number (using total) */
-    return this.chartService.getPercentage(count);
-  }
+  /* PRIVATE METHODS (for component) */
 
-  getClassName(elementName: string): string {
-    /* Returns formatted className for provided elementName
-    (removes dot/period from project names) */
-    return this.chartService.getClassName(elementName);
-  }
-
-  setFilteredTickets(value: string): void {
-    /* Sets filtered tickets using input category and value arg provided
-    && emits elementSelect event output */
-    this.chartService.setFilteredTickets(this.category, value, false, true);
-    this.elementSelect.emit();
-  }
-
-  orderPriorityChartElements(): void {
+  private orderPriorityChartElements(): void {
     /* Reorders chart elements by predefined priority order (High-->Low) */
     let orderedChartElements: ChartElement[] = [];
     let lowIndex: number = this.chartElements.findIndex(element => element.name === "Low");
@@ -56,6 +40,26 @@ export class BarChartComponent implements OnInit {
     orderedChartElements.push(this.chartElements[highIndex]);
 
     this.chartElements = orderedChartElements;
+  }
+
+  /* PUBLIC METHODS (for template) */
+
+  public getPercentage(count: number): number {
+    /* Returns percentage, of provided count, as a number (using total) */
+    return this.chartService.getPercentage(count);
+  }
+
+  public getClassName(elementName: string): string {
+    /* Returns formatted className for provided elementName
+    (removes dot/period from project names) */
+    return this.chartService.getClassName(elementName);
+  }
+
+  public setFilteredTickets(value: string): void {
+    /* Sets filtered tickets using input category and value arg provided
+    && emits elementSelect event output */
+    this.chartService.setFilteredTickets(this.category, value, false, true);
+    this.elementSelect.emit();
   }
 
 }
