@@ -78,8 +78,8 @@ export class TicketListComponent implements OnInit {
 
   private isTicketViewedSub!: Subscription;
 
-  public latestFilter: string = this.trackerService.latestProperty;
-  public latestFilterValue: string = this.trackerService.latestValue;
+  public latestFilterProperty: string = this.trackerService.getFilterProperty();
+  public latestFilterValue: string = this.trackerService.getFilterValue();
 
   constructor(private trackerService: TrackerService) { }
 
@@ -90,14 +90,16 @@ export class TicketListComponent implements OnInit {
     this.isTicketViewedSub = this.trackerService.isTicketViewedObs.subscribe(sub => {
       this.getTickets();
     });
-    this.latestFilter = this.trackerService.latestProperty;
-    this.latestFilterValue = this.trackerService.latestValue;
+    this.latestFilterProperty = this.trackerService.getFilterProperty();
+    this.latestFilterValue = this.trackerService.getFilterValue();
   }
 
   ngOnDestroy(): void {
   /* manually unsubscribes from observable subscription on component destruction */
     this.isTicketViewedSub.unsubscribe();
   }
+
+  /* PRIVATE METHODS (for component) */
 
   private getFilteredTickets(): void {
     /* Assigns array of tracker service's filtered tickets to component's array of tickets */
@@ -123,6 +125,39 @@ export class TicketListComponent implements OnInit {
     if(this.keepFilter) this.filterColumn();
   }
 
+  private selectColumn(columnName: string): void {
+    /* Sets the selected property status of each sortableColumn element to true/false,
+    if the column name matches the provided columnName */
+    this.sortableColumns.forEach(column => {
+      if(column.name == columnName) column.selected = true;
+      else column.selected = false;
+    });
+  }
+
+  private filterColumn(): void {
+    /* Sets filtered property status of each sortableColumn element to true/false,
+    if the column name matches latestFilters value */    
+    this.sortableColumns.forEach(column => {
+      if(column.name == this.latestFilterProperty) column.filtered = true;
+      else column.filtered = false;
+    });
+  }
+  
+  private findTicketIndex(ticketNo: number): number {
+    /* Returns index of provided ticket number, in main tickets array */
+    return this.tickets.findIndex(ticket => ticket.number == ticketNo);
+  }
+
+  private unhighlightTicket(): void {
+    /* Sets currently highlighted ticket's highlighted value to false  */
+    if(this.highlightedTicketIndex != undefined) {
+      this.tickets[this.highlightedTicketIndex].highlighted = false
+    }
+  }
+
+  
+  /* PUBLIC METHODS (for template) */
+  
   public viewTicketDetails(ticketNo: number): void {
     /* Performs required actions to display provided ticket's details */
     this.unhighlightTicket();
@@ -140,33 +175,10 @@ export class TicketListComponent implements OnInit {
     this.selectColumn(column);
   }
 
-  private selectColumn(columnName: string): void {
-    /* Sets the selected property status of each sortableColumn element to true/false,
-    if the column name matches the provided columnName */
-    this.sortableColumns.forEach(column => {
-      if(column.name == columnName) column.selected = true;
-      else column.selected = false;
-    });
-  }
-
-  private filterColumn(): void {
-    /* Sets filtered property status of each sortableColumn element to true/false,
-    if the column name matches latestFilters value */    
-    this.sortableColumns.forEach(column => {
-      if(column.name == this.latestFilter) column.filtered = true;
-      else column.filtered = false;
-    });
-  }
-
   public setFilteredTickets(property: string, value: string, anyStatus: boolean, activeStatus?: boolean): void {
     /* Calls trackerService methods to set the filteredTickets array, using provided filter settings */
     if(activeStatus != null) this.trackerService.setFilteredTickets(property, value, anyStatus, activeStatus)
     else this.trackerService.setFilteredTickets(property, value, anyStatus);
-  }
-
-  private findTicketIndex(ticketNo: number): number {
-    /* Returns index of provided ticket number, in main tickets array */
-    return this.tickets.findIndex(ticket => ticket.number == ticketNo);
   }
 
   public highlightTicket(ticketNo: number): void {
@@ -177,13 +189,6 @@ export class TicketListComponent implements OnInit {
     if(this.highlightedTicketIndex != index) this.unhighlightTicket();
     this.tickets[index].highlighted = true;
     this.highlightedTicketIndex = index;
-  }
-
-  private unhighlightTicket(): void {
-    /* Sets currently highlighted ticket's highlighted value to false  */
-    if(this.highlightedTicketIndex != undefined) {
-      this.tickets[this.highlightedTicketIndex].highlighted = false
-    }
   }
 
   public isFilteredOnCol(column: string): boolean {
