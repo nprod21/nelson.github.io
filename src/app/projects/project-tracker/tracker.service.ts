@@ -37,8 +37,8 @@ export class TrackerService {
   private isTicketViewedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isTicketViewed);
   public isTicketViewedObs: Observable<boolean> = this.isTicketViewedSubject.asObservable();
   
-  public latestProperty: string = "";
-  public latestValue: string = "";
+  private filterProperty: string = "";
+  private filterValue: string = "";
 
   constructor() { }
 
@@ -46,6 +46,39 @@ export class TrackerService {
     /* Return the private array of menu items, containing label name and selected status */
     return this.menuItems;
   }
+
+  /* PRIVATE PROPERTIES (for service) */
+
+  private getTicketIndexByNo(ticketNo: number): number {
+    /* Return index of provided ticket number, in array of all tickets */
+    let number!: number;
+    for(let i: number = 0; i < this.tickets.length; i++) {
+      if(this.tickets[i].number == ticketNo) {
+        number = i;
+        break;
+      }
+    }
+    return number;
+  }
+
+  private getNextAvailableTicketNo(): number {
+    /* Returns the next available ticket number, to be assigned to new ticket */
+    let lastIndex: number = this.tickets.length - 1;
+    let nextNumber: number = this.tickets[lastIndex].number + 1;
+    return nextNumber;
+  }
+
+  private getOpenTickets(): Ticket[] {
+    /* Returns array of all open (non-closed) tickets
+    (used to set value of this.activeTickets property) */
+    let openTickets: Ticket[] = [];
+      this.tickets.forEach(ticket => {
+        if(ticket.status != "Closed") openTickets.push(ticket);
+      });
+      return openTickets;
+  }
+  
+  /* PUBLIC METHODS (for dependants) */
 
   public getSelectedTicketNo(): number {
     /* Return the number of the currently selected ticket */
@@ -63,19 +96,7 @@ export class TrackerService {
     let index: number = this.getTicketIndexByNo(ticketNo);
     return this.tickets[index];
   }
-
-  public getTicketIndexByNo(ticketNo: number): number {
-    /* Return index of provided ticket number, in array of all tickets */
-    let number!: number;
-    for(let i: number = 0; i < this.tickets.length; i++) {
-      if(this.tickets[i].number == ticketNo) {
-        number = i;
-        break;
-      }
-    }
-    return number;
-  }
-
+  
   public getIsTicketViewed(): boolean {
     /* Returns private isTicketViewed bool property */
     return this.isTicketViewed;
@@ -115,13 +136,6 @@ export class TrackerService {
     }
     this.tickets.push(ticket);
     this.activeTickets = this.getOpenTickets();
-  }
-
-  private getNextAvailableTicketNo(): number {
-    /* Returns the next available ticket number, to be assigned to new ticket */
-    let lastIndex: number = this.tickets.length - 1;
-    let nextNumber: number = this.tickets[lastIndex].number + 1;
-    return nextNumber;
   }
 
   public updateTicket(submission: any): boolean {
@@ -201,8 +215,8 @@ export class TrackerService {
     this.filteredTickets = [];
     type ObjectKey = keyof typeof this.tickets[0];
     const category = property as ObjectKey;
-    this.latestProperty = property;
-    this.latestValue = value;
+    this.filterProperty = property;
+    this.filterValue = value;
     this.tickets.forEach(ticket => {
       if(ticket[category] == value) {
         let isClosed: boolean = (ticket.status == "Closed");
@@ -216,16 +230,6 @@ export class TrackerService {
         }
       } 
     });  
-  }
-
-  private getOpenTickets(): Ticket[] {
-    /* Returns array of all open (non-closed) tickets
-    (used to set value of this.activeTickets property) */
-    let openTickets: Ticket[] = [];
-      this.tickets.forEach(ticket => {
-        if(ticket.status != "Closed") openTickets.push(ticket);
-      });
-      return openTickets;
   }
 
   public getActiveTickets(): Ticket[] {
@@ -263,6 +267,16 @@ export class TrackerService {
       }
     });
     return closedTicketCount;
+  }
+
+  public getFilterProperty(): string {
+    /* Returns private property */
+    return this.filterProperty;
+  }
+
+  public getFilterValue(): string {
+    /* Returns private property */
+    return this.filterValue;
   }
 
 }
