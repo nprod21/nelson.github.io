@@ -27,14 +27,14 @@ export const Pages = [
         folderClosed: false,
         name: 'about',
         filepath: 'about',
-        content: `I'm a web developer from London, currently working as a freelance Audio Engineer,
+        content: `I'm a Frontend/Web Developer from London, currently working as a freelance Audio Engineer,
                     with extensive prior experience providing Business Management Support, within a Technology Division, in Financial Services.\\
                     My programming journey began in 2020 /* excluding early experiments modifying the HTML of my MySpace page back in 2008 :) */,
                     initially starting with C, before moving on to Object Oriented Programming with Java, via a thorough course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a>.
                     Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>, topics of which I intend to expand upon in the future, and a further course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
                     before eventually receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
                     A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning/experiencing new things, socialising and listening to various genres of music.\\
-                    Interested in continued learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on exciting projects with positive people!\\
+                    Interested in continued learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on challenging projects with positive people!\\
                     `,
         subPages: [],
         iconClass: 'fa fa-user-o',
