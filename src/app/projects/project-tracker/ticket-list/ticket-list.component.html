@@ -1,7 +1,7 @@
 <div class="ticket-list-component-container">
     <div class="ticket-list-title">
         <div class="ticket-list-title-container">
-            <h3 *ngIf="(keepFilter || filterProperty) && !assignee" class="ticket-list-header">{{latestFilter | titlecase}}: '{{latestFilterValue}}' Tickets ({{tickets.length}})</h3>
+            <h3 *ngIf="(keepFilter || filterProperty) && !assignee" class="ticket-list-header">{{latestFilterProperty | titlecase}}: '{{latestFilterValue}}' Tickets ({{tickets.length}})</h3>
             <h3 *ngIf="filterClosed" class="ticket-list-header">Active Tickets ({{tickets.length}})</h3>
             <h3 *ngIf="assignee" class="ticket-list-header">
                 <ng-container *ngIf="activeStatus" else closed>Active</ng-container>
