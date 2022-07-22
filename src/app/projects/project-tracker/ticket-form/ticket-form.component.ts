@@ -12,7 +12,7 @@ export class TicketFormComponent implements OnInit {
 
   @Output() formClose = new EventEmitter();
 
-  ticketForm: FormGroup = this.formBuilder.group({
+  public ticketForm: FormGroup = this.formBuilder.group({
     priority: ['', Validators.required],
     type: ['', Validators.required],
     project: ['', Validators.required],
@@ -29,13 +29,15 @@ export class TicketFormComponent implements OnInit {
 
   ngOnInit(): void {  }
 
-  get priority() { return this.ticketForm?.get('priority'); }
-  get type() { return this.ticketForm?.get('type'); }
-  get project() { return this.ticketForm?.get('project'); }
-  get title() { return this.ticketForm?.get('title'); }
-  get description() { return this.ticketForm?.get('description'); }
+  /* PUBLIC METHODS (for template) */
 
-  addTicket(): void {
+  public get priority() { return this.ticketForm?.get('priority'); }
+  public get type() { return this.ticketForm?.get('type'); }
+  public get project() { return this.ticketForm?.get('project'); }
+  public get title() { return this.ticketForm?.get('title'); }
+  public get description() { return this.ticketForm?.get('description'); }
+
+  public addTicket(): void {
     /* Calls tracker service method to create new ticket, if form submission is valid
     && emits formClose output event */
     this.submitted = true;
