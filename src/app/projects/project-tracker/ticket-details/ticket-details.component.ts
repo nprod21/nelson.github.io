@@ -45,11 +45,16 @@ export class TicketDetailsComponent implements OnInit {
       comment: ['', Validators.required]
     });
   }
+  
+  /* PRIVATE METHODS (for component) */
 
   private setIsTicketViewed(bool: boolean): void {
     /* Calls tracker service method to set isTicketView value + behaviour subject/observable */
     this.trackerService.setIsTicketViewed(bool);
   }
+  
+
+  /* PUBLIC METHODS (for template) */
 
   public updateTicket(): void {
     /* Handles form submission to update ticket, if submission is valid
