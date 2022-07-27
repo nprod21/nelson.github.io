@@ -67,7 +67,7 @@
             </div>    
         </div>
     </div>
-    <div class="tracker-body" [style.height]="appHeight + 'px'" [style.width]="appWidth > 400 && expanded ? appWidth - 265 + 'px' : appWidth - 80 + 'px'" [ngClass]="appWidth > 400 && expanded ? 'body-trimmed' : 'body-full'">
+    <div class="tracker-body" [style.height]="appHeight + 'px'" [style.width]="appWidth > 400 && expanded ? appWidth - 265 + 'px' : appWidth - 80 + 'px'" [ngClass]="appWidth > 400 && expanded ? 'body-trimmed' : 'body-full'" [style.filter]="appWidth < 400 && expanded ? 'brightness(50%)' : ''">
         <app-ticket-form *ngIf="menuItems[1].selected && isTicketViewed == false" (formClose)="onCloseReport()" [style.width]="appWidth > 400 && expanded ? appWidth - 275 + 'px' : appWidth - 90 + 'px'"></app-ticket-form>
         <div class="ticket-charts-container">
             <div class="ticket-charts-container">
