@@ -18,17 +18,21 @@ export class BarChartComponent implements OnInit {
   constructor(private chartService: ChartService) { }
 
   ngOnInit(): void {
-    /* Assigns chart elements returned by chart service to component property
+    /* Assigns chart elements returned by chart service to new variable
     && if input category provided is priority and all priority values are present,
-        calls method to order chart elements by predefined priority order (High-->Low) */
-    this.chartElements = this.chartService.getChartElements(this.category);
-    if(this.category == "priority" 
-      && this.chartElements.length == 4) this.orderPriorityChartElements();
+        calls method to order chart elements by predefined priority order (High-->Low)
+          && assigns the returned ordered chart elements value to component property
+      otherwise, if above conditions do not apply, assigns temp variable to component property  */
+    let chartElements: ChartElement[] = this.chartService.getChartElements(this.category);
+    if(this.category == "priority" && this.chartElements.length == 4) {
+      this.chartElements = this.orderPriorityChartElements(chartElements);
+    }
+    else this.chartElements = chartElements;
   }
 
   /* PRIVATE METHODS (for component) */
 
-  private orderPriorityChartElements(): void {
+  private orderPriorityChartElements(chartElements: ChartElement[]): ChartElement[] {
     /* Reorders chart elements by predefined priority order (High-->Low) */
     let orderedChartElements: ChartElement[] = [];
     let lowIndex: number = this.chartElements.findIndex(element => element.name === "Low");
@@ -39,7 +43,7 @@ export class BarChartComponent implements OnInit {
     orderedChartElements.push(this.chartElements[mediumIndex]);
     orderedChartElements.push(this.chartElements[highIndex]);
 
-    this.chartElements = orderedChartElements;
+    return orderedChartElements;
   }
 
   /* PUBLIC METHODS (for template) */
