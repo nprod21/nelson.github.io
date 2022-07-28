@@ -64,7 +64,7 @@
 }
 
 .body-expanded-width {
-  width: calc(100vw - 350px);
+  width: calc(100vw - 315px);
 }
 
 .body-collapsed-width {
@@ -84,7 +84,7 @@
   grid-row: span 7;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 40px 1fr;
   background-color: #202327;
 }
 
@@ -107,14 +107,14 @@
   position: relative;
   grid-column: span 1;
   grid-row: span 1;
-  height: calc(((100vh / 9) * 7) - 50px);
+  height: calc(((100vh / 9) * 7) - 40px);
   display: grid;
   grid-template-columns: max-content min-content max-content;
   grid-template-rows: 1fr;
 }
 
 .content-expanded-width {
-  width: calc((100vw - 350px) / 1);
+  width: calc((100vw - 315px) / 1);
 }
 
 .content-collapsed-width {
