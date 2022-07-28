@@ -23,7 +23,7 @@ export class TabHeadersComponent implements OnInit, OnDestroy {
   private droppedOnTabID: number = 0;
 
   public openPages = this.tabService.getTabs();
-  public tabHeight: string = "50px";
+  public tabHeight: string = "40px";
 
   public pageFill: string = "#ffffff";
   public previewFill: string = "#ffffff";
@@ -171,8 +171,8 @@ export class TabHeadersComponent implements OnInit, OnDestroy {
       let tabContainerViewWidth: any = document.getElementById("tabscontainer")?.clientWidth;
       let tabContainerInnerWidth: any = document.getElementById("tabscontainer")?.scrollWidth;
       let tabsOverflow: boolean = (tabContainerViewWidth < tabContainerInnerWidth);
-      if(tabsOverflow) this.tabHeight = "44px";
-      else if(!tabsOverflow) this.tabHeight = "50px";
+      if(tabsOverflow) this.tabHeight = "34px";
+      else if(!tabsOverflow) this.tabHeight = "40px";
     }, 1);
   }
 
