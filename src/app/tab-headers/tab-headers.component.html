@@ -62,13 +62,30 @@
         </ng-container>
     </div>
     <div class="split-screen-icon-container" title="Toggle split screen">
-        <svg class="split-screen-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172.16 172.77" (click)="handleToggle()">
+        <!-- <svg class="split-screen-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172.16 172.77" (click)="handleToggle()">
             <g class="split-screen-icon-group">
               <path class="outline" fill="#fff" d="M0,86Q0,49.69,0,13.44C0,3.08,3.09,0,13.4,0H159c9.95,0,13.15,3.19,13.15,13.2q0,73,0,146c0,10.2-3.28,13.51-13.44,13.51q-72.79,0-145.6,0c-9.87,0-13.09-3.3-13.1-13.28Q0,122.72,0,86ZM7,31.19a19.42,19.42,0,0,0-.28,2.05q0,64-.08,128c0,4.55,2.11,5.63,6.18,5.61,21.67-.11,43.34-.05,65-.07,1.27,0,2.54-.22,3.67-.33V31.19Zm83.5,135.55H158c7.18,0,7.37-.19,7.37-7.27q0-61.5,0-123c0-1.75-.14-3.5-.23-5.29H90.51Z"/>
               <path class="space-left" [style.fill]="pageFill" d="M7,31.19h74.5V166.43c-1.13.11-2.4.33-3.67.33-21.67,0-43.34,0-65,.07-4.07,0-6.19-1.06-6.18-5.61q.15-64,.08-128A19.42,19.42,0,0,1,7,31.19Z" fill="#fff"/>
               <path class="space-right" [style.fill]="previewFill" d="M90.51,166.74V31.19h74.64c.09,1.79.23,3.54.23,5.29q0,61.5,0,123c0,7.08-.19,7.27-7.37,7.27Z" fill="#fff"/>
             </g>
+        </svg> -->
+        <!-- <svg class="split-screen-icon-v2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.01 134.16" (click)="handleToggle()">
+            <g class="split-screen-icon-v2-group">
+              <path class="split-screen-outline" fill="#fff" d="M90,0q37.74,0,75.49,0C175.77,0,180,4.27,180,14.59q0,52.5,0,105c0,10.3-4.26,14.57-14.53,14.57h-151C4.24,134.15,0,129.87,0,119.55q0-52.5,0-105C0,4.24,4.22,0,14.52,0Q52.26,0,90,0ZM12,121.09H168v-109H12Z"/>
+              <path class="split-screen-white-space" fill="transparent" d="M12,121.09v-109H168v109Zm75-7v-94H20v94Zm73-94H93v94h67Z"/>
+              <path class="split-screen-icon-left" [style.fill]="pageFill" d="M87,114.09H20v-94H87Z"/>
+              <path class="split-screen-icon-right" [style.fill]="previewFill" d="M160,20.09v94H93v-94Z"/>
+            </g>
+        </svg> -->
+        <svg class="split-screen-icon-v2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.01 134.16" (click)="handleToggle()">
+            <g class="split-screen-icon-v2-group">
+              <path class="split-screen-outline" fill="#DEE1E5" d="M90,0H165.5C175.77,0,180,4.27,180,14.6q0,52.48,0,105c0,10.31-4.26,14.57-14.53,14.58h-151C4.24,134.15,0,129.87,0,119.55q0-52.48,0-105C0,4.25,4.22,0,14.52,0ZM12,121.09H168v-109H12Z" transform="translate(0 -0.01)"/>
+              <path class="split-screen-white-space" fill="transparent" d="M12,121.09v-109H168v109Zm75-7v-94H20v94Zm73-94H93v94h67Z" transform="translate(0 -0.01)"/>
+              <path class="split-screen-icon-left" [style.fill]="pageFill" d="M82.16,110.69H24.72V22.49H82.16Z" transform="translate(0 -0.01)"/>
+              <path class="split-screen-icon-right" [style.fill]="previewFill" d="M155.29,22.49v88.2H97.52V22.49Z" transform="translate(0 -0.01)"/>
+            </g>
         </svg>
           
+            
     </div>
 </div>
