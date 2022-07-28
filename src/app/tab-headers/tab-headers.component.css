@@ -41,7 +41,7 @@
 }
 
 .tab-header-expanded-width {
-    width: calc(100vw - 350px);
+    width: calc(100vw - 315px);
 }
   
 .tab-header-collapsed-width {
@@ -59,10 +59,10 @@
     display: grid;
 }
 
-.split-screen-icon {
+.split-screen-icon, .split-screen-icon-v2 {
     position: relative;
-    height: 50%;
-    width: 50%;
+    height: 60%;
+    width: 60%;
     place-self: center;
     cursor: pointer;
     /* border: solid 1px #fff; */
@@ -82,7 +82,7 @@
     position: relative;
     align-self: start;
     background-color: #202327;
-    height: 50px;
+    height: 40px;
     padding: 0px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -149,8 +149,9 @@
     border-radius: 4px;
     border: none;
     background-color: transparent;
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: sans-serif, Tahoma, Geneva, Verdana, 'Segoe UI';
 }
 
 .tab-content {
