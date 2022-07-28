@@ -38,7 +38,7 @@
 }
 
 .panel-expanded-width {
-    width: calc(100vw - 350px);
+    width: calc(100vw - 315px);
 }
   
 .panel-collapsed-width {
