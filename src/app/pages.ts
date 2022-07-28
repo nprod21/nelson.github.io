@@ -118,7 +118,7 @@ export const Pages = [
     {
         id: 3,
         folder: true,
-        folderClosed: true,
+        folderClosed: false,
         name: 'projects',
         filepath: 'projects',
         content: '',
