@@ -15,9 +15,9 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
   private tabOpenSub!: Subscription;
   
   private viewPosition: number = 0;
-  private sidebarWidth: number = 350;
+  private sidebarWidth: number = 315;
   private contentResized: boolean = false;
-  private windowWidthMinusSidebarHalved: number = (window.innerWidth - 350) / 2;
+  private windowWidthMinusSidebarHalved: number = (window.innerWidth - 315) / 2;
 
   public pageDisplay: string = "grid";
   public pageColSpan: string = "span 1"
@@ -126,7 +126,7 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
     if(this.resizeActive) {
       this.contentResized = true;
       let contentOffsetLeft: any = document.getElementById("content")?.offsetLeft;
-      let sidebarWidth: number = 350;
+      let sidebarWidth: number = 315;
       if(!this.sidebarExpanded) sidebarWidth = 50;
       let contentNewWidth: number = event.clientX - sidebarWidth - contentOffsetLeft - 1;
       let bodyWidth: any = document.getElementById("bodyContainer")?.offsetWidth;
@@ -202,7 +202,7 @@ export class UserInterfaceComponent implements OnInit, OnDestroy {
     /* sets widths of: page/tab text/content && preview sections
         taking into account the view toggle position
         && whether sections has been manually resized */
-    if(this.sidebarExpanded) this.sidebarWidth = 350;
+    if(this.sidebarExpanded) this.sidebarWidth = 315;
     else if(!this.sidebarExpanded) this.sidebarWidth = 50;
     if(initialize) {
       let splitInnerWidth: number = (window.innerWidth - this.sidebarWidth - 10) / 2;
