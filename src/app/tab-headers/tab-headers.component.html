@@ -23,7 +23,7 @@
                                 <span *ngIf="tab.id == 5" class="at-sign">@</span>
                             </div>    
                         </div>
-                        <div class="tab-name" [style.height]="tabHeight">{{ tab.name }}</div>
+                        <div class="tab-name" [style.height]="tabHeight" [style.color]="tab.color">{{ tab.name }}</div>
                         <div class="tab-close-button" [style.height]="tabHeight">
                             <button class="close-button" [ngClass]="tab.selected ? 'open-tab-x' : 'tab-x'" (click)="closeTab(tab)" title="Close tab">×</button>    
                         </div>
@@ -52,7 +52,7 @@
                                 <span *ngIf="tab.id == 5" class="at-sign">@</span>
                             </div>    
                         </div>
-                        <div class="tab-name" title="Select tab" [style.height]="tabHeight">{{ tab.name }}</div>
+                        <div class="tab-name" title="Select tab" [style.height]="tabHeight" [style.color]="tab.color">{{ tab.name }}</div>
                         <div class="tab-close-button" [style.height]="tabHeight">
                             <button class="close-button" [ngClass]="tab.selected ? 'open-tab-x' : 'tab-x'" (click)="closeTab(tab)" title="Close tab">×</button>    
                         </div>
