@@ -17,6 +17,7 @@ export interface Page {
     previewToggle: string;
     previewContent: string;
     draggedOver: boolean;
+    color: string;
 }
 // interface implemented below and by services for references of object instances
 
@@ -34,7 +35,7 @@ export const Pages = [
                     Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>, topics of which I intend to expand upon in the future, and a further course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
                     before eventually receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
                     A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning/experiencing new things, socialising and listening to various genres of music.\\
-                    Interested in continued learning and development using Angular, plus the entire frontend ecosystem, especially CSS, and working on challenging projects with positive people!\\
+                    Interested in continued development and progression using Angular, with a focus on building state management and testing experience, alongside further learning of the entire frontend ecosystem, and working on challenging projects with positive people!\\
                     `,
         subPages: [],
         iconClass: 'fa fa-user-o',
@@ -48,6 +49,7 @@ export const Pages = [
         previewToggle: '0',
         previewContent: '',
         draggedOver: false,
+        color: "#cccccc"
     },
     {
         id: 2,
@@ -114,6 +116,7 @@ export const Pages = [
         previewToggle: '0',
         previewContent: '',
         draggedOver: false,
+        color: "#BEA47F"
     },
     {
         id: 3,
@@ -133,6 +136,7 @@ export const Pages = [
         previewToggle: '',
         previewContent: '',
         draggedOver: false,
+        color: "#BEA47F",
         subPages: [
             {
                 id: 6,
@@ -191,6 +195,7 @@ export const Pages = [
                 previewToggle: '0',
                 previewContent: 'Demo or Live previewContent',
                 draggedOver: false,
+                color: "#BEA47F"
             },
             {
                 id: 7,
@@ -228,6 +233,7 @@ export const Pages = [
                 previewToggle: '110px',
                 previewContent: 'Demo or Live previewContent',
                 draggedOver: false,
+                color: "#cccccc"
             },
             {
                 id: 8,
@@ -248,7 +254,7 @@ export const Pages = [
                         Representational display screen {
                             highlights: [visible inactive LCD placeholders, far left/right arrows indicate character overflow, repositionable blinking cursor];}
                         Numeric && Arrow key press button control {
-                            highlights: [active style ngClasses toggled by keydown/up events, corresponding numeric entries register in business logic, arrow entries reposition cursor +/-1 || to start/end of equation];}
+                            highlights: [active style ngClasses toggled by keydown/up events, corresponding numeric entries register in business logic, arrow right/left entries reposition cursor +/- 1 position, arrow up/down entries reposition cursor to start/end of equation];}
                         Nested equation calculations {
                             highlights: [methods retrieve preceding + succeeding arguments for advanced operations where required];
                             /* eg for squared/power of operations - multiple can be nested && each base argument is initially entered before these functions */\\}
@@ -278,6 +284,7 @@ export const Pages = [
                 previewToggle: '110px',
                 previewContent: 'Demo or Live previewContent',
                 draggedOver: false,
+                color: "#cccccc"
             },
             {
                 id: 9,
@@ -314,6 +321,7 @@ export const Pages = [
                 previewToggle: '110px',
                 previewContent: 'Demo or Live previewContent',
                 draggedOver: false,
+                color: "#72c790"
             },
         ]
     },
@@ -340,5 +348,6 @@ export const Pages = [
         previewToggle: '0',
         previewContent: "<app-main-window></app-main-window>",
         draggedOver: false,
+        color: "#cccccc"
     }
 ];
