@@ -2150,4 +2150,55 @@ export const initTicketsData = [
         ],
         highlighted: false
     },
+    {
+        number: 125,
+        priority: "High",
+        type: "Issue",
+        project: "this.app",
+        title: "Fix route params ignore case comparison",
+        description: `Ignore case when comparing route params to page filepaths. For example, param: 'issuetracker.app' currently does not return a true outcome when checked for page validity, therefore the intended page does not load as expected.`,
+        status: "Closed",
+        assignee: "Nelson",
+        submitter: "Nelson",
+        log: [
+            {
+                date: new Date("July 30, 2022 10:46:00"),
+                update: "Nelson opened ticket."
+            },
+            {
+                date: new Date("July 20, 2022 10:47:00"),
+                update: `Nelson updated Status from Open to Pending.<br>
+                        Nelson commented "Will resolve by ignoring case during string comparisons."`
+            },
+            {
+                date: new Date("July 30, 2022 10:58:00"),
+                update: `Nelson updated Status from Pending to Closed.<br>
+                        Nelson commented "Resolved issue - converted both route params and a page filepath copy to upper case prior to comparison. Given param 'issuetracker.app' now returns true when checked for page validity, loading the intended page as expected."`
+            }
+        ],
+        highlighted: false
+    },
+    {
+        number: 126,
+        priority: "High",
+        type: "Feature",
+        project: "issueTracker.app",
+        title: "Add component state management to save ticket data updates",
+        description: `Implement state management using Angular component store for user additions/modifications of ticket data.`,
+        status: "Pending",
+        assignee: "Nelson",
+        submitter: "Nelson",
+        log: [
+            {
+                date: new Date("August 01, 2022 11:17:00"),
+                update: "Nelson opened ticket."
+            },
+            {
+                date: new Date("August 01, 2022 11:20:00"),
+                update: `Nelson updated Status from Open to Pending.<br>
+                        Nelson commented "Exploring viable solutions."`
+            }
+        ],
+        highlighted: false
+    },
 ] 
