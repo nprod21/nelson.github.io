@@ -74,13 +74,13 @@
                             <span *ngIf="page.id == 5" class="at-icon">@</span>
                         </div>
                     </div>
-                    <div class="item-name">{{ page.name }}</div>
+                    <div class="item-name" [style.color]="page.color">{{ page.name }}</div>
                 </div>
             </ng-container>
             <ng-container *ngIf="page.folder">
                 <div class="explorer-item" (click)="toggleFolder(page)" [ngClass]="page.selected ? 'selected' : ''" title="Toggle folder">
                     <div class="item-icon"><i class="{{ page.iconClass }}"></i></div>
-                    <div class="item-name">{{ page.name }}</div>
+                    <div class="item-name" [style.color]="page.color">{{ page.name }}</div>
                 </div>
                 <ng-container *ngIf="page.folderClosed === false">
                     <div class="sub-folder-container">
@@ -95,7 +95,7 @@
                                     <path d="M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z" fill="#FFF"/>
                                 </svg>
                             </div>
-                            <div class="item-name">{{ subPage.name }}</div>
+                            <div class="item-name" [style.color]="subPage.color">{{ subPage.name }}</div>
                         </div>
                     </div>
                 </ng-container>
