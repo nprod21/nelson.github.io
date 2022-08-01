@@ -140,15 +140,11 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
           r = r.firstChild;
         }
         r.params.subscribe(params => {
-          if(params['first'])  console.warn("params['first'] == " + params['first']);
-          if(params['second'])  console.warn("params['second'] == " + params['second']);
-          if(params['third'])  console.warn("params['third'] == " + params['third']);
 
           // if first param only
           if(params['first'] && !params['second'] && !params['third']) {
             let pageIsValid = this.isPageValid(params['first']);
             if(pageIsValid) {
-              console.warn("pageIsValid == " + params['first']);
               this.tabService.addTab(this.getPageByPath(params['first']));
               if(this.getPageByPath(params['first']).parentFolderId > 0) {
                 let parentFolderID = this.getPageByPath(params['first']).parentFolderId;
@@ -239,27 +235,33 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
     /* checks if provided route event param path is a valid page
     && returns outcome */
     let isValid: boolean = false;
+    pagePath = pagePath.toLocaleUpperCase();
     this.pages.forEach(element => {
-      if(pagePath == element.filepath && !element.folder) {
+      let elementFilepath: string = element.filepath.toLocaleUpperCase();
+      if(pagePath == elementFilepath && !element.folder) {
         isValid = true;
       }
       if(element.folder) {
         element.subPages.forEach(subElement => {
-          if(pagePath === subElement.filepath && !subElement.folder) isValid = true;
+          let subElementFilepath: string = subElement.filepath.toLocaleUpperCase();
+          if(pagePath === subElementFilepath && !subElement.folder) isValid = true;
         });
       }
     });
     return isValid;
   }
 
-  private getPageByPath(pagePath: string): any {
+  private getPageByPath(pagePathProvided: string): any {
+    pagePathProvided = pagePathProvided.toLocaleUpperCase();
     for(let i: number = 0; i < this.pages.length; i++) {
-      if(pagePath == this.pages[i].filepath) {
+      let pageFilePath = this.pages[i].filepath.toLocaleUpperCase();
+      if(pagePathProvided == pageFilePath) {
         return this.pages[i];
       }
       if(this.pages[i].folder) {
         for(let j: number = 0; j < this.pages[i].subPages.length; j++) {
-          if(pagePath == this.pages[i].subPages[j].filepath) {
+          let subPageFilePath = this.pages[i].subPages[j].filepath.toLocaleUpperCase();
+          if(pagePathProvided == subPageFilePath) {
             return this.pages[i].subPages[j];
           }
         }
