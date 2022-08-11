@@ -69,14 +69,14 @@
     </div>
     <div class="tracker-body" [style.height]="appHeight + 'px'" [style.width]="appWidth > 400 && expanded ? appWidth - 265 + 'px' : appWidth - 80 + 'px'" [ngClass]="appWidth > 400 && expanded ? 'body-trimmed' : 'body-full'" [style.filter]="appWidth < 400 && expanded ? 'brightness(50%)' : ''">
         <app-ticket-form *ngIf="menuItems[1].selected && isTicketViewed == false" (formClose)="onCloseReport()" [style.width]="appWidth > 400 && expanded ? appWidth - 275 + 'px' : appWidth - 90 + 'px'"></app-ticket-form>
-        <div class="ticket-charts-container">
+        <div *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts" class="ticket-charts-container">
             <div class="ticket-charts-container">
-                <app-bar-chart *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts" [category]="'priority'" (elementSelect)="filterTickets()"></app-bar-chart>
-                <app-donut-chart *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts" [category]="'project'" (elementSelect)="filterTickets()"></app-donut-chart>
+                <app-bar-chart *ngIf="isTicketViewed == false"  [category]="'priority'" (elementSelect)="filterTickets()"></app-bar-chart>
+                <app-donut-chart [category]="'project'" (elementSelect)="filterTickets()"></app-donut-chart>
             </div>
             <div class="ticket-charts-container">
-                <app-donut-chart *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts" [category]="'type'" (elementSelect)="filterTickets()"></app-donut-chart>
-                <app-bar-chart *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts" [category]="'status'" (elementSelect)="filterTickets()"></app-bar-chart>
+                <app-donut-chart [category]="'type'" (elementSelect)="filterTickets()"></app-donut-chart>
+                <app-bar-chart [category]="'status'" (elementSelect)="filterTickets()"></app-bar-chart>
             </div>    
         </div>
         <div *ngIf="menuItems[0].selected && isTicketViewed == false && showCharts == false" class="return" (click)="resetFilter()">
