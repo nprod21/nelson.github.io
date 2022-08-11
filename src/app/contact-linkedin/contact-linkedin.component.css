@@ -84,22 +84,31 @@
     text-align: center;
 }
 
-h3 {
-    font-size: 28pt;
+.headers > * {
+    margin: 30px;
+}
+
+.linkedin-name {
+    font-size: 2.25rem;
     font-weight: 550;
 }
 
-h4 {
-    font-size: 16pt;
+.linkedin-headline {
+    font-size: 1.5rem;
+    font-weight: 525;
 }
 
-h4,h5 {
+.linkedin-location {
+    font-size: 1.33rem;
+}
+
+.linkedin-location, .linkedin-connections {
     color: #666666;
     font-weight: normal;
 }
 
-h5 {
-    font-size: 16pt;
+.linkedin-connections {
+    font-size: 1.25rem;
 }
 
 .ext-link {
