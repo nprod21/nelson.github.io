@@ -83,6 +83,21 @@ export class ChartService {
     else return 0;
   }
 
+  private orderPriorityChartElements(chartElements: ChartElement[]): ChartElement[] {
+    /* Returns array of reordered chart elements by predefined priority order (High-->Low) */
+    let orderedChartElements: ChartElement[] = [];
+    let lowIndex: number = chartElements.findIndex(element => element.name === "Low");
+    let mediumIndex: number = chartElements.findIndex(element => element.name === "Medium");
+    let highIndex: number = chartElements.findIndex(element => element.name === "High");
+    
+    orderedChartElements.push(chartElements[highIndex]);
+    orderedChartElements.push(chartElements[mediumIndex]);
+    orderedChartElements.push(chartElements[lowIndex]);
+
+    console.warn("exiting order priority bar chart elements");
+    return orderedChartElements;
+  }
+
   /* PUBLIC METHODS */
   
   public getChartElements(property: string): ChartElement[] {
@@ -109,8 +124,16 @@ export class ChartService {
         }  
       }
     });
+    
     chartElements = this.getChartElementsWithRotateValues(chartElements);
     chartElements = this.getChartElementsWithStrokeValues(chartElements);
+
+    if(property == "priority" && chartElements.length == 3) {
+      // setTimeout(() => 
+      chartElements = this.orderPriorityChartElements(chartElements)
+      // , 10000);      
+    }
+
     return chartElements;
   }
 
