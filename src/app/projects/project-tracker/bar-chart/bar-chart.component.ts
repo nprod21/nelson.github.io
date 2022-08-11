@@ -10,41 +10,19 @@ import { ChartElement } from '../chart-element';
 })
 export class BarChartComponent implements OnInit {
 
-  @Input() category: string = "priority";
+  @Input() set category(value: string) {
+    this.chartCategory = value;
+    this.chartElements = this.chartService.getChartElements(this.chartCategory);
+  }
+
   @Output() elementSelect = new EventEmitter();
 
+  public chartCategory: string = "";
   public chartElements: ChartElement[] = [];
 
   constructor(private chartService: ChartService) { }
 
-  ngOnInit(): void {
-    /* Assigns chart elements returned by chart service to new variable
-    && if input category provided is priority and all priority values are present,
-        calls method to order chart elements by predefined priority order (High-->Low)
-          && assigns the returned ordered chart elements value to component property
-      otherwise, if above conditions do not apply, assigns temp variable to component property  */
-    let chartElements: ChartElement[] = this.chartService.getChartElements(this.category);
-    if(this.category == "priority" && this.chartElements.length == 4) {
-      this.chartElements = this.orderPriorityChartElements(chartElements);
-    }
-    else this.chartElements = chartElements;
-  }
-
-  /* PRIVATE METHODS (for component) */
-
-  private orderPriorityChartElements(chartElements: ChartElement[]): ChartElement[] {
-    /* Reorders chart elements by predefined priority order (High-->Low) */
-    let orderedChartElements: ChartElement[] = [];
-    let lowIndex: number = this.chartElements.findIndex(element => element.name === "Low");
-    let mediumIndex: number = this.chartElements.findIndex(element => element.name === "Medium");
-    let highIndex: number = this.chartElements.findIndex(element => element.name === "High");
-
-    orderedChartElements.push(this.chartElements[lowIndex]);
-    orderedChartElements.push(this.chartElements[mediumIndex]);
-    orderedChartElements.push(this.chartElements[highIndex]);
-
-    return orderedChartElements;
-  }
+  ngOnInit(): void {  }
 
   /* PUBLIC METHODS (for template) */
 
@@ -62,7 +40,7 @@ export class BarChartComponent implements OnInit {
   public setFilteredTickets(value: string): void {
     /* Sets filtered tickets using input category and value arg provided
     && emits elementSelect event output */
-    this.chartService.setFilteredTickets(this.category, value, false, true);
+    this.chartService.setFilteredTickets(this.chartCategory, value, false, true);
     this.elementSelect.emit();
   }
 
