@@ -28,15 +28,33 @@ export const Pages = [
         folderClosed: false,
         name: 'about',
         filepath: 'about',
-        content: `I'm a Frontend/Web Developer from London, currently working as a freelance Audio Engineer,
-                    with extensive prior experience providing Business Management Support, within a Technology Division, in Financial Services.\\
-                    My programming journey began in 2020 /* excluding early experiments modifying the HTML of my MySpace page back in 2008 :) */,
-                    initially starting with C, before moving on to Object Oriented Programming with Java, via a thorough course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a>.
-                    Following on from this, I completed a subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>, topics of which I intend to expand upon in the future, and a further course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
-                    before eventually receiving a recommendation to check out Angular's Tour of Heroes tutorial, and I've been enjoying diving deeper with Angular almost everyday since!\\
-                    A little about me personally, I'm a fan of football, outdoor activities, reading non-fiction, learning/experiencing new things, socialising and listening to various genres of music.\\
-                    Interested in continued development and progression using Angular, with a focus on building state management and testing experience, alongside further learning of the entire frontend ecosystem, and working on challenging projects with positive people!\\
-                    `,
+        content: `I'm a Front-End/Web Developer from London,
+                currently working as a Technical Consultant,
+                with extensive experience providing support for Management Systems,
+                within the Engineering/Technology Division of a multinational investment company.\\
+                My programming journey initially began in 2015 /* excluding early experiments adjusting the HTML and CSS of my MySpace page back in 2008 */,
+                with a brief introduction to Java 8,
+                and resumed in 2019 with a renewed focus to transition into development full-time.
+                Following suggestions from a few Senior Engineers,
+                I undertook a course offered by Microsoft on Logic and Computational Thinking.
+                After completing this preliminary course, I chose to proceed in the opposite direction of recommendations to proceed with Python first,
+                by commencing an Introduction to Computer Science course using C.
+                /* My thinking behind this was that building a foundation with Python first would be analogous to learning to drive a car automatically, whereas developing with a lower-level programming language would be akin to learning to drive manually */\\
+                Midway through this introductory course, a few of the low-level concepts seemed a little too advanced to continue with,
+                therefore I chose to switch to a more suitable course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a> offered by University of Pennsylvania,
+                which provided a thorough overview of Object Oriented Programming with Java.
+                Following on from this,
+                I completed the subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>,
+                and a final course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
+                before eventually receiving a recommendation to check out the Angular Tour of Heroes tutorial,
+                and I've been enjoying diving deeper with Angular 13 almost everyday since!\\    
+                A little about me personally, I'm a fan of football and outdoor activities,
+                reading non-fiction, learning and experiencing new things,
+                socialising and listening to various genres of music.\\    
+                Interested in continued progression with front-end development,
+                with a desire to also gain back-end experience developing microservices,
+                alongside working on challenging projects with positive people!\\\\
+                `,
         subPages: [],
         iconClass: 'fa fa-user-o',
         selected: false,
@@ -93,6 +111,7 @@ export const Pages = [
                         Z-Index];}
                 \\/* OTHER TECHNICAL FAMILIARITIES / SKILLS –\\
                 ** Java (basic knowledge)\\
+                ** C# (basic knowledge)\\
                 ** Github (basic knowledge)\\
                 ** Adobe Illustrator / Photoshop (basic knowledge)\\
                 ** Microsoft Office Suite + Visio\\
