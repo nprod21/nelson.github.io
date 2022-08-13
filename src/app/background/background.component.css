@@ -9,11 +9,11 @@
 
 .main-expanded-width {
     width: calc(100vw - 300px);
-  }
+}
   
 .main-collapsed-width {
     width: calc(100vw - 50px);
-  }
+}
 
 .nlogo-container {
     position: relative;
