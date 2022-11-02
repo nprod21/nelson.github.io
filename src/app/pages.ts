@@ -28,32 +28,24 @@ export const Pages = [
         folderClosed: false,
         name: 'about',
         filepath: 'about',
-        content: `I'm a Front-End/Web Developer from London,
-                currently working as a Technical Consultant,
+        content: `I'm a Front-End Developer from London,
+                currently working as a Technical Consultant focused on web development using Angular,
                 with extensive experience providing support for Management Systems,
                 within the Engineering/Technology Division of a multinational investment company.\\
-                My programming journey initially began in 2015 /* excluding early experiments adjusting the HTML and CSS of my MySpace page back in 2008 */,
-                with a brief introduction to Java 8,
-                and resumed in 2019 with a renewed focus to transition into development full-time.
-                Following suggestions from a few Senior Engineers,
-                I undertook a course offered by Microsoft on Logic and Computational Thinking.
-                After completing this preliminary course, I chose to proceed in the opposite direction of recommendations to proceed with Python first,
-                by commencing an Introduction to Computer Science course using C.
-                /* My thinking behind this was that building a foundation with Python first would be analogous to learning to drive a car automatically, whereas developing with a lower-level programming language would be akin to learning to drive manually */\\
-                Midway through this introductory course, a few of the low-level concepts seemed a little too advanced to continue with,
-                therefore I chose to switch to a more suitable course on <a href="https://www.edx.org/course/software-development-fundamentals" target="_blank" title="Opens in new browser tab">Software Development Fundamentals</a> offered by University of Pennsylvania,
-                which provided a thorough overview of Object Oriented Programming with Java.
-                Following on from this,
-                I completed the subsequent course on <a href="https://www.edx.org/course/data-structures-and-software-design" target="_blank" title="Opens in new browser tab">Data Structures and Software Design</a>,
-                and a final course on <a href="https://www.edx.org/course/programming-for-the-web-with-javascript" target="_blank" title="Opens in new browser tab">Programming for the Web with JavaScript</a>,
-                before eventually receiving a recommendation to check out the Angular Tour of Heroes tutorial,
-                and I've been enjoying diving deeper with Angular 13 almost everyday since!\\    
+                My programming journey initially began in 2015 /* excluding early experiments adjusting the HTML and CSS of my MySpace page back in 2008 :) */,
+                with an introduction to Java 8 from a couple of great developers I was working closely with,
+                and gradually evolved over time to enable me to contribute to fixing a number of issues for the management applications I supported.
+                Fast forwarding a few years and after sucessfully developing a handful of internal company websites,
+                my desire to transition into development full-time was ignited,
+                leading me to undertake several Computer Science courses to fill a few knowledge gaps.
+                Whilst completing these and gaining a well-rounded understanding of software development fundamentals plus object-oriented programming,
+                I received a recommendation to check out the official Angular 'Tour of Heroes' tutorial,
+                and I've been enjoying diving deeper with Angular almost everyday since!\\    
                 A little about me personally, I'm a fan of football and outdoor activities,
                 reading non-fiction, learning and experiencing new things,
                 socialising and listening to various genres of music.\\    
-                Interested in continued progression with front-end development,
-                with a desire to also gain back-end experience developing microservices,
-                alongside working on challenging projects with positive people!\\\\
+                Interested in continued progression towards full-stack development /* with a language-agnostic outlook */,
+                alongside working on challenging projects with positive people!\\
                 `,
         subPages: [],
         iconClass: 'fa fa-user-o',
@@ -112,7 +104,7 @@ export const Pages = [
                 \\/* OTHER TECHNICAL FAMILIARITIES / SKILLS –\\
                 ** Java (basic knowledge)\\
                 ** C# (basic knowledge)\\
-                ** Github (basic knowledge)\\
+                ** Github\\
                 ** Adobe Illustrator / Photoshop (basic knowledge)\\
                 ** Microsoft Office Suite + Visio\\
                 ** Google Search (extensive daily usage) \\*/\\
@@ -165,11 +157,11 @@ export const Pages = [
                 filepath: 'this.app',
                 content: `/* OBJECTIVE */\\
                         For this project, my overall objectives were to develop;
-                        firstly, a deeper understanding of using Angular to create Single-Page Applications,
-                        && secondly, a portfolio website to host all current && future projects.
-                        Therefore, I decided to build this app in the style of a code editor's UI, with an integrated preview section.\\
-                        <a href="https://github.com/nprod21/nprod21.github.io" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
-                        \\/* FEATURES */\\
+                        firstly, a deeper understanding of using Angular to create entire Single-Page Applications, to build upon my knowledge of developing isolated feature modules,
+                        and secondly, a unique portfolio website to host all current && future personal projects.
+                        Therefore, I decided to build this app in the style of a code editor's UI, with an integrated resizable preview section.\\
+                        /* Source code to be provided again shortly, following app refactoring in progress */\\
+                        \\/* FEATURE MODULES */\\
                         TabHeaders Component {
                             summary: displays open tabs + controls tab reselection/closure;
                             highlights: [selected tab scrollIntoView, draggable];}
@@ -191,17 +183,16 @@ export const Pages = [
                         Route Service {
                             summary: enables open tab state management via URL interaction;
                             highlight: sets URL path with appended string of ordered open tab IDs;}
-                        \\/* TODOs\\
+                        \\\\/* TODOs\\
                         * Add lower handle to enable freely resizable heights between lower panel && middle sections\\
                         * Change logic for reselecting tab headers (from click to mousedown event) such that deselected tabs open if dragged\\
                         * Revise logic for tab text scroll position restoration to improve consistency when reselecting tabs\\
-                        * Refactor TabPreview Component to utilise router link for preview component selection
+                        * Refactor TabPreview Component to utilise router link for preview component selection\\
                         * General refactoring of app codebase\\
                         * Set cursor styling for when tabs are dragged\\
                         * Activity/Sidebar enhancement - add open-tab count to side activity bar explorer icon + add search icon && functionality\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */
-                        `,
+                        */\\`,
                 subPages: [],
                 iconClass: 'fa fa-asterisk',
                 selected: false,
@@ -223,9 +214,9 @@ export const Pages = [
                 name: 'localWeather.app',
                 filepath: 'localWeather.app',
                 content: `/* OBJECTIVE */\\
-                        For this project, my primary objective, was to build an application centered around data consumed from a third-party RESTful API.
-                        My secondary objective was to gain familiarity with CSS flex, to structure a simple layout.\\
-                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-weather" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        For this project, my primary objective, was to build a simple application centered around data consumed from a third-party REST API.
+                        My secondary objective was to further practice using CSS flex, to structure a simple layout.\\
+                        /* Source code to be provided again shortly, following app refactoring in progress */\\
                         \\/* FEATURES */\\
                         dynamic animated background image {
                             highlight: image source property binding varies depending on current weather description and time of day;}
@@ -238,8 +229,7 @@ export const Pages = [
                         * Add non location-specific/universal background gif images for other cities\\
                         * Style demo simulation setter dropdowns && address positioning on responsive devices\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */
-                       `,
+                        */\\`,
                 subPages: [],
                 iconClass: 'fa fa-cloud',
                 selected: false,
@@ -261,12 +251,12 @@ export const Pages = [
                 name: 'sciCalculator.app',
                 filepath: 'sciCalculator.app',
                 content: `/* OBJECTIVE */\\
-                        The initial purpose of this project was to simply gain further experience using CSS grid,
-                        however, this app generated a great amount of exposure to numerous CSS && JavaScript features, required to enable the business logic.
+                        The initial purpose of this project was to simply gain further experience using multiple CSS grids,
+                        however, this app generated a great amount of exposure to numerous CSS features && JavaScript functions, required to enable the business logic.
                         /*\\
                         * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! \\
                         */\\\\
-                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        /* Source code to be provided again shortly, following app refactoring in progress */\\
                         \\/* FEATURES */\\
                         3D Design {
                             highlights: [raised edges + outer shadows on body && buttons, button edges && shadows adjust when active, arrow buttons perform 2D transforms when active, inner shadow on display screen && solar panel];}
@@ -289,8 +279,7 @@ export const Pages = [
                         *\\
                         * Add functionality to disabled buttons\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */\\\\
-                        `,
+                        */\\\\\\`,
                 subPages: [],
                 iconClass: 'fa fa-calculator',
                 selected: false,
@@ -313,21 +302,19 @@ export const Pages = [
                 filepath: 'issueTracker.app',
                 content: `/* OBJECTIVE */\\
                         The purpose of this project was to build a CRUD application, with reusable components heavily focused on data management and processing, alongside interactive presentation.\\
-                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-tracker" target="_blank" title="Opens in new browser tab">Source code can be accessed here <i class=\"fa fa-external-link\"></i></a>.
+                        /* Source code to be provided again shortly, following app refactoring in progress */\\
                         \\/* FEATURES */\\
-                        Reusable chart components {
+                        Reusable (dumb) chart components {
                                 highlights: [bar + donut chart components dynamically represent data summaries per input properties, interactive chart elements (bars/segments) facilitate list data filtering];}
-                        Reusable tabular data component {
+                        Reusable (dumb) tabular data component {
                                 highlights: [ticket-list component presents filtered data per input properties, table columns are sortable in both ascending + descending order];}
                         Data object management {
                                     highlights: [data objects (tickets) can be created and updated via ticket form submissions, form submissions feature input validation];}
                         Responsive design {
                                         highlights: [side navigation bar menu auto-collapses/expands per inputted preview width - with z-index switches to overlay app body on menu expansion under a defined width threshold, ticket-list component features flex display to fill available width space - with container overflow scrolling enabled];}           
                         \\/* TODOs\\
-                        * Fix issues detailed within this application\\
-                        * Implement features detailed within this application\\
-                        */
-                    `,
+                        * Fix issues and implement features detailed within this application :)\\
+                        */\\`,
                 subPages: [],
                 iconClass: '',
                 selected: false,
