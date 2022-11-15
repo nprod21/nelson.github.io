@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
-import { PressedKey } from './pressed-key';
+import { PressedKey } from './models/pressed-key.interface';
 
 @Component({
   selector: 'app-project-calculator',
@@ -540,7 +540,7 @@ export class ProjectCalculatorComponent implements OnInit {
       }
       else break;
     }
-    if(postFunctionArgData == []) {
+    if(postFunctionArgData.length == 0) {
       this.isError = true;
       this.syntaxError = true;
     }

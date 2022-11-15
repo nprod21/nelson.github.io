@@ -1,0 +1,14 @@
+<ul class="lines">
+    <ng-container *ngFor="let tab of openTabs">
+        <ng-container *ngIf="tab.selected">
+            <ng-container *ngFor="let in of counter(tab.contentLineCount); let i = index">
+                <ng-container *ngIf="underTen(i)">
+                    <li class="u10">{{ i + 1 }}</li>
+                </ng-container>
+                <ng-container *ngIf="underTen(i) === false">
+                    <li>{{ i + 1 }}</li>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</ul>

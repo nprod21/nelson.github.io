@@ -1,0 +1,97 @@
+<div class="app-container">
+    <div class="app-side-navbar">
+        <app-side-navbar
+            [allPages]="pages"
+            [sidebarExpanded]="sidebarExpanded"
+            (toggleFolderPage)="toggleFolder($event)"
+            (toggleSidebarExpanded)="toggleSidebar()"
+            (selectPage)="selectPage($event)">
+        </app-side-navbar>
+    </div>
+    <div class="body-container"
+        [ngClass]="[sidebarExpanded ? 'body-expanded-width' : 'body-collapsed-width']">
+        <div class="app-background">
+            <background *ngIf="tabsOpen == false"
+                [sidebarExpanded]="sidebarExpanded">
+            </background>
+        </div>
+        <div *ngIf="tabsOpen" class="tab-view-container">
+            <div class="app-tab-headers">
+                <!-- <app-tab-headers
+                    [openTabs]="openTabs"
+                    [viewTogglePosition]="viewPosition"
+                    [sidebarExpanded]="sidebarExpanded"
+                    (tabSelect)="selectTab($event)"
+                    (tabClose)="closeTab($event)"
+                    (viewToggle)="toggleView()"> -->
+                    <app-tab-headers
+                    [openTabs]="openTabs"
+                    [viewTogglePosition]="viewPosition"
+                    [sidebarExpanded]="sidebarExpanded"
+                    (tabSelect)="selectTab($event)"
+                    (tabClose)="closeTab($event)"
+                    (viewToggle)="toggleView()"
+                    (tabDragOver)="setTabDraggedOver($event)"
+                    (tabReposition)="repositionTab($event)"
+                    (tabDropEnd)="setTabLast($event)">
+                </app-tab-headers>
+            </div>
+            <div class="tab-content-container"
+                [ngClass]="[sidebarExpanded ? 'content-expanded-width' : 'content-collapsed-width']"
+                id="bodyContainer"
+                appResize
+                (resizeStart)="onResizeStart($event)"
+                (resizeEnd)="onResizeEnd($event)"
+                (resizeMove)="onResizeMove($event)">
+                <div class="tab-lines-text-container"
+                    [style.display]="pageDisplay"
+                    [style.grid-column]="pageColSpan"
+                    id="content"
+                    [style.width]="contentWidth + 'px'"
+                    [ngClass]="[resizeActive ? 'unscrollable' : '']">
+                    <div class="app-tab-linecount">
+                        <app-tab-linecount
+                            [openTabs]="openTabs"
+                            [ngClass]="[resizeActive ? 'unselectable' : '']">
+                        </app-tab-linecount>
+                    </div>
+                    <div class="app-tab-body">
+                        <app-tab-body *ngIf="openTabs.length"
+                            [openTabs]="openTabs"
+                            [ngClass]="[resizeActive ? 'unselectable' : '']">
+                        </app-tab-body>
+                    </div>
+                    <div class="right-shadow"></div>
+                </div>
+                <div id="resizer-x"
+                    [style.display]="resizerDisplay"
+                    [style.grid-column]="resizerColSpan">
+                </div>   
+                <div class="app-tab-preview"
+                    [ngClass]="[sidebarExpanded ? 'preview-expanded-width' : 'preview-collapsed-width']"
+                    [style.display]="previewDisplay"
+                    [style.grid-column]="previewColSpan"
+                    id="preview"
+                    [style.width]="previewWidth + 'px'">
+                    <app-tab-preview
+                        [openPages]="openTabs"
+                        [selectedTab]="selectedTab"
+                        [sidebarExpanded]="sidebarExpanded"
+                        [previewHeight]="previewHeight"
+                        [previewWidth]="previewWidth"
+                        [style.width]="previewWidth + 'px'"
+                        [ngClass]="[resizeActive ? 'unselectable' : '']"
+                        (componentAssign)="assignComponent($event)"
+                        (weatherResponse)="handleWeatherResponse($event)">
+                    </app-tab-preview>
+                </div>  
+            </div>
+        </div>
+        <div class="app-panel">
+            <app-panel
+                [logs]="logEntries"
+                [sidebarExpanded]="sidebarExpanded">
+            </app-panel>
+        </div>
+    </div>
+</div>

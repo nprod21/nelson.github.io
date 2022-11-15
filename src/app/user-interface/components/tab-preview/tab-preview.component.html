@@ -1,0 +1,137 @@
+<div class="preview-container" id="previewcontainer" [style.width]="previewWidth + 'px'" [ngClass]="[sidebarExpanded ? 'preview-expanded-width' : 'preview-collapsed-width']">
+    <div class="preview-content">
+       <ng-container *ngFor="let page of openPages">
+            <ng-container *ngIf="page.selected">
+                    <ng-container *ngIf="page.hasPreviewOptions">
+                        <div class="button-box">
+                            <div class="btn" [style.Left]="page.previewToggle"></div>
+                            <button type="button" class="toggle-btn" [ngClass]="[ page.previewToggle == '0' ? 'selected-btn' : 'unselected-btn' ]" (click)="assignComponent(page.previewComponents[0], page)">
+                                {{page.previewOptions[0]}}  
+                            </button>
+                            <button type="button" class="toggle-btn" [ngClass]="[ page.previewToggle == '110px' ? 'selected-btn' : 'unselected-btn' ]" (click)="assignComponent(page.previewComponents[1], page)">
+                                {{page.previewOptions[1]}}  
+                            </button>
+                        </div>
+                    </ng-container>
+                <div class="preview-component">
+                    <ng-container *ngIf="page.previewToggle === '0'">
+                        <ng-container *ngIf="page.previewComponents[0] === 'contact-email'">
+                            <div class="app-preview-component">
+                                <app-contact-email></app-contact-email>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen ss-raised">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'contact-linkedin'">
+                            <div class="app-preview-component">
+                                <app-contact-linkedin></app-contact-linkedin>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen ss-raised">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'this-demo'">
+                            <div class="app-preview-component">
+                                <app-this-demo></app-this-demo>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'skills'">
+                            <div class="app-preview-component">
+                                <app-skills></app-skills>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'about'">
+                            <div class="app-preview-component">
+                                <app-about></app-about>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'weather-project'">
+                            <div class="app-preview-component">
+                                <app-project-weather (weatherResponse)="handleWeatherResponse($event)" (weatherResponse)="handleWeatherResponse($event)"></app-project-weather>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'calculator-project'">
+                            <div class="app-preview-component">
+                                <app-project-calculator></app-project-calculator>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="page.previewToggle === '110px'">
+                        <ng-container *ngIf="page.previewComponents[1] === 'contact-email'">
+                            <div class="app-preview-component">
+                                <app-contact-email></app-contact-email>
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen ss-raised">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[1] === 'contact-linkedin'">
+                            <div class="app-preview-component">
+                                <app-contact-linkedin></app-contact-linkedin>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen ss-raised">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[1] === 'this-demo'">
+                            <div class="app-preview-component">
+                                <app-this-demo></app-this-demo>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[1] === 'skills'">
+                            <div class="app-preview-component">
+                                <app-skills></app-skills>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'weather-project'">
+                            <div class="app-preview-component">
+                                <app-project-weather (weatherResponse)="handleWeatherResponse($event)"></app-project-weather>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'calculator-project'">
+                            <div class="app-preview-component">
+                                <app-project-calculator></app-project-calculator>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                        <ng-container *ngIf="page.previewComponents[0] === 'tracker-project'">
+                            <div class="app-preview-component">
+                                <app-project-tracker [appHeight]="previewHeight" [previewWidth]="previewWidth"></app-project-tracker>    
+                            </div>
+                            <div *ngIf="splashTimeout" class="splash-screen">
+                                <app-splash-screen [previewWidth]="previewWidth" [previewHeight]="previewHeight"></app-splash-screen>
+                            </div> 
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </ng-container> 
+    </div>
+</div>

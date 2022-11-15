@@ -1,0 +1,8 @@
+<div class="body">
+        <ng-container *ngFor="let tab of openPages">
+            <ng-container *ngIf="tab.selected">
+                <div class="content" [innerHTML]="tab.content">
+                </div>
+            </ng-container>
+        </ng-container>
+</div>

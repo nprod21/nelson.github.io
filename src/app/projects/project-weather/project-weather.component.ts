@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 
 import { WeatherService } from './weather.service';
-import { TabService } from 'src/app/tab.service';
+import { TabService } from '../../user-interface/services/tab.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./project-weather.component.css']
 })
 export class ProjectWeatherComponent implements OnInit, OnDestroy {
+
+  @Output() weatherResponse: EventEmitter<boolean> = new EventEmitter();
 
   private weatherResponseSub!: Subscription;
 
@@ -47,7 +49,8 @@ export class ProjectWeatherComponent implements OnInit, OnDestroy {
       && calls tab service method to publish API response confirmation */
       if(response) {
         this.setWeatherFromServiceData();
-        this.tabService.updateWeatherFetchedSubject();
+        // this.tabService.updateWeatherFetchedSubject();
+        this.weatherResponse.emit(true);
         /* timer delay for content visibility - to prevent flickering behind splash screen */
         setTimeout(() => this.showProject = true, 3100);
       }
