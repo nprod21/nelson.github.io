@@ -1,0 +1,74 @@
+<div class="btn-arrow-container">
+    <div class="btn-arrow btn-arrow-up" [style.display]="arrowDisplayUp" [ngClass]="[ isKeyPressed('ArrowUp') ? 'btn-arrow-up-active': '']" (click)="arrowButtonClick.emit('start')">
+        <div class="btn-arrow-edge btn-arrow-edge-up"></div>
+        <div class="btn-arrow-shadow btn-arrow-shadow-up"></div>
+        <div class="btn-arrow-front-cover btn-arrow-front-cover-up">
+            <div class="btn-arrow-area-up">
+                <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-left" (mouseenter)="arrowButtonHover.emit('left')">
+                <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-right" (mouseenter)="arrowButtonHover.emit('right')">
+                <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-down" (mouseenter)="arrowButtonHover.emit('down')">
+                <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+            </div>                        
+        </div>
+    </div>
+    <div class="btn-arrow btn-arrow-left" [style.display]="arrowDisplayLeft" [ngClass]="[ isKeyPressed('ArrowLeft') ? 'btn-arrow-left-active': '']" (click)="arrowButtonClick.emit('left')">
+        <div class="btn-arrow-edge btn-arrow-edge-left"></div>
+        <div class="btn-arrow-shadow btn-arrow-shadow-left"></div>
+        <div class="btn-arrow-front-cover btn-arrow-front-cover-left">
+            <div class="btn-arrow-area-up" (mouseenter)="arrowButtonHover.emit('up')">
+                <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-left">
+                <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-right" (mouseenter)="arrowButtonHover.emit('right')">
+                <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-down" (mouseenter)="arrowButtonHover.emit('down')">
+                <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+            </div>                        
+        </div>
+    </div>
+    <div class="btn-arrow btn-arrow-right" [style.display]="arrowDisplayRight" [ngClass]="[ isKeyPressed('ArrowRight') ? 'btn-arrow-right-active': '']" (click)="arrowButtonClick.emit('right')">
+        <div class="btn-arrow-edge btn-arrow-edge-right"></div>
+        <div class="btn-arrow-shadow btn-arrow-shadow-right"></div>
+        <div class="btn-arrow-front-cover btn-arrow-front-cover-right">
+            <div class="btn-arrow-area-up" (mouseenter)="arrowButtonHover.emit('up')">
+                <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-left"(mouseenter)="arrowButtonHover.emit('left')">
+                <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-right">
+                <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-down" (mouseenter)="arrowButtonHover.emit('down')">
+                <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+            </div>                        
+        </div>
+    </div>
+    <div class="btn-arrow btn-arrow-down" [style.display]="arrowDisplayDown" [ngClass]="[ isKeyPressed('ArrowDown') ? 'btn-arrow-down-active': '']" (click)="arrowButtonClick.emit('end')">
+        <div class="btn-arrow-edge btn-arrow-edge-down"></div>
+        <div class="btn-arrow-shadow btn-arrow-shadow-down"></div>
+        <div class="btn-arrow-front-cover btn-arrow-front-cover-down">
+            <div class="btn-arrow-area-up" (mouseenter)="arrowButtonHover.emit('up')">
+                <div class="btn-arrow-icon btn-arrow-icon-up fa fa-caret-up" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-left"(mouseenter)="arrowButtonHover.emit('left')">
+                <div class="btn-arrow-icon btn-arrow-icon-left fa fa-caret-left" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-right"(mouseenter)="arrowButtonHover.emit('right')">
+                <div class="btn-arrow-icon btn-arrow-icon-right fa fa-caret-right" aria-hidden="true"></div>
+            </div>
+            <div class="btn-arrow-area-down">
+                <div class="btn-arrow-icon btn-arrow-icon-down fa fa-caret-down" aria-hidden="true"></div>
+            </div>                        
+        </div>
+    </div>
+</div>

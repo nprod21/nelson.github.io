@@ -1,0 +1,104 @@
+<div class="screen-grid">
+    <div class="casio">CASIO</div>
+    <div class="sp">
+        <span class="sp-splits"></span>
+        <span class="sp-splits"></span>
+        <span class="sp-splits"></span>
+    </div>
+    <div class="fx-991ms">fx-991MS</div>
+    <div class="svpam">S-V.P.A.M</div>
+    <div class="two-way-power">TWO WAY POWER</div>
+    <div class="display-screen">
+        <div class="display-bg">
+            <div class="display">
+                <div class="display-top-line">
+                    <ng-container *ngIf="!isError">
+                        <div class="display-top-line-grid">
+                            <div class="display-top-line-hyp-enabled"><span class="hyp-text" [ngClass]="[hypEnabled ? 'lcd-on' : 'lcd-off']">hyp</span></div>
+                            <div class="display-top-line-memory-enabled"><span class="memory-text" [ngClass]="[memoryEnabled ? 'lcd-on' : 'lcd-off']">M</span></div>
+                            <div class="display-top-line-recall"><span class="recall-text" [ngClass]="[memoryRecall ? 'lcd-on' : 'lcd-off']">RCL</span></div>
+                            <div class="display-top-line-degrees-enabled"><span class="degrees-text">D</span></div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="display-middle-line">
+                    <div class="validExpression">
+                        <ng-container *ngIf="isError">
+                            <ng-container *ngIf="syntaxError">
+                                <div class="syntax-error">Syntax ERROR</div>
+                            </ng-container>
+                            <ng-container *ngIf="mathError">
+                                <div class="math-error">Math ERROR</div>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="!isError">
+                            <div class="display-expression-left-arrow">
+                                <div class="charsToLeft" [ngClass]="[charsToLeft ? 'lcd-on' : 'lcd-off']">
+                                    <i class="fa fa-long-arrow-left long-arrow-left" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="display-expression-entry">
+                                <ng-container *ngFor="let char of displayCharsInViewAsStringArray">
+                                    <ng-container *ngIf="char === '_'">
+                                        <span class="blinking-cursor" [ngClass]="[ cursorOnChar ? 'overlay-cursor': '']">_</span>
+                                    </ng-container>
+                                    <ng-container *ngIf="char != '_' && char != 'y' && char != 'x' && char != 'z' && char != 'E'">
+                                        <span class="display-entries">{{char}}</span>
+                                    </ng-container>
+                                    <ng-container *ngIf="char == 'y'">
+                                        <span class="display-squared-sign">2</span>
+                                    </ng-container>
+                                    <ng-container *ngIf="char == 'x'">
+                                        <span class="display-x-1-sign-minus">-</span>
+                                        <span class="display-x-1-sign-1">|</span>
+                                    </ng-container>
+                                    <ng-container *ngIf="char == 'z'">
+                                        <span class="display-negative-sign">-</span>
+                                    </ng-container>                                               
+                                    <ng-container *ngIf="char == 'E'">
+                                        <span class="display-exp-sign">E</span>
+                                    </ng-container>
+                                </ng-container>
+                            </div>
+                            <div class="display-expression-right-arrow">
+                                <div class="charsToRight" [ngClass]="[charsToRight ? 'lcd-on' : 'lcd-off']">
+                                    <i class="fa fa-long-arrow-right long-arrow-right" aria-hidden="true"></i>
+                                </div>
+                            </div>    
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="display-bottom-line">
+                    <div class="display-result-calc">
+                        <div class="display-result-calc-result">
+                            <ng-container *ngIf="!isError">
+                                <div class="display-result-calc-figures">{{calculatedResult}}</div>
+                                <div class="display-result-placeholder-figures">8888888888</div>
+                                <div class="display-result-calc-commas">
+                                    <ng-container *ngFor="let comma of commas" >
+                                        <span [ngClass]="[ comma ? 'show-comma': 'hide-comma']">,</span>
+                                    </ng-container>
+                                </div>
+                                <div class="display-result-calc-decimals">
+                                    <ng-container *ngFor="let decimal of decimals" >
+                                        <span [ngClass]="[ decimal ? 'show-decimal': 'hide-decimal']">.</span>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div> 
+                        <div class="display-result-x10-sign">
+                            <ng-container *ngIf="!isError">
+                                <span class="x10-sign" [ngClass]="[isOverTenDigits ? 'lcd-on' : 'lcd-off']">×10</span>    
+                            </ng-container>
+                        </div>
+                        <div class="display-result-calc-x10-power-of">
+                            <ng-container *ngIf="!isError">
+                                <span class="x10-power-of" [ngClass]="[isOverTenDigits ? 'lcd-on' : 'lcd-power-off']">{{x10PowerOf}}</span>    
+                            </ng-container>
+                        </div>    
+                    </div>
+                </div>
+            </div>  
+        </div>    
+    </div>
+</div>

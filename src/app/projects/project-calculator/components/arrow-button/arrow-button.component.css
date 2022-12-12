@@ -1,0 +1,348 @@
+.arrows-keys {
+    grid-column: span 2;
+    grid-row: span 2;
+    position: relative;
+    display: grid;
+}
+/* 
+::host {
+    display: grid;
+    position: relative;
+    height: 100%;
+    width: 100%;
+} */
+
+.btn-arrow-container {
+    position: relative;
+    display: grid;
+}
+
+.btn-arrow {
+    position: relative;
+    background-color: transparent;
+    user-select: none;
+    height: 90%;
+    width: 95%;
+    -webkit-tap-highlight-color: transparent;
+    align-self: end;
+    justify-self: center;
+    border-radius: 75% 85% 100% 100% / 50% 50% 100% 100%  ;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.btn-arrow-edge {
+    position: absolute;
+    display: inline-block;
+    background-color: #7d8a9a;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 95%;
+    width: 100%; 
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    cursor: default;
+}
+
+.btn-arrow-shadow {
+    position: absolute;
+    display: inline-block;
+    height: 95%;
+    width: 100%; 
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: #313241;
+    opacity: 33%;
+    filter: blur(2px);
+    cursor: default;
+}
+
+.btn-arrow-front-cover {
+    position: relative;
+    display: grid;
+    height: 95%;
+    width: 100%; 
+    background-color: #9fabc1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    transform: translateY(-4px);
+    margin-right: 1px;
+    will-change: transform;
+    transition: transform 50ms;
+    cursor: default;
+}
+
+.btn-arrow-area-up {
+    position: relative;
+    height: 85%;
+    width: 100%;
+    grid-column: span 2;
+    grid-row: span 1;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    cursor: default;
+}
+
+.btn-arrow-area-left {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    grid-column: span 1;
+    grid-row: span 1;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    cursor: default;
+}
+
+.btn-arrow-area-right {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    grid-column: span 1;
+    grid-row: span 1;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+    margin-left: 5%;
+    cursor: default;
+}
+
+.btn-arrow-area-down {
+    position: relative;
+    height: 86%;
+    width: 100%;
+    grid-column: span 2;
+    grid-row: span 1;
+    display: grid;
+    justify-items: center;
+    align-items: end;
+    margin-top: 4%;
+    padding-bottom: 0%;
+    cursor: default;
+}
+
+.btn-arrow-icon-up {
+    transform: translateY(-1.5px);
+}
+
+.btn-arrow-icon-left {
+    transform: translateX(4px);
+}
+
+.btn-arrow-icon-right {
+    transform: translateX(-2px);
+}
+
+/* down arrow button functionality */
+.btn-arrow-down:active .btn-arrow-front-cover-down {
+    transform: rotateX(-0.05turn) translateY(0.5px)
+}
+
+.btn-arrow-down-active .btn-arrow-front-cover-down {
+    transform: rotateX(-0.05turn) translateY(0.5px)
+}
+
+.btn-arrow-down:active .btn-arrow-shadow-down {
+    transform: translateY(-3px);
+    opacity: 25%;
+    filter: blur(0px);
+}
+
+.btn-arrow-down-active .btn-arrow-shadow-down {
+    transform: translateY(-3px);
+    opacity: 25%;
+    filter: blur(0px);
+}
+
+.btn-arrow-down:active,.btn-arrow-down-active {
+    transition: filter 250ms;
+    filter: brightness(105%);
+}
+
+.btn-arrow-down:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* up arrow button functionality */
+.btn-arrow-up:active .btn-arrow-front-cover-up {
+    transform: rotateX(-0.05turn) translateY(-6px);
+}
+
+.btn-arrow-up-active .btn-arrow-front-cover-up {
+    transform: rotateX(-0.05turn) translateY(-6px);
+}
+
+.btn-arrow-up:active .btn-arrow-shadow-up {
+    transform: translateY(2px);
+    opacity: 36%;
+    filter: blur(1px);
+}
+
+.btn-arrow-up-active .btn-arrow-shadow-up {
+    transform: translateY(2px);
+    opacity: 36%;
+    filter: blur(1px);
+}
+
+.btn-arrow-up:active,.btn-arrow-up-active {
+    transition: filter 50ms;
+    filter: brightness(105%);
+}
+
+.btn-arrow-up:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* left arrow button functionality */
+.btn-arrow-left:active .btn-arrow-front-cover-left {
+    transform: rotateY(-0.05turn) translateY(-3.5px) translateX(-2px);
+}
+
+.btn-arrow-left-active .btn-arrow-front-cover-left {
+    transform: rotateY(-0.05turn) translateY(-3.5px) translateX(-2px);
+}
+
+.btn-arrow-left:active .btn-arrow-shadow-left {
+    transform: translateX(2px) translateY(3px);
+    opacity: 25%;
+    filter: blur(1px);    
+}
+
+.btn-arrow-left-active .btn-arrow-shadow-left {
+    transform: translateX(2px) translateY(3px);
+    opacity: 25%;
+    filter: blur(1px);    
+}
+
+.btn-arrow-left:active,.btn-arrow-left-active {
+    transition: filter 50ms;
+    filter: brightness(105%);
+}
+
+.btn-arrow-left:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* right arrow button functionality */
+.btn-arrow-right:active .btn-arrow-front-cover-right {
+    transform: rotateY(0.05turn) translateY(-3.5px) translateX(3px);
+}
+
+.btn-arrow-right-active .btn-arrow-front-cover-right {
+    transform: rotateY(0.05turn) translateY(-3.5px) translateX(3px);
+}
+
+.btn-arrow-right:active .btn-arrow-shadow-right {
+    transform: translateX(-2px) translateY(3px);
+    opacity: 25%;
+    filter: blur(1px);
+}
+
+.btn-arrow-right-active .btn-arrow-shadow-right {
+    transform: translateX(-2px) translateY(3px);
+    opacity: 25%;
+    filter: blur(1px);
+}
+
+.btn-arrow-right:active,.btn-arrow-right-active {
+    transition: filter 50ms;
+    filter: brightness(105%);
+}
+
+.btn-arrow-right:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+.btn-arrow-icon {
+    cursor: pointer;
+}
+
+.key-arrows-btn-container, .key-arrows-grid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.key-arrows-btn-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    align-self: center;
+}
+
+.key-arrows-btn-bg {
+    
+    /* Initial btn-bg */
+
+    background-color: #9fabc1;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    height: 90%;
+    width: 95%; 
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    display: none;
+}
+
+.key-arrows-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.key-arrows-grid > * {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+}
+.key-arrows-btn {
+    cursor: pointer;
+}
+
+.btn-up {
+    grid-column: span 2;
+    grid-row: span 1;
+    justify-self: center;
+    align-self: start;
+    color: white;
+    padding-top: 5%;
+}
+
+.btn-left {
+    grid-column: span 1;
+    grid-row: span 1;
+    justify-self: start;
+    align-self: center;
+    padding-left: 15%;
+}
+
+.btn-right {
+    grid-column: span 1;
+    grid-row: span 1;
+    justify-self: end;
+    align-self: center;
+    padding-right: 15%;
+}
+
+.btn-down {
+    grid-column: span 2;
+    grid-row: span 1;
+    justify-self: center;
+    align-self: end;
+    padding-bottom: 5%;
+}

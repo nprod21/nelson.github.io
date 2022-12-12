@@ -1,18 +1,13 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { CalcButton } from '../models/calc-button.interface';
 
-import { PressedKey } from './models/pressed-key.interface';
-
-@Component({
-  selector: 'app-project-calculator',
-  templateUrl: './project-calculator.component.html',
-  styleUrls: ['./project-calculator.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class ProjectCalculatorComponent implements OnInit {
+export class SciCalculatorService {
 
   /* PRIVATE PROPERTIES, USED FOR BUSINESS LOGIC */
   private blinkingCursor: string = "_";
-  private keyDown: string = "";
-  private keyUp: string = "";
   private memoryAdded: boolean = false;
   private memoryValue: string = "";
   private enteredEquation: string[] = [];
@@ -26,107 +21,276 @@ export class ProjectCalculatorComponent implements OnInit {
   private latestMathFunctionIndex: number = -1;
   private rawResult: any;
   private ans: string = "";
-  private keyPresses: PressedKey[] = [
+  
+  public functionButtons: CalcButton[] = [
     {
-      keyCode: "ArrowUp",
-      isKeyPressed: false,
+      name: "calc",
+      label: `<span class="fn-btn-front-text btn-front-calc">CALC</span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: "ArrowLeft",
-      isKeyPressed: false,
+      name: "dx",
+      label: `<span class="fn-btn-front-text">∫dx</span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: "ArrowRight",
-      isKeyPressed: false,
+      name: "x1",
+      label: `<span class="fn-btn-front-text btn-front-x1">
+                <span class="btn-front-italic-x">x</span>
+                <span class="btn-front-raised-power">-1</span>
+              </span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "ArrowDown",
-      isKeyPressed: false,
+      name: "const",
+      label: `<span class="fn-btn-front-text btn-front-const">CONST</span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: "Backspace",
-      isKeyPressed: false,
+      name: "abc",
+      label: `<span class="fn-btn-front-text btn-front-abc">
+                <span class="abc-a">a</span>
+                <span class="abc-b">b</span>
+                <span class="abc-c">
+                  <span class="abc-slash">/</span>c
+                </span>
+              </span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: "Delete",
-      isKeyPressed: false,
+      name: "sqrt",
+      label: `<span class="fn-btn-front-text btn-front-sqrt">√</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "Clear",
-      isKeyPressed: false,
+      name: "x2",
+      label: `<span class="fn-btn-front-text btn-front-x2">
+                <span class="btn-front-italic-x">x</span>
+                <span class="btn-front-raised-power">2</span>
+              </span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "=",
-      isKeyPressed: false,
+      name: "caret",
+      label: `<span class="fn-btn-front-text btn-front-caret">^</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "/",
-      isKeyPressed: false,
+      name: "log",
+      label: `<span class="fn-btn-front-text">log</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "*",
-      isKeyPressed: false,
+      name: "ln",
+      label: `<span class="fn-btn-front-text">ln</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "-",
-      isKeyPressed: false,
+      name: "negative",
+      label: `<span class="fn-btn-front-text btn-front-negative">(–)</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "+",
-      isKeyPressed: false,
+      name: "dms",
+      label: `<span class="fn-btn-front-text btn-front-dms">°'"</span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: ".",
-      isKeyPressed: false,
+      name: "hyp",
+      label: `<span class="fn-btn-front-text">hyp</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "9",
-      isKeyPressed: false,
+      name: "sin",
+      label: `<span class="fn-btn-front-text">sin</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "8",
-      isKeyPressed: false,
+      name: "cos",
+      label: `<span class="fn-btn-front-text">cos</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "7",
-      isKeyPressed: false,
+      name: "tan",
+      label: `<span class="fn-btn-front-text">tan</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "6",
-      isKeyPressed: false,
+      name: "rcl",
+      label: `<span class="fn-btn-front-text">RCL</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "5",
-      isKeyPressed: false,
+      name: "eng",
+      label: `<span class="fn-btn-front-text">ENG</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "4",
-      isKeyPressed: false,
+      name: "open-br",
+      label: `<span class="fn-btn-front-text">(</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "3",
-      isKeyPressed: false,
+      name: "close-br",
+      label: `<span class="fn-btn-front-text">)</span>`,
+      enabled: true,
+      alt: false
     },
     {
-      keyCode: "2",
-      isKeyPressed: false,
+      name: "comma",
+      label: `<span class="fn-btn-front-text btn-front-comma">,</span>`,
+      enabled: false,
+      alt: false
     },
     {
-      keyCode: "1",
-      isKeyPressed: false,
-    },
-    {
-      keyCode: "0",
-      isKeyPressed: false,
+      name: "mplus",
+      label: `<span class="fn-btn-front-text">M+</span>`,
+      enabled: true,
+      alt: false
     },
   ]
+  public basicButtons: CalcButton[] = [
+    {
+      name: "7",
+      label: `<span class="basic-btn-front-text btn-front-7">7</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "8",
+      label: `<span class="basic-btn-front-text btn-front-8">8</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "9",
+      label: `<span class="basic-btn-front-text btn-front-9">9</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "delete",
+      label: `<span class="basic-btn-front-text btn-front-del">DEL</span>`,
+      enabled: true,
+      alt: true
+    },
+    {
+      name: "ac",
+      label: `<span class="basic-btn-front-text btn-front-ac">AC</span>`,
+      enabled: true,
+      alt: true
+    },
+    {
+      name: "4",
+      label: `<span class="basic-btn-front-text btn-front-4">4</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "5",
+      label: `<span class="basic-btn-front-text btn-front-5">5</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "6",
+      label: `<span class="basic-btn-front-text btn-front-6">6</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "multiply",
+      label: `<span class="basic-btn-front-text op-btn-front btn-front-multiply">×</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "divide",
+      label: `<span class="basic-btn-front-text op-btn-front btn-front-divide">÷</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "1",
+      label: `<span class="basic-btn-front-text btn-front-1">1</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "2",
+      label: `<span class="basic-btn-front-text btn-front-2">2</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "3",
+      label: `<span class="basic-btn-front-text btn-front-3">3</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "add",
+      label: `<span class="basic-btn-front-text op-btn-front btn-front-add">+</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "subtract",
+      label: `<span class="basic-btn-front-text op-btn-front btn-front-subtract">-</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "0",
+      label: `<span class="basic-btn-front-text btn-front-0">0</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "decimal",
+      label: `<span class="basic-btn-front-text btn-front-decimal">•</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "exp",
+      label: `<span class="basic-btn-front-text btn-front-exp">EXP</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "ans",
+      label: `<span class="basic-btn-front-text btn-front-ans">Ans</span>`,
+      enabled: true,
+      alt: false
+    },
+    {
+      name: "equals",
+      label: `<span class="basic-btn-front-text op-btn-front btn-front-equals">=</span>`,
+      enabled: true,
+      alt: false
+    }
+  ]
 
-  /* PUBLIC PROPERTIES, USED BY TEMPLATE */
-  public showProject: boolean = false;
-  public arrowDisplayUp: string = 'block';
-  public arrowDisplayLeft: string = 'none';
-  public arrowDisplayRight: string = 'none';
-  public arrowDisplayDown: string = 'none';
   public cursorOnChar: boolean = false;
   public isError: boolean = false;
   public syntaxError: boolean = false;
@@ -144,100 +308,6 @@ export class ProjectCalculatorComponent implements OnInit {
   public calculatedResult: string = "0";
 
   constructor() { }
-
-  ngOnInit(): void {
-    /* timer delay for content visibility - to prevent flickering before splash screen */
-    setTimeout(() => this.showProject = true, 3100);
-  }
-
-
-  /* EVENT LISTENERS + ASSOCIATED METHODS, USED FOR KEY PRESS HANDLING */
-  @HostListener("window:keydown", ["$event"]) keyDownEvent(event: any) {
-    /* firstly, prevents default 
-    (in case an arrow key pressed to prevent scrolling element in pressed arrow key's direction,
-      or in case of Enter key, seemingly repeating last key's action)
-    assigns pressed key value to keyDown property
-      replaces value of keyDown, if Enter key pressed to equals sign
-      if key pressed is an arrow key:
-        - && sets Arrow button display layer in direction of arrow key pressed
-      then calls method to handle key down event, providing the keyDown value */
-    this.keyDown = event.key;
-    if(this.keyDown == "Enter") {
-      this.keyDown = "=";
-      event.preventDefault();
-    }
-    if(this.keyDown == "ArrowUp"
-      || this.keyDown == "ArrowDown"
-      || this.keyDown == "ArrowLeft"
-      || this.keyDown == "ArrowRight") {
-        event.preventDefault();
-        this.setArrowDisplayLayer(this.keyDown);
-    }
-    this.handleKeyDown(this.keyDown);
-  }
-
-  @HostListener("window:keyup", ["$event"]) keyUpEvent(event: any) {
-    /* assigns released key value to keyUp property
-      replaces value of keyDown, if Enter key pressed to equals sign
-      then calls method to handle key up event, providing the keyUp value*/
-    this.keyUp = event.key;
-    if(this.keyUp == "Enter") this.keyUp = "=";
-    this.handleKeyUp(this.keyUp);
-  }
-
-  private handleKeyDown(keyCode: string): void {
-    /* loops through array of keyPress objects
-      - to determine if key provided matches a defined key
-        - if match found:
-          - performs intended action, if that key is not currently being pressed (so this only executed once per press, not infinitely)
-        - then sets the matching keyPress object's pressed status to true (to bypass aforemention action from executing repeatedly) */
-    for(let i: number = 0; i < this.keyPresses.length; i++) {
-      if(keyCode === this.keyPresses[i].keyCode) {
-        if(!this.keyPresses[i].isKeyPressed) {
-          if(keyCode == "Delete" || keyCode == "Backspace") this.deleteEntry();
-          else if(keyCode == "=" || keyCode == "Enter") this.calculateResult();
-          else if(keyCode == "Clear") this.clear();
-          else if(keyCode == "ArrowUp") this.moveCursor("start");
-          else if(keyCode == "ArrowLeft") this.moveCursor("left");
-          else if(keyCode == "ArrowRight") this.moveCursor("right");
-          else if(keyCode == "ArrowDown") this.moveCursor("end");
-          else this.addToEquation(keyCode);
-        }
-        this.keyPresses[i].isKeyPressed = true;
-      }
-    }
-  }
-
-  private handleKeyUp(keyCode: string): void {
-    /* loops through array of keyPress objects
-    && resets the matching keyPress object's pressed status to false (to enable subsequent key presses to re-register)*/
-    for(let i: number = 0; i < this.keyPresses.length; i++) {
-      if(keyCode === this.keyPresses[i].keyCode) {
-        this.keyPresses[i].isKeyPressed = false;
-      }
-    }
-  }
-
-  private setArrowDisplayLayer(keyCode: string): void {
-    /* calls methods sets the display properties for each 'overlayed' arrow button element */
-    if(keyCode === "ArrowUp") { this.upBtnHovered(); return }
-    if(keyCode === "ArrowLeft") { this.leftBtnHovered(); return }
-    if(keyCode === "ArrowRight") { this.rightBtnHovered(); return }
-    if(keyCode === "ArrowDown") { this.downBtnHovered(); return; }
-  }
-
-  public isKeyPressed(keyCode: string): boolean {
-    /* loops through array of keyPress objects
-      - if key provided matches a defined key, returns whether that is key is currently being pressed
-      (used to set ngClass of button element to appear 'active') */
-    for(let i: number = 0; i < this.keyPresses.length; i++) {
-      if(keyCode === this.keyPresses[i].keyCode) {
-        return this.keyPresses[i].isKeyPressed;
-      }
-    }
-    return false;
-  }
-
 
   /* PRIVATE METHODS USED FOR BUSINESS LOGIC */
   private setCharsToLeft(): void {
@@ -758,41 +828,6 @@ export class ProjectCalculatorComponent implements OnInit {
 
   
   /* PUBLIC METHODS, USED BY TEMPLATE */
-  public upBtnHovered(): void {
-    /* sets the display values for each unintended button layer to 'none' to hide 
-    then sets the intended 'up' arrow display layer to 'block' to show (done lastly to avoid overlap) */
-    this.arrowDisplayLeft = 'none';
-    this.arrowDisplayRight = 'none';
-    this.arrowDisplayDown = 'none';
-    this.arrowDisplayUp = 'block';
-  }
-
-  public leftBtnHovered(): void {
-    /* sets the display values for each unintended button layer to 'none' to hide 
-    then sets the intended 'left' arrow  display layer to 'block' to show (done lastly to avoid overlap) */
-    this.arrowDisplayRight = 'none';
-    this.arrowDisplayDown = 'none';
-    this.arrowDisplayUp = 'none';
-    this.arrowDisplayLeft = 'block';
-  }
-
-  public rightBtnHovered(): void {
-    /* sets the display values for each unintended button layer to 'none' to hide 
-    then sets the intended 'right' arrow  display layer to 'block' to show (done lastly to avoid overlap) */
-    this.arrowDisplayLeft = 'none';
-    this.arrowDisplayDown = 'none';
-    this.arrowDisplayUp = 'none';
-    this.arrowDisplayRight = 'block';
-  }
-
-  public downBtnHovered(): void {
-    /* sets the display values for each unintended button layer to 'none' to hide 
-    then sets the intended 'down' arrow  display layer to 'block' to show (done lastly to avoid overlap) */
-    this.arrowDisplayLeft = 'none';
-    this.arrowDisplayRight = 'none';
-    this.arrowDisplayUp = 'none';
-    this.arrowDisplayDown = 'block';
-  }
 
   public addToEquation(entry: string): void {
     /* handles adding intended button entry/key press values to both the:
@@ -1080,4 +1115,5 @@ export class ProjectCalculatorComponent implements OnInit {
     }, 1);
     
   }
+
 }

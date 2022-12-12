@@ -1,0 +1,127 @@
+.basic-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 600ms;
+}
+
+.basic-btn-edge {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 30px;
+    background-color: #627282;
+    border-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.basic-btn-shadow {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #313241;
+    opacity: 33%;
+    transform: translateY(2px);
+    filter: blur(2px);
+}
+
+.basic-btn-front-cover {
+    position: relative;
+    display: grid;
+    width: 50px;
+    height: 30px;
+    background-color: #718191;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transform: translateY(-4px);
+    will-change: transform;
+    transition: transform 50ms;
+    justify-items: center;
+    align-items: center;
+}
+
+.basic-btn-front-text {
+    position: relative;
+    display: inline-block;
+    font-size: 16pt;
+    color: #ffffff;
+    text-align: center;
+}
+
+.basic-btn:active .basic-btn-front-cover {
+    transform: translateY(-2px);
+}
+
+.basic-btn-active .basic-btn-front-cover {
+    transform: translateY(-2px)
+}
+
+.basic-btn-active .basic-btn-shadow {
+    transform: translateY(1px)
+}
+
+.basic-btn:active .basic-btn-shadow {
+    transform: translateY(1px)
+}
+
+.basic-btn:active, .basic-btn-active {
+    transition: filter 50ms;
+    filter: brightness(105%);
+}
+
+.basic-btn-active .basic-btn-shadow {
+    opacity: 34.65%;
+    filter: blur(1px);
+}
+
+.basic-btn:active .basic-btn-shadow {
+    opacity: 34.65%;
+    filter: blur(1px);
+}
+
+.basic-btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.btn-front-del, .btn-front-exp {
+    font-size: 14pt;
+}
+
+.btn-front-ans {
+    font-size: 15pt;
+}
+
+.basic-btn-front-cover-alt {
+    background-color: #ad6478;
+}
+
+.basic-btn-edge-alt {
+    background-color: #9e5569;
+}
+
+.btn-front-multiply, .btn-front-divide, .btn-front-add, .btn-front-subtract, .btn-front-equals {
+    font-size: 20pt;
+}
+
+.subtract-sign {
+    font-size: 22pt;
+    transform: translateY(2px);
+}

@@ -1,0 +1,10 @@
+<button type="button" class="basic-btn"
+    [ngClass]="[ isKeyPressed(basicButton.name) ? 'basic-btn-active': '']"
+    (click)="basicButtonClick.emit(basicButton.name)">
+    <span class="basic-btn-edge" [ngClass]="basicButton.alt ? 'basic-btn-edge-alt' : ''"></span>
+    <span class="basic-btn-shadow"></span>
+    <span class="basic-btn-front-cover"
+        [innerHTML]="basicButton.label"
+        [ngClass]="basicButton.alt ? 'basic-btn-front-cover-alt' : ''">
+    </span>
+</button>

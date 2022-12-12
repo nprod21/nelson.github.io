@@ -85,7 +85,7 @@ export class TerminalService {
         this.logSubject.next(entry);
       }
       if(clickedPage.name == "sciCalculator.app") {
-        let entry: string = "<span class='inject'>INJECT</span> src/app/projects/project-calculator/services/calculator.service.ts";
+        let entry: string = "<span class='inject'>INJECT</span> src/app/projects/project-calculator/services/sci-calculator.service.ts";
         this.logSubject.next(entry);
       }
       if(clickedPage.name == "issueTracker.app") {

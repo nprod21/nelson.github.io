@@ -1,0 +1,121 @@
+.row1-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 600ms;
+}
+
+.disabled-row1-btn {
+    cursor: not-allowed;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.row1-btn-edge {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: #919cb2;
+}
+
+.row1-btn-shadow {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: #313241;
+    opacity: 33%;
+    transform: translateY(2px);
+    filter: blur(2px);
+}
+
+.row1-btn-front-cover {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #9fabc1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 30px;
+    transform: translateY(-4px);
+    will-change: transform;
+    transition: transform 50ms;
+}
+
+.row1-btn-front-text {
+    position: relative;
+    display: inline-block;
+    font-family: Helvetica;
+    font-size: 7pt;
+    font-weight: 550;
+    padding-top: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-front-alpha {
+    font-size: 6.5pt;
+}
+
+.row1-btn:active .row1-btn-front-cover {
+    transform: translateY(-2px)
+}
+
+.row1-btn:active .row1-btn-shadow {
+    transform: translateY(1px)
+}
+
+.row1-btn:active {
+    transition: filter 50ms;
+    filter: brightness(105%);
+}
+
+.row1-btn:active .row1-btn-shadow {
+    opacity: 34.65%;
+    filter: blur(1px);
+}
+
+.row1-btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.key-shift {
+    justify-self: start;
+    align-self: center;
+}
+
+.key-alpha {
+    justify-self: start;
+    align-self: end;
+    padding-bottom: 10%;
+}
+
+.key-mode {
+    justify-self: end;
+    align-self: end;
+    padding-bottom: 10%;
+}
+
+.key-on {
+    justify-self: end;
+    align-self: center;
+}

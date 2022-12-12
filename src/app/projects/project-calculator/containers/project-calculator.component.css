@@ -1,0 +1,165 @@
+* {
+    color: #ffffff;
+    font-size: 10pt;    
+}
+
+.calc-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #000000;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    transition: opacity 0.2s;
+}
+
+.calc-grid {
+    position: relative;
+    height: 650px;
+    width: 325px;
+    margin: 35px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 10px;
+}
+
+calc-screen {
+    position: relative;
+    width: 100%;
+}
+
+.middle-container {
+    position: relative;
+    width: 100%;
+}
+
+.bottom-container {
+    position: relative;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.function-keys-grid {
+    height: 100%;
+    width: 88%;
+    margin-left: 6%;
+    margin-right: 6%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0.3%;
+    column-gap: 0.3%;
+}
+
+.basic-keys-grid {
+    height: 88%;
+    width: 88%;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-bottom: 12%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+calc-arrow-button {
+    grid-column: span 2;
+    grid-row: span 2;
+    position: relative;
+    display: grid;
+}
+
+calc-main-button, calc-function-button, calc-basic-button {
+    font-family: Helvetica
+}
+
+.key-shift {
+    justify-self: start;
+    align-self: center;
+}
+
+.key-alpha {
+    justify-self: start;
+    align-self: end;
+    padding-bottom: 10%;
+}
+
+.key-mode {
+    justify-self: end;
+    align-self: end;
+    padding-bottom: 10%;
+}
+
+.key-on {
+    justify-self: end;
+    align-self: center;
+}
+
+calc-function-button, calc-basic-button {
+    position: relative;
+    justify-self: center;
+    align-self: end;
+}
+
+
+/* RESPONSIVE STYLES */
+
+@media screen and (max-height: 578px) {
+    .calc-container {
+        transform: translate(-25%) scale(0.5);
+    }
+}
+
+@media screen and (min-height: 579px) and (max-height: 624px) {
+    .calc-container {
+        transform: translate(-22.5%) scale(0.55);
+    }
+}
+
+@media screen and (min-height: 625px) and (max-height: 669px) {
+    .calc-container {
+        transform: translate(-20%) scale(0.6);
+    }
+}
+
+@media screen and (min-height: 670px) and (max-height: 714px) {
+    .calc-container {
+        transform: translate(-17.5%) scale(0.65);
+    }
+}
+
+@media screen and (min-height: 715px) and (max-height: 759px) {
+    .calc-container {
+        transform: translate(-15%) scale(0.7);
+    }
+}
+
+@media screen and (min-height: 760px) and (max-height: 804px) {
+    .calc-container {
+        transform: translate(-12.5%) scale(0.75);
+    }
+}
+
+@media screen and (min-height: 805px) and (max-height: 849px) {
+    .calc-container {
+        transform: translate(-10%) scale(0.8);
+    }
+}
+
+@media screen and (min-height: 850px) and (max-height: 900px) {
+    .calc-container {
+        transform: translate(-7.5%) scale(0.85);
+    }
+}
+
+@media screen and (min-height: 901px) and (max-height: 999px) {
+    .calc-container {
+        transform: translate(-5%) scale(0.9);
+    }
+}

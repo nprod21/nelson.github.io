@@ -1,0 +1,193 @@
+.disabled-fn-btn {
+    cursor: not-allowed;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    user-select: none;
+}
+
+.fn-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 600ms;
+}
+
+.fn-btn-front-container {
+    position: relative;
+    display: grid;
+    width: 40px;
+    height: 22.5px;
+    background-color: #242f41;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 5px;
+    transform: translateY(-4px);
+    will-change: transform;
+    transition: transform 50ms;
+    justify-items: center;
+    align-items: center;
+}
+
+.fn-btn-front-text {
+    position: relative;
+    font-size: 9pt;
+    font-size: 10pt;
+    font-weight: 550;
+    display: inline-block;
+    text-align: center;
+    color: #ffffff;
+}
+
+.fn-btn-edge {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 22.5px;
+    background-color: #152028;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.fn-btn-shadow {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 22.5px;
+    border-radius: 5px;
+    background-color: #313241;
+    opacity: 25%;
+    transform: translateY(2px);
+    filter: blur(2px);
+}
+
+.fn-btn:active .fn-btn-front-container {
+    transform: translateY(-2px)
+}
+
+.fn-btn:active .fn-btn-shadow {
+    transform: translateY(1px)
+}
+
+.fn-btn:active {
+    transition: filter 50ms;
+    filter: brightness(110%);
+}
+
+.fn-btn:active .fn-btn-shadow {
+    opacity: 27.5%;
+    filter: blur(1px);
+}
+
+.fn-btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.btn-front-const {
+    font-size: 7.5pt;
+}
+
+.btn-front-calc {
+    font-size: 9pt;
+}
+
+.btn-front-x1, .btn-front-x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1;
+}
+
+.btn-front-italic-x {
+    position: relative;
+    display: inline-block;
+    justify-self: end;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.btn-front-raised-power {
+    position: relative;
+    display: inline-block;
+    justify-self: start;
+    align-self: start;
+    font-size: 8pt;
+    padding: 2.5px;
+}
+
+.btn-front-abc {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1;
+}
+
+.abc-a {
+    position: relative;
+    display: inline-block;
+    font-size: 12pt;
+    justify-self: end;
+    align-self: center;
+    padding-left: 5px;
+}
+
+.abc-b {
+    position: relative;
+    display: inline-block;
+    justify-self: end;
+    align-self: start;
+    font-size: 9pt;
+    padding-top: 1px;
+}
+
+.abc-c {
+    position: relative;
+    display: inline-block;
+    justify-self: start;
+    align-self: end;
+    font-size: 9pt;
+    padding-top: 3px;
+    padding-right: 5px;
+}
+
+.abc-slash {
+    font-size: 12pt;
+}
+
+.btn-front-sqrt, .btn-front-negative {
+    font-weight: bolder;
+    font-size: 11pt;
+}
+
+.btn-front-caret {
+    align-self: end;
+    font-size: 14pt;
+    transform: translateY(5px);
+    font-weight: 500;
+}
+
+.btn-front-dms {
+    font-size: 14pt;
+    align-self: end;
+    transform: translateY(5px);
+}
+
+.btn-front-comma {
+    font-size: 14pt;
+    align-self: start;
+    transform: translateY(-5px);
+}

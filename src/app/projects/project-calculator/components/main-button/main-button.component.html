@@ -1,0 +1,10 @@
+    <button type="button"
+    [ngClass]="enabled ? 'row1-btn' : 'disabled-row1-btn'"
+    [style.font-size]="(buttonLabel == 'ALPHA') ? '6.5pt' : '7pt'"
+    (click)="mainButtonClick.emit(buttonLabel)">
+        <span class="row1-btn-edge"></span>
+        <span class="row1-btn-shadow"></span>
+        <span class="row1-btn-front-cover">
+            <span class="row1-btn-front-text">{{buttonLabel}}</span>
+        </span>
+    </button>

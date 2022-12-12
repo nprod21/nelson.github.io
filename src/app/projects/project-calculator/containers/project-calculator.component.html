@@ -1,0 +1,65 @@
+<div class="calc-container" [ngClass]="[showProject ? '' : 'transparent']">
+    <calc-background></calc-background>
+    <div class="calc-grid">
+        <calc-screen
+            [isError]="isError"
+            [syntaxError]="syntaxError"
+            [mathError]="mathError"
+            [hypEnabled]="hypEnabled"
+            [memoryEnabled]="memoryEnabled"
+            [memoryRecall]="memoryRecall"
+            [charsToLeft]="charsToLeft"
+            [charsToRight]="charsToRight"
+            [displayCharsInViewAsStringArray]="displayCharsInViewAsStringArray"
+            [cursorOnChar]="cursorOnChar"
+            [calculatedResult]="calculatedResult"
+            [commas]="commas"
+            [decimals]="decimals"
+            [isOverTenDigits]="isOverTenDigits"
+            [x10PowerOf]="x10PowerOf">
+        </calc-screen>
+        <div class="middle-container">
+            <div class="function-keys-grid">
+                <calc-main-button class="key-shift"
+                    [enabled]="false"
+                    [label]="'shift'">
+                </calc-main-button>
+                <calc-main-button class="key-alpha"
+                    [enabled]="false"
+                    [label]="'alpha'">
+                </calc-main-button>
+                <calc-arrow-button class="arrows-keys"
+                    [arrowDisplayUp]="arrowDisplayUp"
+                    [arrowDisplayLeft]="arrowDisplayLeft"
+                    [arrowDisplayRight]="arrowDisplayRight"
+                    [arrowDisplayDown]="arrowDisplayDown"
+                    [keyPresses]="keyPresses"
+                    (arrowButtonHover)="handleArrowButtonHover($event)"
+                    (arrowButtonClick)="moveCursor($event)">
+                </calc-arrow-button>
+                <calc-main-button class="key-mode"
+                    [enabled]="false"
+                    [label]="'mode'">
+                </calc-main-button>
+                <calc-main-button class="key-on"
+                    [enabled]="true"
+                    [label]="'on'"
+                    (mainButtonClick)="handleMainButtonClick($event)">
+                </calc-main-button>
+                <calc-function-button *ngFor="let functionButton of functionButtons"
+                    [functionButton]="functionButton"
+                    (functionButtonClick)="handleFunctionButtonClick($event)">
+                </calc-function-button>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div class="basic-keys-grid">
+                <calc-basic-button *ngFor="let basicButton of basicButtons"
+                    [basicButton]="basicButton"
+                    [keyPresses]="keyPresses"
+                    (basicButtonClick)="handleBasicButtonClick($event)">
+                </calc-basic-button>
+            </div>
+        </div>
+    </div>
+</div>

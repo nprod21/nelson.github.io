@@ -1,0 +1,5 @@
+<button type="button" [ngClass]="functionButton.enabled ? 'fn-btn' : 'disabled-fn-btn'" (click)="functionButton.enabled && functionButtonClick.emit(functionButton.name)">
+    <span class="fn-btn-edge"></span>
+    <span class="fn-btn-shadow"></span>
+    <span class="fn-btn-front-container" [innerHTML]="functionButton.label"></span>                        
+</button>
