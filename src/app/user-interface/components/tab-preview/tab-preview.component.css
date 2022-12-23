@@ -79,8 +79,6 @@
 }
 
 .btn {
-    left: 0;
-    top: 0;
     position: absolute;
     width: 112px;
     height: calc(100% + 3px);
@@ -93,8 +91,6 @@
 
 .preview-component {
     position: relative;
-    /* width: 600px; */
-    /* padding: 1%; */
     background: #ffffff;
     display: grid;
 }
