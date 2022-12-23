@@ -15,10 +15,10 @@ export const PagesData = [
                 Fast forwarding a few years and after sucessfully developing a handful of internal company websites,
                 my desire to transition into development full-time was ignited,
                 leading me to undertake several Computer Science courses to fill a few knowledge gaps.
-                Whilst completing these and gaining a well-rounded understanding of software development fundamentals plus object-oriented programming,
+                Whilst completing these and gaining a well-rounded understanding of software development fundamentals,
                 I received a recommendation to check out the official Angular 'Tour of Heroes' tutorial,
                 and I've been enjoying diving deeper with Angular almost everyday since!\\    
-                A little about me personally, I'm a fan of football and outdoor activities,
+                A little about me personally, I'm a fan of sports and outdoor activities,
                 reading non-fiction, learning and experiencing new things,
                 socialising and listening to various genres of music.\\    
                 Interested in continued progression towards full-stack development /* with a language-agnostic outlook */,
@@ -50,17 +50,18 @@ export const PagesData = [
                 Angular 13 {
                     features: [Components,
                         Services/Dependency Injections,
-                        Directives, Behaviour Subjects/Observables,
+                        Directives, Inputs, Outputs,
                         Binding, Pipes, View Encapsulation,
                         Routing/Location State,
-                        HTTP Client,
-                        HostListener];}
+                        HTTP Client, HostListener, NgRx];}
                 TypeScript / JavaScript {
-                    features: [JSON, 
+                    features: [RxJS,
+                        JSON, 
                         Arrays, 
                         Loops, 
                         Conditions, 
-                        Interfaces, 
+                        Interfaces,
+                        Classes, 
                         Object Encapsulation, 
                         setTimeout, 
                         toString, 
@@ -79,10 +80,12 @@ export const PagesData = [
                         Media Queries, 
                         Z-Index];}
                 \\/* OTHER TECHNICAL FAMILIARITIES / SKILLS –\\
-                ** Java (basic knowledge)\\
-                ** C# (basic knowledge)\\
+                ** Karma\\
+                ** Jasmine\\
+                ** Java\\
+                ** C#\\
                 ** Github\\
-                ** Adobe Illustrator / Photoshop (basic knowledge)\\
+                ** Adobe Illustrator / Photoshop\\
                 ** Microsoft Office Suite + Visio\\
                 ** Google Search (extensive daily usage) \\*/\\
                 \\/* NON-TECHNICAL / SOFT SKILLS –\\
@@ -137,7 +140,7 @@ export const PagesData = [
                         firstly, a deeper understanding of using Angular to create entire Single-Page Applications, to build upon my knowledge of developing isolated feature modules,
                         and secondly, a unique portfolio website to host all current && future personal projects.
                         Therefore, I decided to build this app in the style of a code editor's UI, with an integrated resizable preview section.\\
-                        /* Source code to be provided again shortly, following app refactoring in progress */\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app" target="_blank" title="Opens in new browser tab">Source code can be viewed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         TabHeaders Component {
                             summary: displays open tabs + controls tab reselection/closure;
@@ -160,7 +163,7 @@ export const PagesData = [
                         Route Service {
                             summary: enables open tab state management via URL interaction;
                             highlight: sets URL path with appended string of ordered open tab IDs;}
-                        \\\\/* TODOs\\
+                        \\/* TODOs\\
                         * Add lower handle to enable freely resizable heights between lower panel && middle sections\\
                         * Change logic for reselecting tab headers (from click to mousedown event) such that deselected tabs open if dragged\\
                         * Revise logic for tab text scroll position restoration to improve consistency when reselecting tabs\\
@@ -169,7 +172,7 @@ export const PagesData = [
                         * Set cursor styling for when tabs are dragged\\
                         * Activity/Sidebar enhancement - add open-tab count to side activity bar explorer icon + add search icon && functionality\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */\\`,
+                        */`,
                 subPages: [],
                 iconClass: 'fa fa-asterisk',
                 selected: false,
@@ -193,7 +196,7 @@ export const PagesData = [
                 content: `/* OBJECTIVE */\\
                         For this project, my primary objective, was to build a simple application centered around data consumed from a third-party REST API.
                         My secondary objective was to further practice using CSS flex, to structure a simple layout.\\
-                        /* Source code to be provided again shortly, following app refactoring in progress */\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-weather" target="_blank" title="Opens in new browser tab">Source code can be viewed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         dynamic animated background image {
                             highlight: image source property binding varies depending on current weather description and time of day;}
@@ -206,7 +209,7 @@ export const PagesData = [
                         * Add non location-specific/universal background gif images for other cities\\
                         * Style demo simulation setter dropdowns && address positioning on responsive devices\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */\\`,
+                        */`,
                 subPages: [],
                 iconClass: 'fa fa-cloud',
                 selected: false,
@@ -233,7 +236,7 @@ export const PagesData = [
                         /*\\
                         * note this emulation would have been tremendously difficult without referencing my 10+ year old physical model from school, * so thank you Casio for the longevity - please don't sue me! \\
                         */\\\\
-                        /* Source code to be provided again shortly, following app refactoring in progress */\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-calculator" target="_blank" title="Opens in new browser tab">Source code can be viewed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         3D Design {
                             highlights: [raised edges + outer shadows on body && buttons, button edges && shadows adjust when active, arrow buttons perform 2D transforms when active, inner shadow on display screen && solar panel];}
@@ -256,7 +259,7 @@ export const PagesData = [
                         *\\
                         * Add functionality to disabled buttons\\
                         * For further details of TODOs for this project - please view my issueTracker.app project!\\
-                        */\\\\\\`,
+                        */\\\\`,
                 subPages: [],
                 iconClass: 'fa fa-calculator',
                 selected: false,
@@ -279,7 +282,7 @@ export const PagesData = [
                 filepath: 'issueTracker.app',
                 content: `/* OBJECTIVE */\\
                         The purpose of this project was to build a CRUD application, with reusable components heavily focused on data management and processing, alongside interactive presentation.\\
-                        /* Source code to be provided again shortly, following app refactoring in progress */\\
+                        <a href="https://github.com/nprod21/nprod21.github.io/tree/main/src/app/projects/project-tracker" target="_blank" title="Opens in new browser tab">Source code can be viewed here <i class=\"fa fa-external-link\"></i></a>.
                         \\/* FEATURES */\\
                         Reusable (dumb) chart components {
                                 highlights: [bar + donut chart components dynamically represent data summaries per input properties, interactive chart elements (bars/segments) facilitate list data filtering];}
@@ -291,7 +294,7 @@ export const PagesData = [
                                         highlights: [side navigation bar menu auto-collapses/expands per inputted preview width - with z-index switches to overlay app body on menu expansion under a defined width threshold, ticket-list component features flex display to fill available width space - with container overflow scrolling enabled];}           
                         \\/* TODOs\\
                         * Fix issues and implement features detailed within this application :)\\
-                        */\\`,
+                        */`,
                 subPages: [],
                 iconClass: '',
                 selected: false,
