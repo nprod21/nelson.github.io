@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpResponse } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
@@ -40,7 +40,7 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private setWeather(data: any): void {
+  public setWeather(data: any): void {
     /* assigns response data received from API call to relevant properties
     && calls further setters to continue separate date/time + background image assignments */
     this.weather = data;
@@ -138,15 +138,9 @@ export class WeatherService {
     return;
   }
 
-  public getWeather(): void {
-    /* makes API call to get weather using endpoint property,
-    && calls weather setter with response as argument
-    && sends confirmation of response received via behaviour subject/observable */
-    this.httpClient.get(this.forecastEndpoint).subscribe(response => {
-      this.setWeather(response);
-      if(response) this.responseSubject.next(true);
-    });
-    return;
+  public getWeather(): Observable<HttpResponse<any>> {
+    /* Returns HttpResponse Observable of GET request to weather API endpoint */ 
+    return this.httpClient.get<any>(this.forecastEndpoint, {observe: 'response'});
   }
 
   public getCity(): string {

@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-
 import { WeatherService } from './weather.service';
-import { TabService } from '../../user-interface/services/tab.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class ProjectWeatherComponent implements OnInit, OnDestroy {
 
-  @Output() weatherResponse: EventEmitter<boolean> = new EventEmitter();
+  @Output() weatherResponse: EventEmitter<boolean> = new EventEmitter(); //Used to output API response status
 
   private weatherResponseSub!: Subscription;
 
@@ -34,41 +32,51 @@ export class ProjectWeatherComponent implements OnInit, OnDestroy {
   public weatherOptions: string[] = this.weatherService.getWeatherOptions();
 
 
-  constructor(
-    private weatherService: WeatherService,
-    private tabService: TabService
-  ) { }
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    /* calls service method to make API call to fetch data vi HTTP Client */
-    this.weatherService.getWeather();
-
-    this.weatherResponseSub = this.weatherService.responseObservable.subscribe(response => {
-      /* on receipt of weather API response:
-      - calls method to assign API data from service to relevant properties
-      && calls tab service method to publish API response confirmation */
-      if(response) {
-        this.setWeatherFromServiceData();
-        // this.tabService.updateWeatherFetchedSubject();
-        this.weatherResponse.emit(true);
-        /* timer delay for content visibility - to prevent flickering behind splash screen */
-        setTimeout(() => this.showProject = true, 3100);
-      }
-    })
-    
+    /* calls service method to make API call to fetch data via HTTP Client */
+    this.getWeatherFromServiceAPI();
   }
 
   ngOnDestroy(): void {
     /* manually unsubscribes from observable subscription on component destruction */
-    this.weatherResponseSub.unsubscribe();
+    if(this.weatherResponseSub) this.weatherResponseSub.unsubscribe();
+  }
+
+  private getWeatherFromServiceAPI(): void {
+    /* Subscribes to service data API GET request and processes returned observable */
+    this.weatherResponseSub = this.weatherService.getWeather()
+    .subscribe({
+      /* Calls weather method to set relevant data values to service properties, if valid
+        - If response is invalid, status is logged */
+      next: (response) => {
+        if(response.ok && response.status == 200) {
+          this.weatherService.setWeather(response.body)
+        }
+        else {
+          console.log("GET Weather request response.status: " + response.status + " - " + response.statusText)
+        }
+      },
+      // Error handling
+      error: (error) => {
+        console.warn("GET Weather request error: " + error.message)
+      },
+      // Completion steps
+      complete: () => {
+        this.setWeatherFromServiceData();
+        this.weatherResponse.emit(true);
+        this.weatherResponseSub.unsubscribe();
+        setTimeout(() => this.showProject = true, 3100);
+      }
+    })
   }
 
 
 
   private setWeatherFromServiceData(): void {
     /* assigns weather data required for template to relevant properties
-    && calls setter methods to assig */
-    // this.dailyTemp[0] = this.weatherService.dailyTemp[0];
+    && calls setter methods to assign */
     this.backgroundImg = this.weatherService.getBackgroundImage();
     this.dailyDescription = this.weatherService.getDailyDescription();
     this.dailyTemp = this.weatherService.getDailyTemp();
