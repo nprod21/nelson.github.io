@@ -9,7 +9,7 @@ export class SciCalculatorService {
   /* PRIVATE PROPERTIES, USED FOR BUSINESS LOGIC */
   private blinkingCursor: string = "_";
   private memoryAdded: boolean = false;
-  private memoryValue: string = "";
+  private memoryValue: number = 0;
   private enteredEquation: string[] = [];
   private formattedEquationString: string = "";
   private formattedEquation: string[] = [];
@@ -20,6 +20,7 @@ export class SciCalculatorService {
   private displayCharsInVew: String = this.displayEquation.join('');
   private latestMathFunctionIndex: number = -1;
   private rawResult: any;
+  private formattedResult: number = 0;
   private ans: string = "";
   
   public functionButtons: CalcButton[] = [
@@ -334,26 +335,32 @@ export class SciCalculatorService {
     this.setCharsToLeft();
     this.setCharsToRight();
   }
-
+// TODO - update to number
   private setMemoryValue(): void {
     /* calls method to calculate result of entered equation
     && either adds result to existing memory value
         or assigns result to memory value, if no memory value exists */
     this.calculateResult();
-    if(this.memoryValue != "") {
-      let memoryFigure: number = parseInt(this.memoryValue) + this.rawResult;
-      this.memoryValue = memoryFigure.toString();
-    }
-    else this.memoryValue = this.rawResult.toString();
+    this.memoryValue += this.rawResult;
+    // else this.memoryValue = this.rawResult.toString();
   }
 
   private displayMemory(): void {
     /* displays a formatted memory result, if one exists
     or resets memory recall to false */
-    if(!isNaN(parseInt(this.memoryValue))) {
-      this.rawResult = parseInt(this.memoryValue);
+    if(this.memoryAdded) {
+      this.rawResult = this.memoryValue;
+      // this.setX10();
+      // this.formatResult();
+      this.formattedResult = this.rawResult;
       this.setX10();
-      this.calculatedResult = this.rawResult.toLocaleString(); 
+      // this.calculatedResult = this.rawResult;
+      // console.log("displayMemory this.calculatedResult == ", this.calculatedResult);
+      this.formatResult();
+      // this.setX10();
+      // this.formatResult();
+      // this.calculateResult();
+      this.displayEquation.splice(this.getCursorIndex(), 1);
     }
     else this.memoryRecall = false;
     
@@ -415,8 +422,8 @@ export class SciCalculatorService {
     && increments the multiplied by 10 to the power of value by 1 (starting from zero) each division  */
     this.x10PowerOf = 0;
     // while(this.rawResult >= 9999999999) {
-    while(this.rawResult > 9999999999) {
-      this.rawResult = this.rawResult / 10;
+    while(this.formattedResult > 9999999999) {
+      this.formattedResult = this.formattedResult / 10;
       this.x10PowerOf++;
     }
   }
@@ -741,7 +748,7 @@ export class SciCalculatorService {
     /* loops through initial result to find a decimal
     && returns its index, if present, otherwise returns negative number */
     let decimalPosition: number = -1;
-    let result: string = this.rawResult.toString();
+    let result: string = this.formattedResult.toString();
     for(let i: number = 0; i < result.length; i++) {
       if(result[i] == ".") {
         decimalPosition = i;
@@ -756,7 +763,7 @@ export class SciCalculatorService {
     exluding the decimal, to a new result without decimal string
     && assigns this new string to the calculated result property */
     if(decimalPosition == -1) return;
-    let resultString: string = this.rawResult.toString();
+    let resultString: string = this.formattedResult.toString();
     let resultWithoutDecimal: string = "";
     for(let i: number = 0; i < resultString.length; i++) {
       if(resultString[i] == ".") continue;
@@ -774,12 +781,13 @@ export class SciCalculatorService {
         let decimalPoint: number = 10 - decimalPosition;
         /* using toFixed incidentally resolve limited float issue/if result is an inexact number
           - i.e. certain trigonometry equation using pi e.g. 'sin 180' returns 1.2246467991473532e-16 */
-        let roundedResult: string = this.rawResult.toFixed(decimalPoint);
-        this.rawResult = parseFloat(roundedResult);
+        let roundedResult: string = this.formattedResult.toFixed(decimalPoint);
+        // this.rawResult = parseFloat(roundedResult);
+        this.formattedResult = parseFloat(roundedResult);
       }
       this.setPunctuation();
       if(decimalPosition != -1) this.removeDecimalFromResult(decimalPosition);
-      else this.calculatedResult = this.rawResult;   
+      else this.calculatedResult = this.formattedResult.toString();   
   }
 
   private resetPunctuation(): void {
@@ -791,7 +799,7 @@ export class SciCalculatorService {
 
   private punctuationCount(): number {
     /* returns amount of specified punctuation characters in initial result */
-    let result: string = this.rawResult.toLocaleString(); //toLocaleString() used to apply punctuation
+    let result: string = this.formattedResult.toLocaleString(); //toLocaleString() used to apply punctuation
     let count: number = 0;
     for(let i: number = 0; i < result.length; i++) {
       if(result[i] == "," || result[i] == ".") count++;
@@ -805,9 +813,9 @@ export class SciCalculatorService {
       therefore, punctuation is overlayed with an offset translation to appear in between digit chars of result) */
     this.resetPunctuation();
     let decimalPosition: number = this.getDecimalPosition();
-    let decimalPlaces = (this.rawResult.toString().length - 1) - decimalPosition;
+    let decimalPlaces = (this.formattedResult.toString().length - 1) - decimalPosition;
     if(decimalPosition == -1) decimalPlaces = 0;
-    let result: string = this.rawResult.toLocaleString(undefined, {minimumFractionDigits: decimalPlaces});
+    let result: string = this.formattedResult.toLocaleString(undefined, {minimumFractionDigits: decimalPlaces});
     let punctuationCount = this.punctuationCount()
     let shift: number = (10 - result.length) + punctuationCount;
     for(let i: number = result.length - 1; i >= 0; i--) {
@@ -978,6 +986,7 @@ export class SciCalculatorService {
     /* resets practically all property values (directly && via methods),
     except for historical answer && in-memory values */
     this.calculatedResult = "0";
+    this.formattedResult = 0;
     this.rawResult = 0;
     this.isOverTenDigits = false;
     this.x10PowerOf = 88;
@@ -1086,6 +1095,7 @@ export class SciCalculatorService {
     this.formatEquation();
     try {
       this.rawResult = eval(this.formattedEquationString);
+      console.warn("in try this.rawResult == " + this.rawResult);
       // this.rawResult = Number(this.formattedEquationString);
     }
     catch(err) {
@@ -1100,18 +1110,25 @@ export class SciCalculatorService {
     }
 
     setTimeout(() => {
+      console.warn("0 end of calculate rawResult: ", this.rawResult);
       if(isNaN(this.rawResult)) {
         this.throwError("syntax");
       }
       else {
+        console.warn("1 end of calculate rawResult: ", this.rawResult);
         this.ans = "(";
         this.ans += this.rawResult.toString();
         this.ans += ")";
+        console.warn("1.25 end of calculate rawResult: ", this.rawResult);
+        this.formattedResult = this.rawResult;
         this.setX10();
+        console.warn("1.5 end of calculate rawResult: ", this.rawResult);
         this.formatResult();
+        console.warn("2 end of calculate rawResult: ", this.rawResult);
       }
       this.displayEquation.splice(this.getCursorIndex(), 1);
       this.updateDisplayCharsInView();  
+      console.warn("3 end of calculate rawResult: ", this.rawResult);
     }, 1);
     
   }

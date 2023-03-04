@@ -19,6 +19,10 @@
     transition: opacity 0.2s;
 }
 
+.transparent {
+    opacity: 0;
+}
+
 .calc-grid {
     position: relative;
     height: 650px;

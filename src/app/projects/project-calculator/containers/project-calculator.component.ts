@@ -13,7 +13,7 @@ import { SciCalculatorService } from '../services/sci-calculator.service';
 export class ProjectCalculatorComponent implements OnInit {
 
   /* PUBLIC PROPERTIES, USED BY TEMPLATE */
-  public showProject: boolean = true;
+  public showProject: boolean = false;
   public arrowDisplayUp: string = 'block';
   public arrowDisplayLeft: string = 'none';
   public arrowDisplayRight: string = 'none';
@@ -141,7 +141,7 @@ export class ProjectCalculatorComponent implements OnInit {
 
   ngOnInit(): void {
     /* timer delay for content visibility - to prevent flickering before splash screen */
-    setTimeout(() => this.showProject = true, 3100);
+    setTimeout(() => this.showProject = true, 3500);
     this.setSciCalcValues();
   }
 
